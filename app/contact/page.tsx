@@ -142,8 +142,8 @@ export default function ContactPage() {
                           </div>
                           <div>
                             <h3 className="text-lg font-semibold text-black dark:text-white mb-1">Email Us</h3>
-                            <p className="text-gray-600 dark:text-gray-300">contact@genovotech.com</p>
-                            <p className="text-gray-600 dark:text-gray-300">partnerships@genovotech.com</p>
+                            <p className="text-gray-600 dark:text-gray-300">support@genovotech.com</p>
+                            <p className="text-gray-600 dark:text-gray-300">founders@genovotech.com</p>
                           </div>
                         </div>
                       </CardContent>
@@ -159,7 +159,7 @@ export default function ContactPage() {
                           </div>
                           <div>
                             <h3 className="text-lg font-semibold text-black dark:text-white mb-1">Call Us</h3>
-                            <p className="text-gray-600 dark:text-gray-300">+1 (555) 123-4567</p>
+                            <p className="text-gray-600 dark:text-gray-300">+234 802 970 9341</p>
                             <p className="text-gray-600 dark:text-gray-300 text-sm">Mon-Fri 9:00 AM - 6:00 PM EST</p>
                           </div>
                         </div>
@@ -177,11 +177,11 @@ export default function ContactPage() {
                           <div>
                             <h3 className="text-lg font-semibold text-black dark:text-white mb-1">Visit Us</h3>
                             <p className="text-gray-600 dark:text-gray-300">
-                              123 Innovation Drive
+                               6a Social Sciences
                               <br />
-                              Tech District, San Francisco
+                              UNILAG Estate, Magodo, Lagos
                               <br />
-                              CA 94107, United States
+                              Nigeria
                             </p>
                           </div>
                         </div>
