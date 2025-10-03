@@ -53,7 +53,99 @@
   * {
     @apply border-border;
   }
+  
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }
+
+@layer utilities {
+  /* Glass morphism utilities */
+  .glass {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-dark {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Premium gradients */
+  .gradient-premium {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .gradient-ocean {
+    background: linear-gradient(135deg, #2E3192 0%, #1BFFFF 100%);
+  }
+
+  .gradient-sunset {
+    background: linear-gradient(135deg, #FF512F 0%, #DD2476 100%);
+  }
+
+  /* Smooth shadows */
+  .shadow-smooth {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
+  }
+
+  .shadow-glow-purple {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.3);
+  }
+
+  /* Text shadow for depth */
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Animation helpers */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+    to { box-shadow: 0 0 40px rgba(139, 92, 246, 0.8); }
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  @keyframes scaleIn {
+    from { 
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to { 
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
