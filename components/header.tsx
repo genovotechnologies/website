@@ -21,35 +21,36 @@ export function Header() {
   ]
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+    <header className="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/70 dark:bg-gray-900/70 border-b border-white/20 dark:border-gray-800/50 shadow-lg">
+      <div className="container mx-auto px-6 py-5 flex justify-between items-center">
         <Link href="/" className="text-black dark:text-white group">
-          <div className="group-hover:scale-105 transition-transform">
+          <div className="group-hover:scale-110 transition-all duration-300 drop-shadow-lg">
             <GenovoLogo size={40} variant="full" />
           </div>
         </Link>
 
-        <nav className="hidden lg:flex space-x-8">
+        <nav className="hidden lg:flex space-x-10">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
               className={cn(
-                "text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors relative group",
-                pathname === item.href && "text-black dark:text-white font-medium",
+                "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 relative group text-base font-medium",
+                pathname === item.href && "text-black dark:text-white font-semibold",
               )}
             >
               {item.name}
               {pathname === item.href && (
-                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-600 rounded-full"></div>
+                <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full shadow-glow"></div>
               )}
+              <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
             </Link>
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center space-x-4">
+        <div className="hidden lg:flex items-center space-x-5">
           <ThemeToggle />
-          <Button className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 rounded-full px-6">
+          <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 rounded-full px-8 py-3 font-semibold shadow-lg hover:shadow-glow transition-all duration-300 hover:scale-105">
             Get Started
           </Button>
         </div>
