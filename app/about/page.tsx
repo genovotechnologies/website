@@ -8,6 +8,9 @@ import { Footer } from "@/components/footer"
 import { SmoothScroll } from "@/components/smooth-scroll"
 import { FloatingParticles } from "@/components/3d/floating-particles"
 import { TechGrid } from "@/components/3d/tech-grid"
+import { GradientMesh } from "@/components/3d/gradient-mesh"
+import { GlassCard } from "@/components/ui/glass-card"
+import { MagneticButton } from "@/components/ui/magnetic-button"
 import Link from "next/link"
 import { ArrowRight, Users, Target, Award, Globe, Rocket, Brain, Shield } from "lucide-react"
 
@@ -18,29 +21,32 @@ import { CounterAnimation } from "@/components/animations/counter-animation"
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 text-black dark:text-white">
       <SmoothScroll />
       <Header />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 opacity-60">
+          <GradientMesh />
+        </div>
+        <div className="absolute inset-0 opacity-30">
           <FloatingParticles />
         </div>
 
-        <div className="container mx-auto max-w-4xl text-center relative z-10">
+        <div className="container mx-auto max-w-5xl text-center relative z-10">
           <FadeIn>
-            <Badge className="mb-6 bg-blue-600/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400 border-blue-600/20 dark:border-blue-400/20">
+            <Badge className="mb-8 bg-blue-600/20 text-blue-500 dark:bg-blue-400/20 dark:text-blue-400 border-blue-600/30 dark:border-blue-400/30 text-sm px-4 py-2">
               About Genovo Technologies
             </Badge>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
               Building the Future of
               <br />
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                 Decentralized Digital Empires
               </span>
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+            <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-200 mb-8 max-w-4xl mx-auto leading-relaxed">
               Founded in 2025, we are a deeptech company focused on building scalable and impactful products across Nigeria, US, and UK markets. Our mission is to create monetizable, scalable, and decentralized digital infrastructure.
             </p>
           </FadeIn>
@@ -48,81 +54,78 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 px-6 bg-gray-50 dark:bg-gray-800/50 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
+      <section className="py-32 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
           <TechGrid />
         </div>
 
         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <SlideIn direction="left">
               <div>
-                <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                <Badge className="mb-6 bg-purple-600/20 text-purple-500 dark:bg-purple-400/20 dark:text-purple-400 border-purple-600/30 text-sm px-4 py-2">
+                  Our Purpose
+                </Badge>
+                <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
+                  Our <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Mission</span>
+                </h2>
+                <p className="text-xl text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
                   At Genovo Technologies, our mission is to leverage the transformative power of deep technology to
                   create intelligent, scalable, and sustainable solutions that address the world's most pressing
                   challenges.
                 </p>
-                <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                <p className="text-xl text-gray-700 dark:text-gray-300 mb-10 leading-relaxed">
                   We believe that through the strategic application of artificial intelligence, quantum computing, and
                   advanced analytics, we can fundamentally transform how industries operate and how societies function.
                 </p>
                 <Link href="/contact">
-                  <Button className="bg-blue-600 text-white hover:bg-blue-700 rounded-full px-8 group">
+                  <MagneticButton className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 rounded-full px-10 py-6 text-lg font-semibold shadow-glow group">
                     Partner With Us
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                    <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-2 transition-transform" />
+                  </MagneticButton>
                 </Link>
               </div>
             </SlideIn>
 
-            <StaggerContainer className="grid grid-cols-2 gap-6" staggerDelay={150}>
+            <StaggerContainer className="grid grid-cols-2 gap-8" staggerDelay={150}>
               <FadeIn>
-                <Card className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 group">
-                  <CardContent className="p-6 text-center">
-                    <Target className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                    <h3 className="text-xl font-semibold mb-2">Vision</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">
-                      To be the leading force in intelligent technology transformation globally.
-                    </p>
-                  </CardContent>
-                </Card>
+                <GlassCard className="p-8 text-center group cursor-pointer">
+                  <Target className="w-16 h-16 text-blue-600 dark:text-blue-400 mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
+                  <h3 className="text-2xl font-bold mb-3">Vision</h3>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    To be the leading force in intelligent technology transformation globally.
+                  </p>
+                </GlassCard>
               </FadeIn>
 
               <FadeIn>
-                <Card className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 group">
-                  <CardContent className="p-6 text-center">
-                    <Globe className="w-12 h-12 text-green-600 dark:text-green-400 mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                    <h3 className="text-xl font-semibold mb-2">Impact</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">
-                      Transforming industries across 7 key verticals worldwide.
-                    </p>
-                  </CardContent>
-                </Card>
+                <GlassCard className="p-8 text-center group cursor-pointer">
+                  <Globe className="w-16 h-16 text-green-600 dark:text-green-400 mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
+                  <h3 className="text-2xl font-bold mb-3">Impact</h3>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Transforming industries across 7 key verticals worldwide.
+                  </p>
+                </GlassCard>
               </FadeIn>
 
               <FadeIn>
-                <Card className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 group">
-                  <CardContent className="p-6 text-center">
-                    <Brain className="w-12 h-12 text-purple-600 dark:text-purple-400 mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                    <h3 className="text-xl font-semibold mb-2">Innovation</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">
-                      Cutting-edge AI and quantum computing research.
-                    </p>
-                  </CardContent>
-                </Card>
+                <GlassCard className="p-8 text-center group cursor-pointer">
+                  <Brain className="w-16 h-16 text-purple-600 dark:text-purple-400 mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
+                  <h3 className="text-2xl font-bold mb-3">Innovation</h3>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Cutting-edge AI and quantum computing research.
+                  </p>
+                </GlassCard>
               </FadeIn>
 
               <FadeIn>
-                <Card className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 group">
-                  <CardContent className="p-6 text-center">
-                    <Shield className="w-12 h-12 text-red-600 dark:text-red-400 mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                    <h3 className="text-xl font-semibold mb-2">Security</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">
-                      Military-grade security and privacy protection.
-                    </p>
-                  </CardContent>
-                </Card>
+                <GlassCard className="p-8 text-center group cursor-pointer">
+                  <Shield className="w-16 h-16 text-red-600 dark:text-red-400 mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
+                  <h3 className="text-2xl font-bold mb-3">Security</h3>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Military-grade security and privacy protection.
+                  </p>
+                </GlassCard>
               </FadeIn>
             </StaggerContainer>
           </div>
