@@ -142,8 +142,8 @@ export default function ContactPage() {
                           </div>
                           <div>
                             <h3 className="text-lg font-semibold text-black dark:text-white mb-1">Email Us</h3>
-                            <p className="text-gray-600 dark:text-gray-300">support@genovotech.com</p>
-                            <p className="text-gray-600 dark:text-gray-300">founders@genovotech.com</p>
+                            <p className="text-gray-600 dark:text-gray-300">info@genovotech.com</p>
+                            <p className="text-gray-600 dark:text-gray-300">accounts@genovotech.com</p>
                           </div>
                         </div>
                       </CardContent>
