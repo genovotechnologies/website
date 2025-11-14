@@ -1,11 +1,10 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Github, Twitter, MessageCircle } from "lucide-react"
 import { useState } from "react"
 
 export function Header() {
@@ -16,61 +15,56 @@ export function Header() {
     { name: "Products", href: "/products" },
     { name: "Solutions", href: "/solutions" },
     { name: "About", href: "/about" },
-    { name: "Careers", href: "/careers" },
+    { name: "Team", href: "/team" },
+    { name: "Blog", href: "/blog" },
   ]
 
   return (
-    <header className="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/70 dark:bg-gray-900/70 border-b border-white/20 dark:border-gray-800/50 shadow-lg">
-      <div className="container mx-auto px-6 py-5 flex justify-between items-center">
-        <Link href="/" className="text-black dark:text-white group">
-          <div className="group-hover:scale-110 transition-all duration-300 drop-shadow-lg flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">G</span>
-            </div>
-            <span className="text-xl font-bold">Genovo Technologies</span>
-          </div>
+    <header className="fixed top-0 w-full z-50 bg-[#faf8f5]/95 backdrop-blur-sm border-b border-gray-200/50">
+      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+        <Link href="/" className="group flex items-center space-x-2">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#e81899]">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="2"/>
+            <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2"/>
+            <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2"/>
+          </svg>
+          <span className="text-lg font-semibold text-gray-900">genovo</span>
         </Link>
 
-        <nav className="hidden lg:flex space-x-10">
+        <nav className="hidden lg:flex items-center space-x-8">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
               className={cn(
-                "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 relative group text-base font-medium",
-                pathname === item.href && "text-black dark:text-white font-semibold",
+                "text-sm text-gray-600 hover:text-gray-900 transition-colors relative group",
+                pathname === item.href && "text-gray-900 font-medium"
               )}
             >
               {item.name}
-              {pathname === item.href && (
-                <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full shadow-glow"></div>
-              )}
-              <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#e81899] group-hover:w-full transition-all duration-300"></span>
             </Link>
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center space-x-5">
-          <ThemeToggle />
-          <Link href="/contact">
-            <Button className="bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium">
-              Contact
-            </Button>
-          </Link>
-          <Link href="/careers">
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg px-6 py-2 font-medium shadow-md">
-              Join Us
-            </Button>
-          </Link>
+        <div className="hidden lg:flex items-center space-x-4">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Github className="w-5 h-5" />
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Twitter className="w-5 h-5" />
+          </a>
+          <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <MessageCircle className="w-5 h-5" />
+          </a>
         </div>
 
-        <div className="lg:hidden flex items-center space-x-2">
-          <ThemeToggle />
+        <div className="lg:hidden">
           <Button
             variant="ghost"
             size="sm"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-black dark:text-white"
+            className="text-gray-900"
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
@@ -78,15 +72,15 @@ export function Header() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+        <div className="lg:hidden bg-[#faf8f5] border-t border-gray-200/50">
           <div className="px-6 py-4 space-y-4">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "block text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors py-2",
-                  pathname === item.href && "text-black dark:text-white font-medium",
+                  "block text-sm text-gray-600 hover:text-gray-900 transition-colors py-2",
+                  pathname === item.href && "text-gray-900 font-medium"
                 )}
                 onClick={() => setMobileMenuOpen(false)}
               >
