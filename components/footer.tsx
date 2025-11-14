@@ -122,38 +122,3 @@ export function Footer() {
     </footer>
   )
 }
-              <li>
-                <span className="hover:text-white transition-colors">Manufacturing 4.0</span>
-              </li>
-              <li>
-                <span className="hover:text-white transition-colors">Healthcare AI</span>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Connect</h4>
-            <ul className="space-y-3 text-gray-300">
-              <li>
-                <span className="hover:text-white transition-colors">LinkedIn</span>
-              </li>
-              <li>
-                <span className="hover:text-white transition-colors">Twitter</span>
-              </li>
-              <li>
-                <span className="hover:text-white transition-colors">GitHub</span>
-              </li>
-              <li>
-                <span className="hover:text-white transition-colors">hello@genovotech.com</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="border-t border-gray-800 pt-8">
-          <p className="text-gray-400 text-sm">© 2025 Genovo Technologies, Inc. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-  )
-}
