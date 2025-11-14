@@ -16,105 +16,105 @@ export default function SolutionsPage() {
   const solutions = [
     {
       icon: Briefcase,
-      title: "For Marketing Teams",
-      description: "Streamline campaign management, content calendars, and team collaboration.",
+      title: "Service Marketplace Solutions",
+      description: "Leverage Taskr to connect professionals with opportunities across multiple sectors.",
       features: [
-        "Campaign tracking and planning",
-        "Content calendar management",
-        "Social media scheduling",
-        "Performance analytics",
-        "Client collaboration tools"
+        "AI-powered matching algorithm",
+        "Secure payment processing",
+        "Real-time tracking and updates",
+        "Review and rating system",
+        "Multi-platform accessibility"
       ],
       color: "from-blue-500 to-cyan-500",
-      image: "📊"
+      image: "🎯"
+    },
+    {
+      icon: Building,
+      title: "Property Management",
+      description: "Modern rental platform solutions powered by Homevy for landlords and tenants.",
+      features: [
+        "Property listing management",
+        "Tenant screening and verification",
+        "Online rent collection",
+        "Maintenance request tracking",
+        "Lease and document management"
+      ],
+      color: "from-green-500 to-emerald-500",
+      image: "🏠"
     },
     {
       icon: Code,
-      title: "For Software Teams",
-      description: "Agile project management with sprint planning, bug tracking, and code integrations.",
+      title: "Smart Infrastructure",
+      description: "IoT and AI-powered infrastructure management with SCOS platform.",
       features: [
-        "Sprint and backlog management",
-        "Bug and issue tracking",
-        "Git integration",
-        "Code review workflows",
-        "CI/CD pipeline tracking"
-      ],
-      color: "from-purple-500 to-pink-500",
-      image: "💻"
-    },
-    {
-      icon: Palette,
-      title: "For Design Teams",
-      description: "Manage design projects, feedback cycles, and creative workflows.",
-      features: [
-        "Design project boards",
-        "Visual feedback tools",
-        "Asset management",
-        "Client approval workflows",
-        "Version control"
+        "Real-time monitoring and analytics",
+        "Predictive maintenance",
+        "Energy optimization",
+        "Traffic and resource management",
+        "Integration with existing systems"
       ],
       color: "from-orange-500 to-red-500",
-      image: "🎨"
+      image: "⚡"
     },
     {
       icon: TrendingUp,
-      title: "For Sales Teams",
-      description: "Track deals, manage pipelines, and collaborate on customer relationships.",
+      title: "Earning Platforms",
+      description: "Enable users to monetize skills with ProfitQuest task-to-earn ecosystem.",
       features: [
-        "Deal pipeline management",
-        "Lead tracking",
-        "Sales activity logging",
-        "Quota and target tracking",
-        "CRM integration"
+        "Micro-task marketplace",
+        "Skill-based opportunity matching",
+        "Instant payment processing",
+        "Gamified user experience",
+        "Blockchain-powered rewards"
       ],
-      color: "from-green-500 to-emerald-500",
-      image: "📈"
+      color: "from-purple-500 to-pink-500",
+      image: "💰"
     },
     {
       icon: Heart,
-      title: "For Healthcare",
-      description: "HIPAA-compliant task management for healthcare professionals and facilities.",
+      title: "FinTech Solutions",
+      description: "Advanced financial technology platforms with AI-powered analytics.",
       features: [
-        "Patient care coordination",
-        "Staff scheduling",
-        "Compliance tracking",
-        "Secure messaging",
-        "Medical records integration"
+        "Blockchain integration",
+        "Risk management AI",
+        "Automated trading systems",
+        "Compliance and security",
+        "Multi-currency support"
       ],
       color: "from-pink-500 to-rose-500",
-      image: "🏥"
+      image: "💳"
     },
     {
       icon: GraduationCap,
-      title: "For Education",
-      description: "Organize curriculum, assignments, and student collaboration.",
+      title: "Healthcare Technology",
+      description: "AI-powered healthcare solutions for diagnostics and patient management.",
       features: [
-        "Course and lesson planning",
-        "Assignment tracking",
-        "Student collaboration",
-        "Grade management",
-        "Parent communication"
+        "AI diagnostic tools",
+        "Telemedicine platform",
+        "Patient data management",
+        "Medical imaging analysis",
+        "Health records integration"
       ],
       color: "from-indigo-500 to-purple-500",
-      image: "📚"
+      image: "🏥"
     }
   ]
 
   const benefits = [
     {
-      title: "Increased Productivity",
-      description: "Teams using ChronoTask report 40% increase in productivity",
-      stat: "40%"
+      title: "Products Deployed",
+      description: "Active products serving multiple markets",
+      stat: "7+"
     },
     {
-      title: "Time Saved",
-      description: "Average of 10 hours saved per team member each week",
-      stat: "10hrs"
+      title: "Markets",
+      description: "Operating across Nigeria, US, and UK",
+      stat: "3"
     },
     {
-      title: "Project Success",
-      description: "95% of projects completed on time with our tools",
-      stat: "95%"
+      title: "Deep Tech Focus",
+      description: "AI and blockchain-powered solutions",
+      stat: "100%"
     }
   ]
 
@@ -131,12 +131,12 @@ export default function SolutionsPage() {
                 Solutions
               </Badge>
               <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-gray-900 dark:text-white">
-                Solutions for every
+                Solutions for Every
                 <br />
-                <span className="text-gray-400 dark:text-gray-500">type of team</span>
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Industry</span>
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                Whether you're a startup or enterprise, we have the perfect solution for your team's workflow.
+                Tailored technology solutions leveraging our product ecosystem to solve specific industry challenges.
               </p>
             </FadeIn>
           </div>

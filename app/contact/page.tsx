@@ -3,6 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -10,7 +11,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Mail, Phone, MapPin, Send, MessageSquare, HelpCircle } from "lucide-react"
+import { Mail, MapPin, Send, MessageSquare, ArrowRight } from "lucide-react"
 import { FadeIn } from "@/components/animations/fade-in"
 
 export default function ContactPage() {
@@ -140,23 +141,8 @@ export default function ContactPage() {
                         </div>
                         <div>
                           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Email Us</h3>
-                          <p className="text-gray-600 dark:text-gray-400">support@chronotask.com</p>
-                          <p className="text-gray-600 dark:text-gray-400">sales@chronotask.com</p>
-                        </div>
-                      </div>
-                    </Card>
-                  </Card>
-
-                  <Card className="border bg-white dark:bg-gray-900">
-                    <CardContent className="p-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-green-100 dark:bg-green-900/20 rounded-lg flex items-center justify-center">
-                          <Phone className="w-6 h-6 text-green-600" />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Call Us</h3>
-                          <p className="text-gray-600 dark:text-gray-400">+1 (555) 123-4567</p>
-                          <p className="text-gray-600 dark:text-gray-400 text-sm">Mon-Fri 9:00 AM - 6:00 PM EST</p>
+                          <p className="text-gray-600 dark:text-gray-400">info@genovotech.com</p>
+                          <p className="text-gray-600 dark:text-gray-400">hello@genovotech.com</p>
                         </div>
                       </div>
                     </CardContent>
@@ -166,61 +152,52 @@ export default function ContactPage() {
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">
                         <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/20 rounded-lg flex items-center justify-center">
-                          <MessageSquare className="w-6 h-6 text-purple-600" />
+                          <MapPin className="w-6 h-6 text-purple-600" />
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Live Chat</h3>
-                          <p className="text-gray-600 dark:text-gray-400">Available 24/7</p>
-                          <Button className="mt-3 bg-purple-600 hover:bg-purple-700 text-white" size="sm">
-                            Start Chat
-                          </Button>
+                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Locations</h3>
+                          <p className="text-gray-600 dark:text-gray-400">Lagos, Nigeria</p>
+                          <p className="text-gray-600 dark:text-gray-400">United States</p>
+                          <p className="text-gray-600 dark:text-gray-400">United Kingdom</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border bg-white dark:bg-gray-900">
+                    <CardContent className="p-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 bg-green-100 dark:bg-green-900/20 rounded-lg flex items-center justify-center">
+                          <MessageSquare className="w-6 h-6 text-green-600" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Chat with Us</h3>
+                          <p className="text-gray-600 dark:text-gray-400">Live chat support</p>
+                          <p className="text-gray-600 dark:text-gray-400">Available 9 AM - 5 PM WAT</p>
                         </div>
                       </div>
                     </CardContent>
                   </Card>
                 </div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 px-6 bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">Quick answers to common questions about ChronoTask.</p>
-          </div>
-
-          <div className="space-y-6">
-            {[
-              {
-                q: "How do I get started with ChronoTask?",
-                a: "Simply click 'Get demo' and fill out the form. Our team will reach out to set up your account and provide onboarding.",
-              },
-              {
-                q: "Is my data secure?",
-                a: "Yes, we use enterprise-grade encryption and security protocols to protect your data. We're also GDPR compliant.",
-              },
-              {
-                q: "Can I integrate ChronoTask with other tools?",
-                a: "Absolutely! We offer 100+ integrations with popular tools like Slack, Google Calendar, and more.",
-              },
-              {
-                q: "Do you offer customer support?",
-                a: "Yes, we provide 24/7 support via live chat, email, and phone to ensure you get help whenever you need it.",
-              },
-            ].map((faq, index) => (
-              <FadeIn key={index} delay={index * 100}>
-                <Card className="border bg-white dark:bg-gray-800 hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">{faq.q}</h3>
-                    <p className="text-gray-600 dark:text-gray-400">{faq.a}</p>
+                <Card className="border bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-900">
+                  <CardContent className="p-8">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                      Looking to join our team?
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-6">
+                      Check out our open positions and join us in building the future of technology.
+                    </p>
+                    <Link href="/careers">
+                      <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white w-full">
+                        View Careers
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
-              </FadeIn>
-            ))}
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>

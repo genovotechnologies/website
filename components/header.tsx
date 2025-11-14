@@ -13,9 +13,10 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const navigation = [
-    { name: "Features", href: "/features" },
+    { name: "Products", href: "/products" },
     { name: "Solutions", href: "/solutions" },
-    { name: "Resources", href: "/resources" },
+    { name: "About", href: "/about" },
+    { name: "Careers", href: "/careers" },
   ]
 
   return (
@@ -23,15 +24,10 @@ export function Header() {
       <div className="container mx-auto px-6 py-5 flex justify-between items-center">
         <Link href="/" className="text-black dark:text-white group">
           <div className="group-hover:scale-110 transition-all duration-300 drop-shadow-lg flex items-center space-x-2">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-              <div className="grid grid-cols-2 gap-0.5">
-                <div className="w-2 h-2 bg-white rounded-full"></div>
-                <div className="w-2 h-2 bg-white rounded-full"></div>
-                <div className="w-2 h-2 bg-white rounded-full"></div>
-                <div className="w-2 h-2 bg-white rounded-full"></div>
-              </div>
+            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">G</span>
             </div>
-            <span className="text-xl font-bold">ChronoTask</span>
+            <span className="text-xl font-bold">Genovo Technologies</span>
           </div>
         </Link>
 
@@ -58,12 +54,12 @@ export function Header() {
           <ThemeToggle />
           <Link href="/contact">
             <Button className="bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium">
-              Sign in
+              Contact
             </Button>
           </Link>
-          <Link href="/contact">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-6 py-2 font-medium shadow-md">
-              Get demo
+          <Link href="/careers">
+            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg px-6 py-2 font-medium shadow-md">
+              Join Us
             </Button>
           </Link>
         </div>

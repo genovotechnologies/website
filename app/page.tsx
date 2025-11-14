@@ -7,7 +7,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FadeIn } from "@/components/animations/fade-in"
 import Link from "next/link"
-import { ArrowRight, CheckCircle, Users, Target, TrendingUp, BarChart, Calendar, Clock, Slack, Mail } from "lucide-react"
+import { ArrowRight, CheckCircle, Users, Brain, Code, Database, Zap, Shield, Rocket } from "lucide-react"
 
 export default function HomePage() {
   return (
@@ -20,143 +20,112 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <FadeIn delay={0}>
               <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-gray-900 dark:text-white">
-                Think, plan, and track
+                Building the Future of
                 <br />
-                <span className="text-gray-400 dark:text-gray-500">all in one place</span>
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Digital Innovation</span>
               </h1>
             </FadeIn>
 
             <FadeIn delay={200}>
               <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10">
-                Efficiently manage your tasks and boost productivity.
+                We create scalable, impactful products across AI infrastructure, fintech, and digital platforms.
               </p>
             </FadeIn>
 
             <FadeIn delay={400}>
-              <Button
-                size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-8 py-6 text-lg font-medium shadow-lg"
-              >
-                Get free demo
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/products">
+                  <Button
+                    size="lg"
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg px-8 py-6 text-lg font-medium shadow-lg"
+                  >
+                    Explore Products
+                  </Button>
+                </Link>
+                <Link href="/about">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-2 border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg px-8 py-6 text-lg font-medium"
+                  >
+                    Learn More
+                  </Button>
+                </Link>
+              </div>
             </FadeIn>
 
             {/* Hero Visual Elements */}
             <div className="mt-16 relative max-w-6xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Sticky Note */}
+                {/* Tech Card */}
                 <FadeIn delay={600}>
-                  <Card className="bg-yellow-100 dark:bg-yellow-900/20 border-0 shadow-lg rotate-[-2deg] hover:rotate-0 transition-transform">
+                  <Card className="bg-gradient-to-br from-blue-500 to-cyan-500 border-0 shadow-lg text-white rotate-[-2deg] hover:rotate-0 transition-transform">
                     <CardContent className="p-6">
-                      <div className="flex items-center mb-4">
-                        <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                      </div>
-                      <p className="text-sm text-gray-700 dark:text-gray-300 font-handwriting">
-                        Take notes to keep track of crucial details, and accomplish more tasks with ease.
+                      <div className="text-3xl mb-4">🚀</div>
+                      <h3 className="font-bold text-lg mb-2">AI Infrastructure</h3>
+                      <p className="text-sm text-blue-50">
+                        Building intelligent systems that scale globally
                       </p>
-                      <div className="mt-4 bg-white dark:bg-gray-800 rounded-lg p-3 w-12 h-12 flex items-center justify-center">
-                        <CheckCircle className="w-6 h-6 text-blue-600" />
-                      </div>
                     </CardContent>
                   </Card>
                 </FadeIn>
 
-                {/* App Icon */}
+                {/* Logo Display */}
                 <FadeIn delay={700}>
                   <div className="flex items-center justify-center">
                     <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-8 w-32 h-32 flex items-center justify-center">
-                      <div className="grid grid-cols-2 gap-2">
-                        <div className="w-8 h-8 bg-blue-500 rounded-full"></div>
-                        <div className="w-8 h-8 bg-black dark:bg-white rounded-full"></div>
-                        <div className="w-8 h-8 bg-black dark:bg-white rounded-full"></div>
-                        <div className="w-8 h-8 bg-black dark:bg-white rounded-full"></div>
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center">
+                        <span className="text-white font-bold text-3xl">G</span>
                       </div>
                     </div>
                   </div>
                 </FadeIn>
 
-                {/* Reminders Card */}
+                {/* Innovation Card */}
                 <FadeIn delay={800}>
-                  <Card className="bg-white dark:bg-gray-800 border shadow-lg rotate-[2deg] hover:rotate-0 transition-transform">
+                  <Card className="bg-gradient-to-br from-purple-500 to-pink-500 border-0 shadow-lg text-white rotate-[2deg] hover:rotate-0 transition-transform">
                     <CardContent className="p-6">
-                      <div className="flex items-center justify-between mb-4">
-                        <h3 className="font-semibold text-gray-900 dark:text-white">Reminders</h3>
-                        <Clock className="w-5 h-5 text-gray-400" />
-                      </div>
-                      <div className="space-y-3">
-                        <div className="text-sm text-gray-600 dark:text-gray-400">Meeting</div>
-                        <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
-                          <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">Today's Meeting</div>
-                          <div className="flex items-center text-sm">
-                            <Clock className="w-4 h-4 text-blue-600 mr-2" />
-                            <span className="text-blue-600 font-medium">13:00 - 14:45</span>
-                          </div>
-                        </div>
-                      </div>
+                      <div className="text-3xl mb-4">💡</div>
+                      <h3 className="font-bold text-lg mb-2">Deep Tech</h3>
+                      <p className="text-sm text-purple-50">
+                        Pioneering solutions for tomorrow's challenges
+                      </p>
                     </CardContent>
                   </Card>
                 </FadeIn>
               </div>
 
-              {/* Today's Tasks Widget */}
+              {/* Products Showcase */}
               <FadeIn delay={900}>
-                <Card className="mt-8 max-w-xs mx-auto md:absolute md:bottom-0 md:left-0 bg-white dark:bg-gray-800 border shadow-xl">
+                <Card className="mt-8 max-w-2xl mx-auto bg-white dark:bg-gray-800 border shadow-xl">
                   <CardContent className="p-6">
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Today's tasks</h3>
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                          <div>
-                            <div className="text-sm font-medium text-gray-900 dark:text-white">New Ideas for campaign</div>
-                            <div className="text-xs text-gray-500">Sep 30</div>
-                          </div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Our Product Ecosystem</h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      {[
+                        { name: "Taskr", icon: "🎯", color: "bg-blue-100 dark:bg-blue-900/20 text-blue-600" },
+                        { name: "Homevy", icon: "🏠", color: "bg-green-100 dark:bg-green-900/20 text-green-600" },
+                        { name: "SCOS", icon: "⚡", color: "bg-orange-100 dark:bg-orange-900/20 text-orange-600" },
+                        { name: "ProfitQuest", icon: "💰", color: "bg-purple-100 dark:bg-purple-900/20 text-purple-600" }
+                      ].map((product, idx) => (
+                        <div key={idx} className={`${product.color} rounded-lg p-4 text-center`}>
+                          <div className="text-2xl mb-1">{product.icon}</div>
+                          <div className="text-sm font-medium">{product.name}</div>
                         </div>
-                        <div className="flex items-center space-x-1">
-                          <div className="w-6 h-6 rounded-full bg-gray-200 dark:bg-gray-700"></div>
-                          <span className="text-xs text-gray-600 dark:text-gray-400">60%</span>
-                        </div>
-                      </div>
-                      <div className="w-full bg-gray-200 dark:bg-gray-700 h-1.5 rounded-full">
-                        <div className="bg-blue-600 h-1.5 rounded-full" style={{ width: "60%" }}></div>
-                      </div>
-
-                      <div className="flex items-center justify-between pt-2">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          <div>
-                            <div className="text-sm font-medium text-gray-900 dark:text-white">Design PPT #4</div>
-                            <div className="text-xs text-gray-500">Sep 18</div>
-                          </div>
-                        </div>
-                        <div className="flex items-center space-x-1">
-                          <div className="w-6 h-6 rounded-full bg-gray-200 dark:bg-gray-700"></div>
-                          <span className="text-xs text-gray-600 dark:text-gray-400">10%</span>
-                        </div>
-                      </div>
-                      <div className="w-full bg-gray-200 dark:bg-gray-700 h-1.5 rounded-full">
-                        <div className="bg-orange-500 h-1.5 rounded-full" style={{ width: "10%" }}></div>
-                      </div>
+                      ))}
                     </div>
                   </CardContent>
                 </Card>
               </FadeIn>
 
-              {/* Integrations Badge */}
+              {/* Tech Stack Badge */}
               <FadeIn delay={1000}>
                 <Card className="mt-8 max-w-xs mx-auto md:absolute md:bottom-0 md:right-0 bg-white dark:bg-gray-800 border shadow-xl">
                   <CardContent className="p-6">
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-4">100+ Integrations</h3>
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Our Tech Stack</h3>
                     <div className="flex items-center space-x-2">
-                      <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-yellow-500 rounded-lg flex items-center justify-center">
-                        <Mail className="w-6 h-6 text-white" />
-                      </div>
-                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                        <Slack className="w-6 h-6 text-white" />
-                      </div>
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                        <Calendar className="w-6 h-6 text-white" />
-                      </div>
+                      <Badge className="bg-blue-100 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 border-0">AI/ML</Badge>
+                      <Badge className="bg-purple-100 dark:bg-purple-900/20 text-purple-700 dark:text-purple-400 border-0">Cloud</Badge>
+                      <Badge className="bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400 border-0">Blockchain</Badge>
                     </div>
                   </CardContent>
                 </Card>
@@ -166,99 +135,86 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* What We Do Section */}
       <section className="py-20 px-6 bg-white dark:bg-gray-950">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
             <Badge className="mb-6 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-0">
-              Features
+              What We Do
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              Solve your team's
+              Building Tomorrow's
               <br />
-              biggest challenges
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Technology Today</span>
             </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <FadeIn delay={100}>
-              <Card className="border bg-white dark:bg-gray-900 hover:shadow-lg transition-shadow">
+              <Card className="border bg-white dark:bg-gray-900 hover:shadow-xl transition-shadow">
                 <CardContent className="p-8 text-center">
-                  <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">📊</span>
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Brain className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                    Empower each team to optimize their unique processes
+                  <h3 className="font-bold text-xl text-gray-900 dark:text-white mb-2">
+                    AI & Machine Learning
                   </h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Customize workflows to match your team's needs with flexible project management tools.
+                    Advanced AI infrastructure and intelligent systems powering the next generation of applications.
                   </p>
                 </CardContent>
               </Card>
             </FadeIn>
 
             <FadeIn delay={200}>
-              <Card className="border bg-white dark:bg-gray-900 hover:shadow-lg transition-shadow">
+              <Card className="border bg-white dark:bg-gray-900 hover:shadow-xl transition-shadow">
                 <CardContent className="p-8 text-center">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">⚡</span>
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Code className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                    Maintain an integrated view of project progress across teams
+                  <h3 className="font-bold text-xl text-gray-900 dark:text-white mb-2">
+                    Digital Platforms
                   </h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Get real-time visibility into all your projects with comprehensive dashboards.
+                    Scalable platforms connecting users, services, and opportunities across multiple markets.
                   </p>
                 </CardContent>
               </Card>
             </FadeIn>
 
             <FadeIn delay={300}>
-              <Card className="border bg-white dark:bg-gray-900 hover:shadow-lg transition-shadow">
+              <Card className="border bg-white dark:bg-gray-900 hover:shadow-xl transition-shadow">
                 <CardContent className="p-8 text-center">
-                  <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">🎯</span>
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Shield className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                    Collaboratively plan milestones and track progress
+                  <h3 className="font-bold text-xl text-gray-900 dark:text-white mb-2">
+                    Secure Infrastructure
                   </h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Work together to set goals and monitor achievements in real-time.
+                    Enterprise-grade security and decentralized architecture ensuring data privacy and reliability.
                   </p>
                 </CardContent>
               </Card>
             </FadeIn>
           </div>
 
-          {/* Dashboard Preview */}
+          {/* Product Stats Dashboard */}
           <div className="relative max-w-5xl mx-auto">
-            <Card className="border-0 shadow-2xl bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-gray-800 dark:to-gray-900 overflow-hidden">
-              <CardContent className="p-0">
-                <div className="bg-white dark:bg-gray-900 p-8">
-                  <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Good morning, Amanda</h3>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">04:21:58</div>
+            <Card className="border-0 shadow-2xl bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 overflow-hidden">
+              <CardContent className="p-8">
+                <div className="grid md:grid-cols-3 gap-8 text-center">
+                  <div>
+                    <div className="text-5xl font-bold text-blue-600 mb-2">7+</div>
+                    <div className="text-gray-600 dark:text-gray-400">Active Products</div>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-4">To do list</h4>
-                      <div className="space-y-3">
-                        <div className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                          <CheckCircle className="w-5 h-5 text-blue-600" />
-                          <span className="text-sm text-gray-700 dark:text-gray-300">Review project proposal</span>
-                        </div>
-                        <div className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                          <CheckCircle className="w-5 h-5 text-gray-400" />
-                          <span className="text-sm text-gray-700 dark:text-gray-300">Update team schedule</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Activity</h4>
-                      <div className="flex items-center justify-center h-32">
-                        <div className="w-32 h-32 rounded-full border-8 border-blue-600 border-t-transparent"></div>
-                      </div>
-                    </div>
+                  <div>
+                    <div className="text-5xl font-bold text-purple-600 mb-2">3</div>
+                    <div className="text-gray-600 dark:text-gray-400">Markets</div>
+                  </div>
+                  <div>
+                    <div className="text-5xl font-bold text-green-600 mb-2">2025</div>
+                    <div className="text-gray-600 dark:text-gray-400">Founded</div>
                   </div>
                 </div>
               </CardContent>
@@ -267,112 +223,90 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Keep Everything Section */}
+      {/* Our Products Section */}
       <section className="py-20 px-6 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
             <Badge className="mb-6 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-0">
-              Features
+              Products
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
-              Keep everything in one place
+              Our Product Ecosystem
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400">
-              Forget complex project management tools.
+              Innovative solutions across multiple domains
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <FadeIn delay={100}>
-              <Card className="border bg-white dark:bg-gray-800">
+              <Card className="border bg-white dark:bg-gray-800 hover:shadow-xl transition-all group">
                 <CardContent className="p-6">
-                  <div className="mb-4">
-                    <Users className="w-8 h-8 text-blue-600" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <span className="text-2xl">🎯</span>
                   </div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Seamless Collaboration</h3>
+                  <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">Taskr</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                    Effortlessly manage tasks, share updates, and collaborate with your team in real-time.
+                    AI-powered service marketplace connecting professionals with opportunities.
                   </p>
-                  <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between text-xs">
-                        <span className="text-gray-600 dark:text-gray-300">Design concept</span>
-                        <CheckCircle className="w-4 h-4 text-green-500" />
-                      </div>
-                      <div className="flex items-center justify-between text-xs">
-                        <span className="text-gray-600 dark:text-gray-300">User research</span>
-                        <CheckCircle className="w-4 h-4 text-green-500" />
-                      </div>
-                    </div>
-                  </div>
+                  <Link href="/products" className="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center">
+                    Learn more
+                    <ArrowRight className="w-4 h-4 ml-1" />
+                  </Link>
                 </CardContent>
               </Card>
             </FadeIn>
 
             <FadeIn delay={200}>
-              <Card className="border bg-white dark:bg-gray-800">
+              <Card className="border bg-white dark:bg-gray-800 hover:shadow-xl transition-all group">
                 <CardContent className="p-6">
-                  <div className="mb-4">
-                    <Clock className="w-8 h-8 text-cyan-600" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <span className="text-2xl">🏠</span>
                   </div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Time Management Tools</h3>
+                  <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">Homevy</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                    Optimize your workflow with advanced time tracking and scheduling capabilities.
+                    Modern rental platform simplifying property management and tenant experiences.
                   </p>
-                  <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                    <div className="space-y-2">
-                      <div className="flex justify-between items-center">
-                        <div className="h-12 w-12 bg-blue-500 rounded"></div>
-                        <div className="h-16 w-12 bg-cyan-500 rounded"></div>
-                        <div className="h-10 w-12 bg-purple-500 rounded"></div>
-                      </div>
-                    </div>
-                  </div>
+                  <Link href="/products" className="text-green-600 hover:text-green-700 text-sm font-medium flex items-center">
+                    Learn more
+                    <ArrowRight className="w-4 h-4 ml-1" />
+                  </Link>
                 </CardContent>
               </Card>
             </FadeIn>
 
             <FadeIn delay={300}>
-              <Card className="border bg-white dark:bg-gray-800">
+              <Card className="border bg-white dark:bg-gray-800 hover:shadow-xl transition-all group">
                 <CardContent className="p-6">
-                  <div className="mb-4">
-                    <TrendingUp className="w-8 h-8 text-purple-600" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <span className="text-2xl">⚡</span>
                   </div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Advanced Task Tracking</h3>
+                  <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">SCOS</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                    Monitor task progress with intuitive kanban boards and powerful analytics.
+                    Intelligent operating system for smart infrastructure and IoT management.
                   </p>
-                  <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 space-y-2">
-                    <div className="flex items-center justify-between text-xs">
-                      <span className="text-gray-600 dark:text-gray-300">Project Tracker</span>
-                      <BarChart className="w-4 h-4 text-orange-500" />
-                    </div>
-                    <div className="flex items-center justify-between text-xs">
-                      <span className="text-gray-600 dark:text-gray-300">Team Dashboard</span>
-                      <BarChart className="w-4 h-4 text-blue-500" />
-                    </div>
-                  </div>
+                  <Link href="/products" className="text-orange-600 hover:text-orange-700 text-sm font-medium flex items-center">
+                    Learn more
+                    <ArrowRight className="w-4 h-4 ml-1" />
+                  </Link>
                 </CardContent>
               </Card>
             </FadeIn>
 
             <FadeIn delay={400}>
-              <Card className="border bg-white dark:bg-gray-800">
+              <Card className="border bg-white dark:bg-gray-800 hover:shadow-xl transition-all group">
                 <CardContent className="p-6">
-                  <div className="mb-4">
-                    <Target className="w-8 h-8 text-yellow-600" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <span className="text-2xl">💰</span>
                   </div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Customizable Workspaces</h3>
+                  <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">ProfitQuest</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                    Tailor your workspace to fit your unique workflow and preferences.
+                    Task-to-earn platform enabling users to monetize their skills and time.
                   </p>
-                  <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                    <div className="flex items-center justify-center">
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
-                        <span className="text-2xl font-bold text-white">04:21</span>
-                      </div>
-                    </div>
-                  </div>
+                  <Link href="/products" className="text-purple-600 hover:text-purple-700 text-sm font-medium flex items-center">
+                    Learn more
+                    <ArrowRight className="w-4 h-4 ml-1" />
+                  </Link>
                 </CardContent>
               </Card>
             </FadeIn>
@@ -384,27 +318,27 @@ export default function HomePage() {
       <section className="py-20 px-6 bg-white dark:bg-gray-950">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-            Ready to boost your productivity?
+            Ready to build the future?
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-10">
-            Join thousands of teams already using ChronoTask to manage their work.
+            Join us in creating innovative solutions that make a real impact.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
+            <Link href="/products">
               <Button
                 size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-8 py-6 text-lg font-medium"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg px-8 py-6 text-lg font-medium"
               >
-                Get free demo
+                Explore Products
               </Button>
             </Link>
-            <Link href="/features">
+            <Link href="/careers">
               <Button
                 size="lg"
                 variant="outline"
                 className="border-2 border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg px-8 py-6 text-lg font-medium"
               >
-                Explore features
+                Join Our Team
               </Button>
             </Link>
           </div>
