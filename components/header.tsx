@@ -1,7 +1,6 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { GenovoLogo } from "@/components/genovo-logo"
 import { ThemeToggle } from "@/components/theme-toggle"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -14,18 +13,25 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const navigation = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Products", href: "/products" },
-    { name: "Contact", href: "/contact" },
+    { name: "Features", href: "/features" },
+    { name: "Solutions", href: "/solutions" },
+    { name: "Resources", href: "/resources" },
   ]
 
   return (
     <header className="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/70 dark:bg-gray-900/70 border-b border-white/20 dark:border-gray-800/50 shadow-lg">
       <div className="container mx-auto px-6 py-5 flex justify-between items-center">
         <Link href="/" className="text-black dark:text-white group">
-          <div className="group-hover:scale-110 transition-all duration-300 drop-shadow-lg">
-            <GenovoLogo size={40} variant="full" />
+          <div className="group-hover:scale-110 transition-all duration-300 drop-shadow-lg flex items-center space-x-2">
+            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+              <div className="grid grid-cols-2 gap-0.5">
+                <div className="w-2 h-2 bg-white rounded-full"></div>
+                <div className="w-2 h-2 bg-white rounded-full"></div>
+                <div className="w-2 h-2 bg-white rounded-full"></div>
+                <div className="w-2 h-2 bg-white rounded-full"></div>
+              </div>
+            </div>
+            <span className="text-xl font-bold">ChronoTask</span>
           </div>
         </Link>
 
@@ -50,9 +56,16 @@ export function Header() {
 
         <div className="hidden lg:flex items-center space-x-5">
           <ThemeToggle />
-          <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 rounded-full px-8 py-3 font-semibold shadow-lg hover:shadow-glow transition-all duration-300 hover:scale-105">
-            Get Started
-          </Button>
+          <Link href="/contact">
+            <Button className="bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium">
+              Sign in
+            </Button>
+          </Link>
+          <Link href="/contact">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-6 py-2 font-medium shadow-md">
+              Get demo
+            </Button>
+          </Link>
         </div>
 
         <div className="lg:hidden flex items-center space-x-2">

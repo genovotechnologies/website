@@ -5,15 +5,13 @@ import type React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { SmoothScroll } from "@/components/smooth-scroll"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
+import { Mail, Phone, MapPin, Send, MessageSquare, HelpCircle } from "lucide-react"
 import { FadeIn } from "@/components/animations/fade-in"
-import { SlideIn } from "@/components/animations/slide-in"
-import { StaggerContainer } from "@/components/animations/stagger-container"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -37,17 +35,19 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
-      <SmoothScroll />
+    <div className="min-h-screen bg-white dark:bg-gray-950">
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-32 pb-20 px-6 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950">
         <div className="container mx-auto max-w-4xl text-center">
           <FadeIn>
-            <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white mb-6">Get in Touch</h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-              Ready to transform your business with intelligent software systems? Let's start a conversation.
+            <Badge className="mb-6 bg-blue-100 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 border-0">
+              Contact Us
+            </Badge>
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">Get in Touch</h1>
+            <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
+              Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
             </p>
           </FadeIn>
         </div>
@@ -58,10 +58,10 @@ export default function ContactPage() {
         <div className="container mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
-            <SlideIn direction="left">
-              <Card className="border border-gray-200 dark:border-gray-700">
+            <FadeIn delay={100}>
+              <Card className="border bg-white dark:bg-gray-900">
                 <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold text-black dark:text-white mb-6">Send us a message</h2>
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send us a message</h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
@@ -112,107 +112,75 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <Button type="submit" className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 w-full">
+                    <Button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white w-full rounded-lg py-6">
                       Send Message
                       <Send className="ml-2 h-4 w-4" />
                     </Button>
                   </form>
                 </CardContent>
               </Card>
-            </SlideIn>
+            </FadeIn>
 
             {/* Contact Information */}
-            <SlideIn direction="right" delay={200}>
+            <FadeIn delay={200}>
               <div className="space-y-8">
                 <div>
-                  <h2 className="text-2xl font-bold text-black dark:text-white mb-6">Contact Information</h2>
-                  <p className="text-gray-600 dark:text-gray-300 mb-8">
-                    We'd love to hear from you. Whether you're interested in partnering, investing, or learning more
-                    about our solutions, we're here to help.
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Other ways to reach us</h2>
+                  <p className="text-gray-600 dark:text-gray-400 mb-8">
+                    Prefer a different channel? We're available through multiple platforms to assist you.
                   </p>
                 </div>
 
-                <StaggerContainer className="space-y-6" staggerDelay={100}>
-                  <FadeIn>
-                    <Card className="border border-gray-200 dark:border-gray-700">
-                      <CardContent className="p-6">
-                        <div className="flex items-start space-x-4">
-                          <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
-                            <Mail className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                          </div>
-                          <div>
-                            <h3 className="text-lg font-semibold text-black dark:text-white mb-1">Email Us</h3>
-                            <p className="text-gray-600 dark:text-gray-300">info@genovotech.com</p>
-                            <p className="text-gray-600 dark:text-gray-300">accounts@genovotech.com</p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </FadeIn>
-
-                  <FadeIn>
-                    <Card className="border border-gray-200 dark:border-gray-700">
-                      <CardContent className="p-6">
-                        <div className="flex items-start space-x-4">
-                          <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center">
-                            <Phone className="w-6 h-6 text-green-600 dark:text-green-400" />
-                          </div>
-                          <div>
-                            <h3 className="text-lg font-semibold text-black dark:text-white mb-1">Call Us</h3>
-                            <p className="text-gray-600 dark:text-gray-300">+234 802 970 9341</p>
-                            <p className="text-gray-600 dark:text-gray-300 text-sm">Mon-Fri 9:00 AM - 6:00 PM EST</p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </FadeIn>
-
-                  <FadeIn>
-                    <Card className="border border-gray-200 dark:border-gray-700">
-                      <CardContent className="p-6">
-                        <div className="flex items-start space-x-4">
-                          <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center">
-                            <MapPin className="w-6 h-6 text-purple-600 dark:text-purple-400" />
-                          </div>
-                          <div>
-                            <h3 className="text-lg font-semibold text-black dark:text-white mb-1">Visit Us</h3>
-                            <p className="text-gray-600 dark:text-gray-300">
-                               6a Social Sciences
-                              <br />
-                              UNILAG Estate, Magodo, Lagos
-                              <br />
-                              Nigeria
-                            </p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </FadeIn>
-                </StaggerContainer>
-
-                <FadeIn delay={600}>
-                  <Card className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                <div className="space-y-6">
+                  <Card className="border bg-white dark:bg-gray-900">
                     <CardContent className="p-6">
-                      <h3 className="text-lg font-semibold text-black dark:text-white mb-3">Business Hours</h3>
-                      <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                        <div className="flex justify-between">
-                          <span>Monday - Friday</span>
-                          <span>9:00 AM - 6:00 PM</span>
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center">
+                          <Mail className="w-6 h-6 text-blue-600" />
                         </div>
-                        <div className="flex justify-between">
-                          <span>Saturday</span>
-                          <span>10:00 AM - 4:00 PM</span>
+                        <div>
+                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Email Us</h3>
+                          <p className="text-gray-600 dark:text-gray-400">support@chronotask.com</p>
+                          <p className="text-gray-600 dark:text-gray-400">sales@chronotask.com</p>
                         </div>
-                        <div className="flex justify-between">
-                          <span>Sunday</span>
-                          <span>Closed</span>
+                      </div>
+                    </Card>
+                  </Card>
+
+                  <Card className="border bg-white dark:bg-gray-900">
+                    <CardContent className="p-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 bg-green-100 dark:bg-green-900/20 rounded-lg flex items-center justify-center">
+                          <Phone className="w-6 h-6 text-green-600" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Call Us</h3>
+                          <p className="text-gray-600 dark:text-gray-400">+1 (555) 123-4567</p>
+                          <p className="text-gray-600 dark:text-gray-400 text-sm">Mon-Fri 9:00 AM - 6:00 PM EST</p>
                         </div>
                       </div>
                     </CardContent>
                   </Card>
-                </FadeIn>
+
+                  <Card className="border bg-white dark:bg-gray-900">
+                    <CardContent className="p-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/20 rounded-lg flex items-center justify-center">
+                          <MessageSquare className="w-6 h-6 text-purple-600" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Live Chat</h3>
+                          <p className="text-gray-600 dark:text-gray-400">Available 24/7</p>
+                          <Button className="mt-3 bg-purple-600 hover:bg-purple-700 text-white" size="sm">
+                            Start Chat
+                          </Button>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
-            </SlideIn>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -220,40 +188,40 @@ export default function ContactPage() {
       {/* FAQ Section */}
       <section className="py-20 px-6 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto max-w-4xl">
-          <FadeIn className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-black dark:text-white mb-6">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">Quick answers to common questions about our solutions and services.</p>
-          </FadeIn>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">Frequently Asked Questions</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400">Quick answers to common questions about ChronoTask.</p>
+          </div>
 
-          <StaggerContainer className="space-y-6" staggerDelay={150}>
+          <div className="space-y-6">
             {[
               {
-                q: "What industries do you serve?",
-                a: "We serve seven key verticals: infrastructure, finance, manufacturing, energy, healthcare, urban planning, and digital platforms.",
+                q: "How do I get started with ChronoTask?",
+                a: "Simply click 'Get demo' and fill out the form. Our team will reach out to set up your account and provide onboarding.",
               },
               {
-                q: "How long does implementation typically take?",
-                a: "Implementation timelines vary based on project complexity, but most solutions are deployed within 3-6 months.",
+                q: "Is my data secure?",
+                a: "Yes, we use enterprise-grade encryption and security protocols to protect your data. We're also GDPR compliant.",
               },
               {
-                q: "Do you offer ongoing support and maintenance?",
-                a: "Yes, we provide comprehensive support packages including 24/7 monitoring, regular updates, and dedicated account management.",
+                q: "Can I integrate ChronoTask with other tools?",
+                a: "Absolutely! We offer 100+ integrations with popular tools like Slack, Google Calendar, and more.",
               },
               {
-                q: "Can your solutions integrate with existing systems?",
-                a: "Absolutely. Our solutions are designed with integration in mind and can work seamlessly with most existing enterprise systems.",
+                q: "Do you offer customer support?",
+                a: "Yes, we provide 24/7 support via live chat, email, and phone to ensure you get help whenever you need it.",
               },
             ].map((faq, index) => (
-              <FadeIn key={index}>
-                <Card className="border border-gray-200 dark:border-gray-700 hover:shadow-lg dark:hover:shadow-gray-800 transition-shadow">
+              <FadeIn key={index} delay={index * 100}>
+                <Card className="border bg-white dark:bg-gray-800 hover:shadow-lg transition-shadow">
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-black dark:text-white mb-3">{faq.q}</h3>
-                    <p className="text-gray-600 dark:text-gray-300">{faq.a}</p>
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">{faq.q}</h3>
+                    <p className="text-gray-600 dark:text-gray-400">{faq.a}</p>
                   </CardContent>
                 </Card>
               </FadeIn>
             ))}
-          </StaggerContainer>
+          </div>
         </div>
       </section>
 
