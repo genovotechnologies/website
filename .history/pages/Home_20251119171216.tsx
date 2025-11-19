@@ -68,7 +68,7 @@ const Home: React.FC = () => {
                     SynthOS: Eradicating the $5B Model Collapse Problem
                   </h3>
                   <p className="text-gray-400 mb-12 text-lg font-light">
-                     By Oluwatosin Abioye Afolabi • March 11, 2025
+                     By Oluwatosin Abiye Afolabi • March 11, 2025
                   </p>
                   <Link to="/products" className="bg-white text-black px-10 py-4 rounded-full font-bold text-sm tracking-wider w-fit hover:bg-gray-200 transition transform hover:scale-105 duration-200">
                     READ FULL POST
