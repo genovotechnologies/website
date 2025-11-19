@@ -135,7 +135,7 @@ export const LEADERSHIP: TeamMember[] = [
 
 const ENGINEERING_TEAM: TeamMember[] = [
     {
-        name: "Chiebidolu “Chiboy”",
+        name: "Chiedbidolu “Chiboy”",
         role: "Engineering Lead",
         bio: "Backend and DevOps powerhouse fluent in Go, Rust, and Python. Leads engineering velocity, backend architecture, and infrastructure automation.",
         expertise: ["Backend", "DevOps", "Go/Rust", "CI/CD"]
