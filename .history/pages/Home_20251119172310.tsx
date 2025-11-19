@@ -19,7 +19,7 @@ const Home: React.FC = () => {
                 <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
                 <span className="text-xs font-bold tracking-widest text-gray-500 uppercase">Systems First</span>
             </div>
-            <h1 className="text-5xl lg:text-7xl font-bold text-[#1A1A1A] leading-[0.9] tracking-tighter mb-8">
+            <h1 className="text-xl lg:text-8xl font-bold text-[#1A1A1A] leading-[0.9] tracking-tighter mb-8">
               ENGINEERING <br/> INSIGHTS
             </h1>
             <p className="text-xl text-gray-600 font-light mb-10 max-w-lg leading-relaxed">
