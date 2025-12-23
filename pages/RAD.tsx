@@ -180,13 +180,6 @@ const RAD: React.FC = () => {
                                 </div>
                             ))}
                         </div>
-                        
-                        {/* Footer */}
-                        <div className="bg-gray-50 p-4 border-t border-gray-200 flex justify-center">
-                             <button className="text-xs font-bold text-gray-500 hover:text-[#1A1A1A] uppercase tracking-widest flex items-center gap-2 transition-colors">
-                                View Archive <ChevronRight size={14} />
-                             </button>
-                        </div>
                      </div>
                  </div>
 

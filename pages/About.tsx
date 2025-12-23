@@ -1,8 +1,17 @@
-import React, { useEffect } from 'react';
-import { Users, Zap, Globe, Shield, Box, Server, Database, Target, Award, Hexagon, Layers, Cpu } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Users, Zap, Globe, Shield, Box, Server, Database, Target, Award, Hexagon, Layers, Cpu, Check } from 'lucide-react';
 import { LEADERSHIP } from '../constants';
 
 const About: React.FC = () => {
+  const [partnerForm, setPartnerForm] = useState({ name: '', email: '' });
+  const [partnerSubmitted, setPartnerSubmitted] = useState(false);
+
+  const handlePartnerSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Partnership inquiry:', partnerForm);
+    setPartnerSubmitted(true);
+  };
+
   useEffect(() => {
     document.title = "About Genovo | Systems-First AI Engineering";
     document.querySelector('meta[name="description"]')?.setAttribute('content', "Learn about Genovo Technologies' mission to engineer the foundational intelligence rails for the future. We prioritize precision, first principles, and ownership.");
@@ -217,13 +226,39 @@ const About: React.FC = () => {
                 <div className="flex flex-col justify-center space-y-6 bg-white/5 p-8 rounded-3xl backdrop-blur-sm border border-white/10">
                     <h3 className="text-2xl font-bold mb-2">Partner With Us</h3>
                     <p className="text-gray-400 text-sm mb-6">Forge the Future of Computation</p>
-                    <form className="space-y-4">
-                        <input type="text" placeholder="Full Name" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:bg-white/10 transition text-white placeholder-gray-600" />
-                        <input type="email" placeholder="Email Address" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:bg-white/10 transition text-white placeholder-gray-600" />
-                        <button className="w-full bg-[#10B981] text-white font-bold py-3 rounded-xl hover:bg-emerald-600 transition shadow-lg shadow-emerald-900/20">
+                    {partnerSubmitted ? (
+                      <div className="text-center py-6">
+                        <div className="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <Check size={24} className="text-emerald-400" />
+                        </div>
+                        <h4 className="text-lg font-bold mb-2">Thank You!</h4>
+                        <p className="text-gray-400 text-sm">
+                          We'll be in touch soon to discuss partnership opportunities.
+                        </p>
+                      </div>
+                    ) : (
+                    <form className="space-y-4" onSubmit={handlePartnerSubmit}>
+                        <input 
+                          type="text" 
+                          placeholder="Full Name" 
+                          required
+                          value={partnerForm.name}
+                          onChange={(e) => setPartnerForm({...partnerForm, name: e.target.value})}
+                          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:bg-white/10 transition text-white placeholder-gray-600" 
+                        />
+                        <input 
+                          type="email" 
+                          placeholder="Email Address" 
+                          required
+                          value={partnerForm.email}
+                          onChange={(e) => setPartnerForm({...partnerForm, email: e.target.value})}
+                          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:bg-white/10 transition text-white placeholder-gray-600" 
+                        />
+                        <button type="submit" className="w-full bg-[#10B981] text-white font-bold py-3 rounded-xl hover:bg-emerald-600 transition shadow-lg shadow-emerald-900/20">
                             PROPOSE PARTNERSHIP
                         </button>
                     </form>
+                    )}
                 </div>
             </div>
         </div>

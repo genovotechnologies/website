@@ -1,9 +1,26 @@
-import React, { useEffect } from 'react';
-import { PlayCircle, ArrowRight, FileText, Hexagon } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { PlayCircle, ArrowRight, FileText, Hexagon, Clock, User } from 'lucide-react';
 import { PRODUCTS, ARTICLES } from '../constants';
 import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
+  const [selectedTopic, setSelectedTopic] = useState<string>('All');
+  
+  const topics = ['All', 'AI/ML', 'Product', 'Company News', 'Engineering', 'Research'];
+  
+  // Map topic filter to article categories
+  const topicToCategory: { [key: string]: string } = {
+    'AI/ML': 'Research',
+    'Product': 'Product',
+    'Company News': 'Company News',
+    'Engineering': 'Engineering',
+    'Research': 'Research'
+  };
+  
+  const filteredArticles = selectedTopic === 'All' 
+    ? ARTICLES 
+    : ARTICLES.filter(a => a.category === topicToCategory[selectedTopic] || a.category === selectedTopic);
+
   useEffect(() => {
     document.title = "Genovo Technologies | Engineering the Future of Intelligence";
     document.querySelector('meta[name="description"]')?.setAttribute('content', "Genovo Technologies is a systems-first, AI-native company building foundational software rails, including SynthOS, Taskr, and SCOS, for the next era of computation.");
@@ -70,7 +87,7 @@ const Home: React.FC = () => {
                   <p className="text-gray-400 mb-12 text-lg font-light">
                      By Oluwatosin Abioye Afolabi • March 11, 2025
                   </p>
-                  <Link to="/products" className="bg-white text-black px-10 py-4 rounded-full font-bold text-sm tracking-wider w-fit hover:bg-gray-200 transition transform hover:scale-105 duration-200">
+                  <Link to="/blog" className="bg-white text-black px-10 py-4 rounded-full font-bold text-sm tracking-wider w-fit hover:bg-gray-200 transition transform hover:scale-105 duration-200">
                     READ FULL POST
                   </Link>
               </div>
@@ -91,8 +108,9 @@ const Home: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {ARTICLES.map((article, idx) => (
-            <div 
+          {filteredArticles.slice(0, 6).map((article, idx) => (
+            <Link 
+                to={`/blog/${article.id}`}
                 key={idx} 
                 className={`p-10 rounded-[2.5rem] min-h-[240px] flex flex-col justify-between transition-all hover:-translate-y-2 hover:shadow-xl cursor-pointer group ${article.color} ${article.textColor}`}
             >
@@ -108,8 +126,20 @@ const Home: React.FC = () => {
                     <h3 className="text-2xl font-bold leading-tight mb-3">{article.title}</h3>
                     <p className="text-xs opacity-70 font-bold uppercase tracking-wide">{article.date}</p>
                 </div>
-            </div>
+            </Link>
           ))}
+        </div>
+        
+        {filteredArticles.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-gray-500">No articles found for this topic.</p>
+          </div>
+        )}
+        
+        <div className="text-center mt-12">
+          <Link to="/blog" className="inline-flex items-center px-8 py-4 bg-[#1A1A1A] text-white font-bold text-sm tracking-widest uppercase rounded-2xl hover:bg-gray-800 transition-colors">
+            View All Articles <ArrowRight size={16} className="ml-2" />
+          </Link>
         </div>
       </section>
 
@@ -120,8 +150,16 @@ const Home: React.FC = () => {
                 <span className="font-bold text-lg text-[#1A1A1A]">EXPLORE TOPICS</span>
             </div>
             <div className="flex flex-wrap gap-3">
-                {['All', 'AI/ML', 'Product', 'Company News', 'Engineering', 'Research'].map((topic, idx) => (
-                    <button key={idx} className={`px-6 py-3 rounded-full text-sm font-bold transition-all ${idx === 0 ? 'bg-[#1A1A1A] text-white shadow-lg' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}>
+                {topics.map((topic, idx) => (
+                    <button 
+                      key={idx} 
+                      onClick={() => setSelectedTopic(topic)}
+                      className={`px-6 py-3 rounded-full text-sm font-bold transition-all ${
+                        selectedTopic === topic 
+                          ? 'bg-[#1A1A1A] text-white shadow-lg' 
+                          : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      }`}
+                    >
                         {topic}
                     </button>
                 ))}

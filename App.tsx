@@ -19,6 +19,9 @@ import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Terms from './pages/Terms';
 import NotFound from './pages/NotFound';
+import Blog from './pages/Blog';
+import ArticleDetail from './pages/ArticleDetail';
+import JobDetail from './pages/JobDetail';
 
 // Global Scroll Reset on Route Change
 const ScrollToTop = () => {
@@ -47,9 +50,12 @@ const App: React.FC = () => {
                <Route path="/team" element={<PageTransition><Team /></PageTransition>} />
                <Route path="/about" element={<PageTransition><About /></PageTransition>} />
                <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />
+               <Route path="/careers/:id" element={<PageTransition><JobDetail /></PageTransition>} />
                <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
                <Route path="/privacy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
                <Route path="/terms" element={<PageTransition><Terms /></PageTransition>} />
+               <Route path="/blog" element={<PageTransition><Blog /></PageTransition>} />
+               <Route path="/blog/:id" element={<PageTransition><ArticleDetail /></PageTransition>} />
                {/* Catch-all for 404 */}
                <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
             </Routes>

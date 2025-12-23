@@ -1,6 +1,7 @@
 import React from 'react';
 import { Twitter, Linkedin, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SOCIAL_LINKS } from '../constants';
 
 const Footer: React.FC = () => {
   return (
@@ -27,6 +28,7 @@ const Footer: React.FC = () => {
               <li><Link to="/products" className="hover:text-white transition">Products</Link></li>
               <li><Link to="/rad" className="hover:text-white transition">R&D</Link></li>
               <li><Link to="/careers" className="hover:text-white transition">Careers</Link></li>
+              <li><Link to="/blog" className="hover:text-white transition">Blog</Link></li>
             </ul>
           </div>
 
@@ -49,9 +51,9 @@ const Footer: React.FC = () => {
             </p>
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-white"><Twitter size={20} /></a>
-            <a href="#" className="text-gray-400 hover:text-white"><Linkedin size={20} /></a>
-            <a href="#" className="text-gray-400 hover:text-white"><Github size={20} /></a>
+            <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition" aria-label="Twitter"><Twitter size={20} /></a>
+            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition" aria-label="LinkedIn"><Linkedin size={20} /></a>
+            <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition" aria-label="GitHub"><Github size={20} /></a>
           </div>
         </div>
       </div>

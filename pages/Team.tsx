@@ -39,8 +39,12 @@ const Team: React.FC = () => {
                                  />
                              </div>
                              <div className="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                 <a href="#" className="bg-gray-100 p-2 rounded-full hover:bg-[#0077b5] hover:text-white transition"><Linkedin size={16} /></a>
-                                 <a href="#" className="bg-gray-100 p-2 rounded-full hover:bg-[#1DA1F2] hover:text-white transition"><Twitter size={16} /></a>
+                                 {member.linkedin && (
+                                   <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="bg-gray-100 p-2 rounded-full hover:bg-[#0077b5] hover:text-white transition"><Linkedin size={16} /></a>
+                                 )}
+                                 {member.twitter && (
+                                   <a href={member.twitter} target="_blank" rel="noopener noreferrer" className="bg-gray-100 p-2 rounded-full hover:bg-[#1DA1F2] hover:text-white transition"><Twitter size={16} /></a>
+                                 )}
                              </div>
                         </div>
                         

@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { ArrowRight, Terminal, Globe, Zap, Briefcase, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { JOB_LISTINGS } from '../constants';
 
 const Careers: React.FC = () => {
   useEffect(() => {
@@ -21,7 +23,7 @@ const Careers: React.FC = () => {
                      Join Architects of Tomorrow's Digital World. Building the operating system for the next generation of intelligence.
                  </p>
                  <button className="bg-white text-black px-8 py-4 rounded-2xl font-bold text-sm hover:bg-blue-500 hover:text-white transition-all shadow-lg hover:shadow-blue-500/50">
-                     EXPLORE PLATFORMS
+                     <Link to="/products">EXPLORE PLATFORMS</Link>
                  </button>
              </div>
         </div>
@@ -100,42 +102,41 @@ const Careers: React.FC = () => {
              </div>
 
              <div className="space-y-6">
-                 <div className="bg-gray-50 hover:bg-[#1A1A1A] hover:text-white rounded-3xl p-8 transition-all duration-300 group cursor-pointer border border-transparent hover:border-gray-800">
+                 {JOB_LISTINGS.map((job) => (
+                   <Link 
+                     key={job.id}
+                     to={`/careers/${job.id}`}
+                     className="block bg-gray-50 hover:bg-[#1A1A1A] hover:text-white rounded-3xl p-8 transition-all duration-300 group cursor-pointer border border-transparent hover:border-gray-800"
+                   >
                      <div className="flex flex-col md:flex-row md:items-center justify-between">
                          <div>
                              <div className="flex items-center gap-3 mb-2">
-                                <h3 className="text-xl font-bold">Senior Systems Engineer</h3>
-                                <span className="text-[10px] font-bold bg-blue-100 text-blue-800 px-2 py-1 rounded-md group-hover:bg-blue-600 group-hover:text-white">RUST</span>
+                                <h3 className="text-xl font-bold">{job.title}</h3>
+                                {job.tags.map((tag, idx) => (
+                                  <span key={idx} className={`text-[10px] font-bold px-2 py-1 rounded-md ${job.tagColor}`}>{tag}</span>
+                                ))}
                              </div>
-                             <p className="text-sm text-gray-500 group-hover:text-gray-400">Core Infrastructure • Remote</p>
+                             <p className="text-sm text-gray-500 group-hover:text-gray-400">{job.department} • {job.location}</p>
                          </div>
                          <div className="mt-4 md:mt-0 bg-white text-black p-3 rounded-full group-hover:bg-gray-800 group-hover:text-white transition">
                              <ArrowRight size={20} />
                          </div>
                      </div>
-                 </div>
-
-                 <div className="bg-gray-50 hover:bg-[#1A1A1A] hover:text-white rounded-3xl p-8 transition-all duration-300 group cursor-pointer border border-transparent hover:border-gray-800">
-                     <div className="flex flex-col md:flex-row md:items-center justify-between">
-                         <div>
-                             <div className="flex items-center gap-3 mb-2">
-                                <h3 className="text-xl font-bold">ML Ops Architect</h3>
-                                <span className="text-[10px] font-bold bg-purple-100 text-purple-800 px-2 py-1 rounded-md group-hover:bg-purple-600 group-hover:text-white">PYTHON</span>
-                             </div>
-                             <p className="text-sm text-gray-500 group-hover:text-gray-400">SynthOS Platform • Remote</p>
-                         </div>
-                         <div className="mt-4 md:mt-0 bg-white text-black p-3 rounded-full group-hover:bg-gray-800 group-hover:text-white transition">
-                             <ArrowRight size={20} />
-                         </div>
-                     </div>
-                 </div>
+                   </Link>
+                 ))}
              </div>
+             
+             {JOB_LISTINGS.length === 0 && (
+               <div className="text-center py-12 bg-gray-50 rounded-3xl">
+                 <p className="text-gray-500">No open positions at the moment. Check back soon!</p>
+               </div>
+             )}
              
              <div className="mt-16 p-8 bg-[#F5F5F5] rounded-3xl text-center">
                  <Users className="mx-auto mb-4 text-gray-400" />
                  <p className="text-gray-500 text-sm mb-4">Don't see your role?</p>
                  <a href="mailto:info@genovotech.com" className="inline-block text-[#1A1A1A] font-bold border-b-2 border-[#1A1A1A] pb-1 hover:text-blue-600 hover:border-blue-600 transition">
-                     Email us your resume
+                     Email us youcareerssume
                  </a>
              </div>
         </div>

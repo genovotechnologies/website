@@ -15,6 +15,8 @@ export interface TeamMember {
   role: string;
   bio: string;
   expertise: string[];
+  linkedin?: string;
+  twitter?: string;
 }
 
 export interface ResearchPaper {
@@ -29,4 +31,30 @@ export interface ResearchPaper {
 export interface NavItem {
   label: string;
   path: string;
+}
+
+export interface Article {
+  id: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  date: string;
+  author: string;
+  category: string;
+  icon: React.ComponentType<{ size?: number; className?: string }>;
+  color: string;
+  textColor: string;
+  readTime: string;
+}
+
+export interface JobListing {
+  id: string;
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  tags: string[];
+  description: string;
+  requirements: string[];
+  tagColor: string;
 }

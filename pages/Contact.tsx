@@ -1,17 +1,41 @@
-import React, { useEffect } from 'react';
-import { Mail, Send, Globe, Clock, MessageSquare, ArrowRight, Shield } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Mail, Send, Globe, Clock, MessageSquare, ArrowRight, Shield, Check } from 'lucide-react';
 
 const Contact: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    org: '',
+    message: ''
+  });
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   useEffect(() => {
     document.title = "Contact Us | Genovo Technologies";
     document.querySelector('meta[name="description"]')?.setAttribute('content', "Get in touch with Genovo Technologies for engineering partnerships, media inquiries, or general questions. Global headquarters, remote-first.");
   }, []);
 
-  const FloatingInput = ({ id, label, type = "text", placeholder = " " }: { id: string, label: string, type?: string, placeholder?: string }) => (
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission - in production, this would send to an API
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    console.log('Contact form submitted:', formData);
+    setFormSubmitted(true);
+    setIsSubmitting(false);
+  };
+
+  const FloatingInput = ({ id, label, type = "text", placeholder = " ", value, onChange, required }: { id: string, label: string, type?: string, placeholder?: string, value?: string, onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void, required?: boolean }) => (
     <div className="relative group">
         <input 
             type={type} 
             id={id} 
+            value={value}
+            onChange={onChange}
+            required={required}
             className="block w-full px-4 py-4 text-[#1A1A1A] bg-[#F9F9F9] border border-gray-200 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A] focus:bg-white peer transition-all duration-200 font-medium text-sm"
             placeholder={placeholder} 
         />
@@ -24,11 +48,14 @@ const Contact: React.FC = () => {
     </div>
   );
 
-  const FloatingTextArea = ({ id, label }: { id: string, label: string }) => (
+  const FloatingTextArea = ({ id, label, value, onChange, required }: { id: string, label: string, value?: string, onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void, required?: boolean }) => (
     <div className="relative group">
         <textarea 
             id={id} 
             rows={5}
+            value={value}
+            onChange={onChange}
+            required={required}
             className="block w-full px-4 py-4 text-[#1A1A1A] bg-[#F9F9F9] border border-gray-200 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A] focus:bg-white peer transition-all duration-200 resize-none font-medium text-sm"
             placeholder=" " 
         />
@@ -65,21 +92,70 @@ const Contact: React.FC = () => {
                         <div className="relative z-10">
                             <h3 className="text-xl font-bold text-[#1A1A1A] mb-8 uppercase tracking-wider border-b border-gray-100 pb-4">Transmission Protocol</h3>
                             
-                            <form className="space-y-6">
+                            {formSubmitted ? (
+                              <div className="text-center py-12">
+                                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                  <Check size={32} className="text-green-600" />
+                                </div>
+                                <h4 className="text-2xl font-bold text-[#1A1A1A] mb-3">Message Transmitted!</h4>
+                                <p className="text-gray-600 mb-6">
+                                  Thank you for reaching out. Our team will get back to you within 24-48 hours.
+                                </p>
+                                <button 
+                                  onClick={() => {
+                                    setFormSubmitted(false);
+                                    setFormData({ name: '', email: '', org: '', message: '' });
+                                  }}
+                                  className="text-blue-600 font-bold hover:underline"
+                                >
+                                  Send another message
+                                </button>
+                              </div>
+                            ) : (
+                            <form className="space-y-6" onSubmit={handleSubmit}>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <FloatingInput id="name" label="Identity (Name)" />
-                                    <FloatingInput id="email" label="Return Address (Email)" type="email" />
+                                    <FloatingInput 
+                                      id="name" 
+                                      label="Identity (Name)" 
+                                      value={formData.name}
+                                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                                      required
+                                    />
+                                    <FloatingInput 
+                                      id="email" 
+                                      label="Return Address (Email)" 
+                                      type="email" 
+                                      value={formData.email}
+                                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                                      required
+                                    />
                                 </div>
                                 
-                                <FloatingInput id="org" label="Organization / Entity" />
-                                <FloatingTextArea id="message" label="Payload (Message)" />
+                                <FloatingInput 
+                                  id="org" 
+                                  label="Organization / Entity" 
+                                  value={formData.org}
+                                  onChange={(e) => setFormData({...formData, org: e.target.value})}
+                                />
+                                <FloatingTextArea 
+                                  id="message" 
+                                  label="Payload (Message)" 
+                                  value={formData.message}
+                                  onChange={(e) => setFormData({...formData, message: e.target.value})}
+                                  required
+                                />
 
                                 <div className="pt-4">
-                                    <button type="button" className="w-full md:w-auto bg-[#1A1A1A] text-white font-bold py-4 px-10 rounded-lg hover:bg-gray-800 border border-transparent transition-all duration-300 shadow-lg flex items-center justify-center gap-3 group text-sm tracking-widest uppercase">
-                                        Transmit <Send size={14} className="group-hover:translate-x-1 transition-transform text-gray-400 group-hover:text-white" />
+                                    <button 
+                                      type="submit" 
+                                      disabled={isSubmitting}
+                                      className="w-full md:w-auto bg-[#1A1A1A] text-white font-bold py-4 px-10 rounded-lg hover:bg-gray-800 border border-transparent transition-all duration-300 shadow-lg flex items-center justify-center gap-3 group text-sm tracking-widest uppercase disabled:opacity-50 disabled:cursor-not-allowed"
+                                    >
+                                        {isSubmitting ? 'Transmitting...' : 'Transmit'} <Send size={14} className="group-hover:translate-x-1 transition-transform text-gray-400 group-hover:text-white" />
                                     </button>
                                 </div>
                             </form>
+                            )}
                         </div>
                     </div>
                 </div>
