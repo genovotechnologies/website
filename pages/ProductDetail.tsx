@@ -48,6 +48,11 @@ const ProductDetail: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap gap-4">
+             {product.id === 'synthos' && (
+               <a href="https://synthos.dev" target="_blank" rel="noopener noreferrer" className="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-sm shadow-lg hover:scale-105 transition-transform">
+                 Explore Platform
+               </a>
+             )}
              <button className="bg-[#1A1A1A] text-white px-8 py-4 rounded-2xl font-bold text-sm shadow-lg hover:scale-105 transition-transform">
                  Schedule Demo
              </button>

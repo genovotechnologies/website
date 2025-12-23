@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Users, Zap, Globe, Shield, Box, Server, Database, Target, Award, Hexagon, Layers } from 'lucide-react';
+import { Users, Zap, Globe, Shield, Box, Server, Database, Target, Award, Hexagon, Layers, Cpu } from 'lucide-react';
 import { LEADERSHIP } from '../constants';
 
 const About: React.FC = () => {
@@ -121,6 +121,43 @@ const About: React.FC = () => {
                      <p className="text-gray-500 text-sm">Extreme accountability for every line of code.</p>
                  </div>
              </div>
+        </div>
+
+        {/* Flagship Product Section */}
+        <div className="mb-32">
+            <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden">
+                <div className="absolute inset-0 opacity-10">
+                    <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white rounded-full blur-[100px] transform translate-x-1/3 -translate-y-1/3"></div>
+                </div>
+                <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div className="inline-flex items-center space-x-2 mb-6 bg-white/20 px-4 py-2 rounded-full">
+                            <Cpu size={16} />
+                            <span className="text-xs font-bold uppercase tracking-widest">Flagship Product</span>
+                        </div>
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">SynthOS is a product of Genovo Technologies</h2>
+                        <p className="text-blue-100 text-lg leading-relaxed mb-8">
+                            Our flagship AI training data validation platform, SynthOS, represents the culmination of Genovo's mission to engineer foundational intelligence rails. It eliminates model collapse by validating training data at the entropic level.
+                        </p>
+                        <a 
+                            href="https://synthos.dev" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-bold text-sm rounded-2xl hover:bg-blue-50 transition-colors shadow-lg"
+                        >
+                            Visit synthos.dev
+                            <Globe size={16} className="ml-2" />
+                        </a>
+                    </div>
+                    <div className="relative">
+                        <img 
+                            src="https://picsum.photos/seed/synthos_about/600/400" 
+                            alt="SynthOS Platform" 
+                            className="rounded-2xl shadow-2xl"
+                        />
+                    </div>
+                </div>
+            </div>
         </div>
 
         {/* Founders Section */}

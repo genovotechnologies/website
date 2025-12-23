@@ -40,9 +40,14 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-xs">
-            © 2025 Genovo Technologies. All rights reserved. African Roots, Global Reach.
-          </p>
+          <div className="text-center md:text-left">
+            <p className="text-gray-500 text-xs">
+              © 2025 Genovo Technologies. All rights reserved. African Roots, Global Reach.
+            </p>
+            <p className="text-gray-500 text-xs mt-2">
+              <a href="https://synthos.dev" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition">SynthOS</a> is a product of Genovo Technologies.
+            </p>
+          </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-white"><Twitter size={20} /></a>
             <a href="#" className="text-gray-400 hover:text-white"><Linkedin size={20} /></a>

@@ -44,9 +44,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, reversed }) => {
         </div>
 
         <div className="mt-auto">
-             <Link to={`/products/${product.id}`} className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-sm shadow-lg transition-all duration-300 transform translate-y-0 group-hover:translate-y-[-4px] group-hover:shadow-xl bg-white text-black hover:bg-[#1A1A1A] hover:text-white">
-                Explore Platform <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
+             {product.id === 'synthos' ? (
+               <a href="https://synthos.dev" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-sm shadow-lg transition-all duration-300 transform translate-y-0 group-hover:translate-y-[-4px] group-hover:shadow-xl bg-white text-black hover:bg-[#1A1A1A] hover:text-white">
+                 Explore Platform <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+               </a>
+             ) : (
+               <Link to={`/products/${product.id}`} className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-sm shadow-lg transition-all duration-300 transform translate-y-0 group-hover:translate-y-[-4px] group-hover:shadow-xl bg-white text-black hover:bg-[#1A1A1A] hover:text-white">
+                 Explore Platform <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+               </Link>
+             )}
         </div>
       </div>
       
