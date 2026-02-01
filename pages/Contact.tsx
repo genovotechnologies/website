@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Mail, Send, Globe, Clock, MessageSquare, ArrowRight, Shield, Check } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -20,12 +21,26 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission - in production, this would send to an API
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    console.log('Contact form submitted:', formData);
-    setFormSubmitted(true);
-    setIsSubmitting(false);
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          organization: formData.org,
+          message: formData.message,
+          to_name: 'Genovo Team',
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+      setFormSubmitted(true);
+    } catch (error) {
+      console.error(error);
+      alert('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const FloatingInput = ({ id, label, type = "text", placeholder = " ", value, onChange, required }: { id: string, label: string, type?: string, placeholder?: string, value?: string, onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void, required?: boolean }) => (
