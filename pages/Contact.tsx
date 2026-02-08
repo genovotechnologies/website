@@ -75,9 +75,10 @@ const Contact: React.FC = () => {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
       setFormSubmitted(true);
-    } catch (error) {
-      console.error(error);
-      alert('Failed to send message. Please try again.');
+    } catch (error: any) {
+      console.error('EmailJS Error:', error);
+      const message = error?.text || error?.message || 'Unknown error';
+      alert(`Failed to send message: ${message}`);
     } finally {
       setIsSubmitting(false);
     }
