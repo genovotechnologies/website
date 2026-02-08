@@ -2,6 +2,46 @@ import React, { useEffect, useState } from 'react';
 import { Mail, Send, Globe, Clock, MessageSquare, ArrowRight, Shield, Check } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
+const FloatingInput = ({ id, label, type = "text", placeholder = " ", value, onChange, required }: { id: string, label: string, type?: string, placeholder?: string, value?: string, onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void, required?: boolean }) => (
+  <div className="relative group">
+      <input 
+          type={type} 
+          id={id} 
+          value={value}
+          onChange={onChange}
+          required={required}
+          className="block w-full px-4 py-4 text-[#1A1A1A] bg-[#F9F9F9] border border-gray-200 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A] focus:bg-white peer transition-all duration-200 font-medium text-sm"
+          placeholder={placeholder} 
+      />
+      <label 
+          htmlFor={id} 
+          className="absolute text-xs text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:text-[#1A1A1A] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 peer-not-placeholder-shown:scale-75 peer-not-placeholder-shown:-translate-y-4 font-bold tracking-widest uppercase px-1"
+      >
+          {label}
+      </label>
+  </div>
+);
+
+const FloatingTextArea = ({ id, label, value, onChange, required }: { id: string, label: string, value?: string, onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void, required?: boolean }) => (
+  <div className="relative group">
+      <textarea 
+          id={id} 
+          rows={5}
+          value={value}
+          onChange={onChange}
+          required={required}
+          className="block w-full px-4 py-4 text-[#1A1A1A] bg-[#F9F9F9] border border-gray-200 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A] focus:bg-white peer transition-all duration-200 resize-none font-medium text-sm"
+          placeholder=" " 
+      />
+      <label 
+          htmlFor={id} 
+          className="absolute text-xs text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:text-[#1A1A1A] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 peer-not-placeholder-shown:scale-75 peer-not-placeholder-shown:-translate-y-4 font-bold tracking-widest uppercase px-1"
+      >
+          {label}
+      </label>
+  </div>
+);
+
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -42,46 +82,6 @@ const Contact: React.FC = () => {
       setIsSubmitting(false);
     }
   };
-
-  const FloatingInput = ({ id, label, type = "text", placeholder = " ", value, onChange, required }: { id: string, label: string, type?: string, placeholder?: string, value?: string, onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void, required?: boolean }) => (
-    <div className="relative group">
-        <input 
-            type={type} 
-            id={id} 
-            value={value}
-            onChange={onChange}
-            required={required}
-            className="block w-full px-4 py-4 text-[#1A1A1A] bg-[#F9F9F9] border border-gray-200 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A] focus:bg-white peer transition-all duration-200 font-medium text-sm"
-            placeholder={placeholder} 
-        />
-        <label 
-            htmlFor={id} 
-            className="absolute text-xs text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:text-[#1A1A1A] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 peer-not-placeholder-shown:scale-75 peer-not-placeholder-shown:-translate-y-4 font-bold tracking-widest uppercase px-1"
-        >
-            {label}
-        </label>
-    </div>
-  );
-
-  const FloatingTextArea = ({ id, label, value, onChange, required }: { id: string, label: string, value?: string, onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void, required?: boolean }) => (
-    <div className="relative group">
-        <textarea 
-            id={id} 
-            rows={5}
-            value={value}
-            onChange={onChange}
-            required={required}
-            className="block w-full px-4 py-4 text-[#1A1A1A] bg-[#F9F9F9] border border-gray-200 rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A] focus:bg-white peer transition-all duration-200 resize-none font-medium text-sm"
-            placeholder=" " 
-        />
-        <label 
-            htmlFor={id} 
-            className="absolute text-xs text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:text-[#1A1A1A] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 peer-not-placeholder-shown:scale-75 peer-not-placeholder-shown:-translate-y-4 font-bold tracking-widest uppercase px-1"
-        >
-            {label}
-        </label>
-    </div>
-  );
 
   return (
     <div className="min-h-screen bg-[#F5F5F5] pt-32 pb-20 px-4 sm:px-6 lg:px-8">
