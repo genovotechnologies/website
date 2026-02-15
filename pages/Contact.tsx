@@ -194,7 +194,7 @@ const Contact: React.FC = () => {
                       <EditorialInput
                         id="name"
                         label="Identity (Name)"
-                        placeholder="John Doe"
+                        placeholder="Full Name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         required
