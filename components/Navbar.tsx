@@ -1,72 +1,169 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { NAV_ITEMS, COMPANY_NAME } from '../constants';
-import { Menu, X, Hexagon } from 'lucide-react';
+import { Menu, X, ChevronDown, ExternalLink } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
+  const navLinks = [
+    { label: 'Products', path: '/products' },
+    { label: 'Synthos', path: '/products#synthos' },
+    { label: 'Taskr', path: '/products#taskr' },
+    { label: 'SCOS', path: '/products#scos' },
+    { label: 'Asphallea', path: '/products#asphallea' },
+    { label: 'Company', path: '/about' },
+  ];
+
   return (
-    <nav className="sticky top-0 z-50 bg-[#F5F5F5]/90 backdrop-blur-md border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2 group">
-              <div className="bg-[#1A1A1A] text-white p-2 rounded-lg group-hover:rotate-180 transition-transform duration-500">
-                <Hexagon size={24} fill="white" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-xl tracking-tight text-[#1A1A1A] leading-none">GENOVO</span>
-                <span className="text-[0.6rem] font-semibold tracking-widest text-gray-500 uppercase">Technologies</span>
-              </div>
-            </Link>
-          </div>
+    <nav className="fixed top-0 left-0 right-0 z-50 max-w-[1280px] mx-auto px-6 py-5 w-full flex items-center justify-between">
+      {/* Left: Custom Geometric SVG Logo + Genovo */}
+      <Link to="/" className="flex items-center space-x-3 group z-10">
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="text-white transform group-hover:scale-105 transition-transform duration-300"
+        >
+          <path
+            d="M16 2L3 9.5V22.5L16 30L29 22.5V9.5L16 2Z"
+            fill="white"
+            fillOpacity="0.9"
+          />
+          <path
+            d="M16 6L8 10.625V19.875L16 24.5L24 19.875V10.625L16 6Z"
+            fill="#050505"
+          />
+          <path
+            d="M16 10L11 13V19L16 22L21 19V13L16 10Z"
+            fill="white"
+          />
+        </svg>
+        <span className="font-heading font-bold text-xl tracking-tight text-white">
+          Genovo
+        </span>
+      </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  location.pathname === item.path
-                    ? 'text-[#1A1A1A] border-b-2 border-[#1A1A1A]'
-                    : 'text-gray-500 hover:text-[#1A1A1A]'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-[#1A1A1A] hover:text-gray-600 focus:outline-none"
+      {/* Desktop Links (Center) */}
+      <div className="hidden md:flex items-center gap-8 bg-white/[0.02] backdrop-blur-md px-6 py-2.5 rounded-full border border-white/10 shadow-lg">
+        {navLinks.map((link) => {
+          const isActive = location.pathname === link.path || (link.path.includes('#') && location.hash === link.path.substring(link.path.indexOf('#')));
+          return (
+            <Link
+              key={link.label}
+              to={link.path}
+              className={`text-sm font-medium transition-colors ${
+                isActive ? 'text-white font-semibold' : 'text-white/70 hover:text-white'
+              }`}
             >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
-        </div>
+              {link.label}
+            </Link>
+          );
+        })}
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white border-b border-gray-200">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setIsOpen(false)}
-                className="block px-3 py-4 rounded-md text-base font-medium text-[#1A1A1A] hover:bg-gray-50"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
+      {/* Desktop Actions (Right) */}
+      <div className="hidden md:flex items-center space-x-4">
+        <Link
+          to="/rad"
+          className="text-white/70 hover:text-white transition-colors text-sm font-medium px-3 py-2"
+        >
+          Documentation
+        </Link>
+        <a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="liquid-glass rounded-full px-6 py-2 text-white text-sm font-medium inline-flex items-center gap-2 hover:bg-white/10 transition-all duration-300"
+        >
+          Access Repos
+        </a>
+      </div>
+
+      {/* Mobile Toggle Button */}
+      <div className="md:hidden flex items-center z-10">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle Navigation Menu"
+          className="text-white p-2 focus:outline-none rounded-lg bg-white/5 border border-white/10"
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu: Framer Motion slide-in sheet from right, background #0A0A0A */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsOpen(false)}
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm md:hidden z-40"
+          >
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              onClick={(e) => e.stopPropagation()}
+              className="fixed top-0 right-0 bottom-0 w-[280px] sm:w-[320px] bg-[#0A0A0A] border-l border-white/10 p-6 flex flex-col justify-between shadow-2xl z-50"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-8 pt-2">
+                  <div className="flex items-center space-x-2">
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+                      <path d="M16 2L3 9.5V22.5L16 30L29 22.5V9.5L16 2Z" fill="white" />
+                    </svg>
+                    <span className="font-heading font-bold text-lg text-white">Genovo</span>
+                  </div>
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="text-white/70 hover:text-white p-1"
+                  >
+                    <X size={20} />
+                  </button>
+                </div>
+
+                <div className="flex flex-col space-y-4">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.label}
+                      to={link.path}
+                      onClick={() => setIsOpen(false)}
+                      className="text-base font-medium text-white/70 hover:text-white transition-colors py-2 border-b border-white/5"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-3 pt-6 border-t border-white/10">
+                <Link
+                  to="/rad"
+                  onClick={() => setIsOpen(false)}
+                  className="text-center text-white/70 hover:text-white text-sm font-medium py-2.5 rounded-lg border border-white/10 hover:bg-white/5 transition-all"
+                >
+                  Documentation
+                </Link>
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="liquid-glass text-center rounded-full py-3 text-white text-sm font-medium block"
+                >
+                  Access Repos
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

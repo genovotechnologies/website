@@ -5,49 +5,50 @@ import { ARTICLES } from '../constants';
 
 const Blog: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  
-  const categories = ['All', ...Array.from(new Set(ARTICLES.map(a => a.category)))];
-  
-  const filteredArticles = selectedCategory === 'All' 
-    ? ARTICLES 
-    : ARTICLES.filter(a => a.category === selectedCategory);
+
+  const categories = ['All', ...Array.from(new Set(ARTICLES.map((a) => a.category)))];
+
+  const filteredArticles =
+    selectedCategory === 'All'
+      ? ARTICLES
+      : ARTICLES.filter((a) => a.category === selectedCategory);
 
   useEffect(() => {
     document.title = "Blog | Genovo Technologies";
-    document.querySelector('meta[name="description"]')?.setAttribute('content', "Insights, research, and updates from Genovo Technologies. Explore articles on AI, systems engineering, and the future of computing.");
+    document.querySelector('meta[name="description"]')?.setAttribute(
+      'content',
+      "Insights, research, and updates from Genovo Technologies. Explore articles on AI, systems engineering, and the future of computing."
+    );
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#F5F5F5]">
+    <div className="min-h-screen bg-[#050505] text-white pt-28 pb-24">
       {/* Hero */}
-      <div className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="inline-flex items-center space-x-2 mb-6 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">
-          <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-          <span className="text-xs font-bold tracking-widest text-gray-500 uppercase">Engineering Insights</span>
-        </div>
-        <h1 className="text-5xl md:text-7xl font-bold text-[#1A1A1A] mb-6 tracking-tighter leading-[0.9]">
-          THE GENOVO <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1A1A1A] to-gray-500">BLOG</span>
+      <div className="max-w-[1280px] mx-auto px-6 mb-16">
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#7342E2] block mb-3">
+          Engineering Insights
+        </span>
+        <h1 className="font-heading text-5xl md:text-8xl font-bold text-white mb-6 tracking-tighter leading-none">
+          THE GENOVO <br /> <span className="text-[#7342E2]">BLOG</span>
         </h1>
-        <p className="text-xl text-gray-600 max-w-xl font-light leading-relaxed">
-          Deep dives into systems engineering, AI research, and company updates.
+        <p className="text-xl text-white/70 max-w-xl font-body leading-relaxed">
+          Deep dives into systems engineering, AI research, and platform updates.
         </p>
       </div>
 
       {/* Category Filter */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="bg-white rounded-[2rem] p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <span className="font-bold text-lg text-[#1A1A1A]">FILTER BY TOPIC</span>
-          </div>
-          <div className="flex flex-wrap gap-3">
+      <div className="max-w-[1280px] mx-auto px-6 mb-12">
+        <div className="liquid-glass rounded-[2rem] p-6 border border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <span className="font-heading font-bold text-base text-white">FILTER BY TOPIC</span>
+          <div className="flex flex-wrap gap-2.5">
             {categories.map((category, idx) => (
-              <button 
-                key={idx} 
+              <button
+                key={idx}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-full text-sm font-bold transition-all ${
-                  selectedCategory === category 
-                    ? 'bg-[#1A1A1A] text-white shadow-lg' 
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                className={`px-5 py-2 rounded-full text-xs font-semibold transition-all ${
+                  selectedCategory === category
+                    ? 'bg-white text-black shadow-lg'
+                    : 'bg-white/5 text-white/70 hover:bg-white/10 hover:text-white'
                 }`}
               >
                 {category}
@@ -58,34 +59,38 @@ const Blog: React.FC = () => {
       </div>
 
       {/* Articles Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+      <div className="max-w-[1280px] mx-auto px-6 pb-24">
         {filteredArticles.length === 0 ? (
-          <div className="text-center py-20">
-            <p className="text-gray-500 text-lg">No articles found in this category.</p>
+          <div className="text-center py-20 liquid-glass rounded-[2rem]">
+            <p className="text-white/60 text-lg">No articles found in this category.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArticles.map((article, idx) => (
-              <Link 
+              <Link
                 to={`/blog/${article.id}`}
-                key={idx} 
-                className={`group p-8 rounded-[2.5rem] min-h-[320px] flex flex-col justify-between transition-all hover:-translate-y-2 hover:shadow-xl ${article.color} ${article.textColor}`}
+                key={idx}
+                className="liquid-glass group p-8 rounded-[2.5rem] min-h-[320px] border border-white/10 hover:border-white/30 transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex justify-between items-start mb-6">
-                    <div className="p-3 bg-white/30 rounded-2xl backdrop-blur-sm">
-                      <article.icon size={24} className="opacity-90" />
+                    <div className="p-3 bg-white/10 rounded-2xl text-white">
+                      <article.icon size={24} />
                     </div>
-                    <span className="text-xs font-bold uppercase tracking-wider bg-white/20 px-3 py-1 rounded-full">
+                    <span className="text-[10px] font-semibold uppercase tracking-wider bg-white/10 text-white/80 px-3 py-1 rounded-full border border-white/10">
                       {article.category}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold leading-tight mb-3">{article.title}</h3>
-                  <p className="text-sm opacity-80 leading-relaxed mb-4 line-clamp-3">{article.excerpt}</p>
+                  <h3 className="font-heading text-2xl font-bold text-white mb-3 group-hover:text-[#7342E2] transition-colors leading-tight">
+                    {article.title}
+                  </h3>
+                  <p className="text-sm text-white/70 font-body leading-relaxed mb-4 line-clamp-3">
+                    {article.excerpt}
+                  </p>
                 </div>
-                
-                <div className="flex items-center justify-between pt-4 border-t border-black/10">
-                  <div className="flex items-center gap-4 text-xs opacity-70">
+
+                <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                  <div className="flex items-center gap-4 text-xs text-white/50">
                     <span className="flex items-center gap-1">
                       <Clock size={12} />
                       {article.readTime}
@@ -95,8 +100,8 @@ const Blog: React.FC = () => {
                       {article.author.split(' ')[0]}
                     </span>
                   </div>
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 p-2 rounded-full">
-                    <ArrowRight size={16} />
+                  <div className="w-8 h-8 rounded-full bg-white/10 text-white group-hover:bg-[#7342E2] flex items-center justify-center transition-colors">
+                    <ArrowRight size={14} />
                   </div>
                 </div>
               </Link>

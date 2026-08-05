@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Users, Zap, Globe, Shield, Box, Server, Database, Target, Award, Hexagon, Layers, Cpu, Check } from 'lucide-react';
+import { Users, Zap, Globe, Shield, Box, Server, Database, Target, Award, Hexagon, Layers, Cpu, Check, ArrowUpRight } from 'lucide-react';
 import { LEADERSHIP } from '../constants';
 
 const About: React.FC = () => {
@@ -8,261 +8,274 @@ const About: React.FC = () => {
 
   const handlePartnerSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Partnership inquiry:', partnerForm);
     setPartnerSubmitted(true);
   };
 
   useEffect(() => {
     document.title = "About Genovo | Systems-First AI Engineering";
-    document.querySelector('meta[name="description"]')?.setAttribute('content', "Learn about Genovo Technologies' mission to engineer the foundational intelligence rails for the future. We prioritize precision, first principles, and ownership.");
+    document.querySelector('meta[name="description"]')?.setAttribute(
+      'content',
+      "Learn about Genovo Technologies' mission to engineer the foundational intelligence rails for the future. We prioritize precision, first principles, and ownership."
+    );
   }, []);
 
   return (
-    <div className="bg-white min-h-screen">
-      <div className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#050505] text-white min-h-screen pt-28 pb-24">
+      <div className="max-w-[1280px] mx-auto px-6">
         {/* Header */}
-        <div className="mb-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h1 className="text-5xl md:text-7xl font-bold text-[#1A1A1A] mb-8 leading-[1] tracking-tighter">
-                    THE ARCHITECTS <br/> OF TOMORROW'S <br/> <span className="text-blue-600">DIGITAL WORLD</span>
-                </h1>
-                <p className="text-xl text-gray-500 leading-relaxed font-light">
-                    Our Decentralized Collective of Visionaries & Engineers. 
-                    Genovo Technologies is a systems-first, AI-native technology company building high-performance infrastructure.
-                </p>
+        <div className="mb-24 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#7342E2] block mb-3">
+              Company Mission
+            </span>
+            <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
+              THE ARCHITECTS <br /> OF TOMORROW'S <br />
+              <span className="text-[#7342E2]">DIGITAL RAILS</span>
+            </h1>
+            <p className="text-lg text-white/70 leading-relaxed font-body">
+              Our Decentralized Collective of Visionaries & Engineers. Genovo Technologies is a systems-first, AI-native technology company building high-performance infrastructure.
+            </p>
+          </div>
+          <div className="relative">
+            <div className="liquid-glass rounded-[2.5rem] p-4 border border-white/10 overflow-hidden shadow-2xl">
+              <img
+                src="https://picsum.photos/seed/about_genovo/800/800"
+                className="rounded-[2rem] w-full h-[400px] object-cover opacity-80 hover:opacity-100 transition duration-700"
+                alt="Generative Art"
+              />
             </div>
-            <div className="relative">
-                <img src="https://picsum.photos/seed/about_genovo/800/800" className="rounded-[3rem] shadow-2xl rotate-2 hover:rotate-0 transition duration-700" alt="Generative Art" />
-            </div>
+          </div>
         </div>
 
-        {/* Connected Structure Diagram */}
-        <div className="mb-40">
-            <h2 className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase mb-16 text-center">OUR STRUCTURE: MINIMAL HIERARCHY, MAXIMUM IMPACT</h2>
-            
-            <div className="relative">
-                {/* Visual Connector Lines (Background) */}
-                <svg className="absolute inset-0 w-full h-full pointer-events-none hidden md:block z-0" style={{ overflow: 'visible' }}>
-                    <path d="M200,150 C400,150 400,300 600,300" stroke="#F3F4F6" strokeWidth="4" fill="none" />
-                    <path d="M600,300 C800,300 800,150 1000,150" stroke="#F3F4F6" strokeWidth="4" fill="none" />
-                </svg>
+        {/* Structure Section */}
+        <div className="mb-32">
+          <h2 className="text-xs font-bold tracking-[0.2em] text-white/50 uppercase mb-12 text-center">
+            OUR STRUCTURE: MINIMAL HIERARCHY, MAXIMUM IMPACT
+          </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
-                    <div className="bg-[#1A1A1A] text-white p-10 rounded-[2.5rem] shadow-2xl hover:scale-105 transition duration-500 flex flex-col justify-between min-h-[320px]">
-                        <div>
-                            <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm">
-                                <Zap size={28} />
-                            </div>
-                            <h3 className="text-2xl font-bold leading-tight mb-2">AI & Machine Learning</h3>
-                            <p className="text-gray-400 text-sm">Research</p>
-                        </div>
-                        <div className="mt-4 pt-4 border-t border-white/10">
-                             <p className="text-[10px] uppercase tracking-widest opacity-50">Foundational Models</p>
-                        </div>
-                    </div>
-
-                    <div className="bg-[#10B981] text-white p-10 rounded-[2.5rem] shadow-2xl hover:scale-105 transition duration-500 flex flex-col justify-between min-h-[320px] mt-12 md:mt-24">
-                        <div>
-                             <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm">
-                                <Box size={28} />
-                            </div>
-                            <h3 className="text-2xl font-bold leading-tight mb-2">System & Manufacturing</h3>
-                            <p className="text-green-100 text-sm">Engineering</p>
-                        </div>
-                         <div className="mt-4 pt-4 border-t border-white/20">
-                             <p className="text-[10px] uppercase tracking-widest opacity-70">Industrial Hardware</p>
-                        </div>
-                    </div>
-
-                    <div className="bg-[#F97316] text-white p-10 rounded-[2.5rem] shadow-2xl hover:scale-105 transition duration-500 flex flex-col justify-between min-h-[320px]">
-                        <div>
-                             <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm">
-                                <Server size={28} />
-                            </div>
-                            <h3 className="text-2xl font-bold leading-tight mb-2">Systems & Architecture</h3>
-                            <p className="text-orange-100 text-sm">Engineering</p>
-                        </div>
-                         <div className="mt-4 pt-4 border-t border-white/20">
-                             <p className="text-[10px] uppercase tracking-widest opacity-70">Scalable Compute</p>
-                        </div>
-                    </div>
-
-                    <div className="bg-[#F3F4F6] text-[#1A1A1A] p-10 rounded-[2.5rem] shadow-xl hover:scale-105 transition duration-500 flex flex-col justify-between min-h-[320px] mt-12 md:mt-24">
-                        <div>
-                             <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
-                                <Globe size={28} />
-                            </div>
-                            <h3 className="text-2xl font-bold leading-tight mb-2">Systems Division</h3>
-                            <p className="text-gray-500 text-sm">Bysseon</p>
-                        </div>
-                         <div className="mt-4 pt-4 border-t border-gray-200">
-                             <p className="text-[10px] uppercase tracking-widest opacity-50">Global Ops</p>
-                        </div>
-                    </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="liquid-glass rounded-[2rem] p-8 border border-white/10 flex flex-col justify-between min-h-[300px]">
+              <div>
+                <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6 text-white border border-white/10">
+                  <Zap size={24} />
                 </div>
+                <h3 className="font-heading text-xl font-bold text-white mb-2">AI & Machine Learning</h3>
+                <p className="text-white/60 text-sm">Research</p>
+              </div>
+              <div className="mt-4 pt-4 border-t border-white/10">
+                <p className="text-[10px] uppercase tracking-widest text-white/40">Foundational Models</p>
+              </div>
             </div>
+
+            <div className="liquid-glass rounded-[2rem] p-8 border border-white/10 flex flex-col justify-between min-h-[300px]">
+              <div>
+                <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6 text-white border border-white/10">
+                  <Box size={24} />
+                </div>
+                <h3 className="font-heading text-xl font-bold text-white mb-2">System & Manufacturing</h3>
+                <p className="text-white/60 text-sm">Engineering</p>
+              </div>
+              <div className="mt-4 pt-4 border-t border-white/10">
+                <p className="text-[10px] uppercase tracking-widest text-white/40">Industrial Hardware</p>
+              </div>
+            </div>
+
+            <div className="liquid-glass rounded-[2rem] p-8 border border-white/10 flex flex-col justify-between min-h-[300px]">
+              <div>
+                <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6 text-white border border-white/10">
+                  <Server size={24} />
+                </div>
+                <h3 className="font-heading text-xl font-bold text-white mb-2">Systems & Architecture</h3>
+                <p className="text-white/60 text-sm">Engineering</p>
+              </div>
+              <div className="mt-4 pt-4 border-t border-white/10">
+                <p className="text-[10px] uppercase tracking-widest text-white/40">Scalable Compute</p>
+              </div>
+            </div>
+
+            <div className="liquid-glass rounded-[2rem] p-8 border border-white/10 flex flex-col justify-between min-h-[300px]">
+              <div>
+                <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6 text-white border border-white/10">
+                  <Globe size={24} />
+                </div>
+                <h3 className="font-heading text-xl font-bold text-white mb-2">Systems Division</h3>
+                <p className="text-white/60 text-sm">Bysseon</p>
+              </div>
+              <div className="mt-4 pt-4 border-t border-white/10">
+                <p className="text-[10px] uppercase tracking-widest text-white/40">Global Ops</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Core Values */}
         <div className="mb-32">
-             <h2 className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase mb-10">CORE VALUES</h2>
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                 <div className="text-center p-8">
-                     <div className="w-16 h-16 bg-[#1A1A1A] text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                         <Target size={24} />
-                     </div>
-                     <h3 className="font-bold text-xl mb-2">Precision</h3>
-                     <p className="text-gray-500 text-sm">Zero tolerance for error in foundational systems.</p>
-                 </div>
-                 <div className="text-center p-8 relative">
-                     <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -z-10 hidden md:block"></div>
-                     <div className="w-16 h-16 bg-white border-2 border-[#1A1A1A] text-[#1A1A1A] rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg relative z-10">
-                         <Hexagon size={24} />
-                     </div>
-                     <h3 className="font-bold text-xl mb-2">First Principles</h3>
-                     <p className="text-gray-500 text-sm">Reasoning from physics and math, not analogy.</p>
-                 </div>
-                 <div className="text-center p-8">
-                     <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                         <Award size={24} />
-                     </div>
-                     <h3 className="font-bold text-xl mb-2">Ownership</h3>
-                     <p className="text-gray-500 text-sm">Extreme accountability for every line of code.</p>
-                 </div>
-             </div>
+          <h2 className="text-xs font-bold tracking-[0.2em] text-white/50 uppercase mb-12 text-center">
+            CORE OPERATING VALUES
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="liquid-glass rounded-[2rem] p-8 text-center border border-white/10">
+              <div className="w-14 h-14 bg-[#7342E2]/20 text-[#7342E2] border border-[#7342E2]/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Target size={24} />
+              </div>
+              <h3 className="font-heading font-bold text-xl mb-2 text-white">Precision</h3>
+              <p className="text-white/60 text-sm font-body">Zero tolerance for error in foundational systems.</p>
+            </div>
+
+            <div className="liquid-glass rounded-[2rem] p-8 text-center border border-white/10">
+              <div className="w-14 h-14 bg-white/10 text-white border border-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Hexagon size={24} />
+              </div>
+              <h3 className="font-heading font-bold text-xl mb-2 text-white">First Principles</h3>
+              <p className="text-white/60 text-sm font-body">Reasoning from physics and math, not analogy.</p>
+            </div>
+
+            <div className="liquid-glass rounded-[2rem] p-8 text-center border border-white/10">
+              <div className="w-14 h-14 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Award size={24} />
+              </div>
+              <h3 className="font-heading font-bold text-xl mb-2 text-white">Ownership</h3>
+              <p className="text-white/60 text-sm font-body">Extreme accountability for every line of code.</p>
+            </div>
+          </div>
         </div>
 
-        {/* Flagship Product Section */}
+        {/* Flagship Banner */}
         <div className="mb-32">
-            <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden">
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white rounded-full blur-[100px] transform translate-x-1/3 -translate-y-1/3"></div>
-                </div>
-                <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <div className="inline-flex items-center space-x-2 mb-6 bg-white/20 px-4 py-2 rounded-full">
-                            <Cpu size={16} />
-                            <span className="text-xs font-bold uppercase tracking-widest">Flagship Product</span>
-                        </div>
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">SynthOS is a product of Genovo Technologies</h2>
-                        <p className="text-blue-100 text-lg leading-relaxed mb-8">
-                            Our flagship AI training data validation platform, SynthOS, represents the culmination of Genovo's mission to engineer foundational intelligence rails. It eliminates model collapse by validating training data at the entropic level.
-                        </p>
-                        <a 
-                            href="https://synthos.dev" 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-bold text-sm rounded-2xl hover:bg-blue-50 transition-colors shadow-lg"
-                        >
-                            Visit synthos.dev
-                            <Globe size={16} className="ml-2" />
-                        </a>
-                    </div>
-                    <div className="relative">
-                        <img 
-                            src="https://picsum.photos/seed/synthos_about/600/400" 
-                            alt="SynthOS Platform" 
-                            className="rounded-2xl shadow-2xl"
-                        />
-                    </div>
-                </div>
+          <div className="liquid-glass rounded-[2.5rem] p-10 md:p-16 border border-white/10 relative overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-white text-xs font-semibold uppercase tracking-wider mb-6">
+                  <Cpu size={14} /> Flagship Platform
+                </span>
+                <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
+                  SynthOS is a product of Genovo Technologies
+                </h2>
+                <p className="text-white/70 text-base leading-relaxed mb-8 font-body">
+                  Our flagship AI training data validation platform, SynthOS, represents the culmination of Genovo's mission to engineer foundational intelligence rails.
+                </p>
+                <a
+                  href="https://synthos.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-semibold text-sm rounded-full hover:bg-white/90 transition-all shadow-xl"
+                >
+                  Visit synthos.dev <ArrowUpRight size={16} />
+                </a>
+              </div>
+              <div>
+                <img
+                  src="https://picsum.photos/seed/synthos_about/600/400"
+                  alt="SynthOS Platform"
+                  className="rounded-2xl border border-white/10 shadow-2xl opacity-80"
+                />
+              </div>
             </div>
+          </div>
         </div>
 
-        {/* Founders Section */}
-        <div className="mb-32 bg-gray-50 rounded-[3rem] p-12 md:p-20">
-             <div className="text-center mb-16">
-                 <h2 className="text-3xl font-bold text-[#1A1A1A]">LEADERSHIP</h2>
-                 <p className="text-gray-500 mt-2">The minds behind the machine.</p>
-             </div>
+        {/* Leadership Section */}
+        <div className="mb-32">
+          <div className="text-center mb-16">
+            <h2 className="font-heading text-3xl font-bold text-white">LEADERSHIP</h2>
+            <p className="text-white/50 text-sm mt-2">The minds behind the machine.</p>
+          </div>
 
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-                 {LEADERSHIP.map((leader, idx) => (
-                     <div key={idx} className="flex flex-col items-center text-center">
-                         <div className="w-48 h-48 rounded-full overflow-hidden mb-8 border-4 border-white shadow-xl">
-                             <img src={`https://picsum.photos/seed/${leader.name.split(' ')[0]}/400/400`} alt={leader.name} className="w-full h-full object-cover" />
-                         </div>
-                         <h3 className="text-2xl font-bold text-[#1A1A1A] mb-2">{leader.name}</h3>
-                         <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">— {leader.role}</p>
-                         <p className="text-gray-600 leading-relaxed max-w-sm">
-                             {leader.bio}
-                         </p>
-                     </div>
-                 ))}
-             </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {LEADERSHIP.map((leader, idx) => (
+              <div key={idx} className="liquid-glass rounded-[2.5rem] p-8 sm:p-10 border border-white/10 flex flex-col items-center text-center">
+                <div className="w-40 h-40 rounded-full overflow-hidden mb-6 border-2 border-white/20 shadow-xl">
+                  <img
+                    src={`https://picsum.photos/seed/${leader.name.split(' ')[0]}/400/400`}
+                    alt={leader.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="font-heading text-2xl font-bold text-white mb-2">{leader.name}</h3>
+                <p className="text-xs font-semibold text-[#7342E2] uppercase tracking-widest mb-4">
+                  {leader.role}
+                </p>
+                <p className="text-white/70 text-sm font-body leading-relaxed max-w-md">
+                  {leader.bio}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Strategy Timeline */}
-        <div className="bg-[#1A1A1A] rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden shadow-2xl">
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20">
+        {/* Strategy & Form */}
+        <div className="liquid-glass rounded-[2.5rem] p-10 md:p-16 border border-white/10 shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div>
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-2 h-2 bg-[#7342E2] rounded-full animate-pulse" />
+                <h2 className="text-xs font-bold text-white/50 uppercase tracking-[0.2em]">
+                  STRATEGY TIMELINE
+                </h2>
+              </div>
+              <div className="space-y-8">
                 <div>
-                    <div className="flex items-center space-x-3 mb-6">
-                        <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                        <h2 className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">OUR STRATEGY TIMELINE</h2>
-                    </div>
-                    <div className="space-y-12">
-                        <div className="group">
-                            <div className="flex items-center justify-between mb-2">
-                                <h3 className="font-bold text-xl group-hover:text-orange-500 transition">Scale SynthOS Enterprise</h3>
-                                <Database size={20} className="text-gray-600 group-hover:text-orange-500 transition" />
-                            </div>
-                            <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
-                                <div className="bg-orange-500 h-full w-3/4 rounded-full shadow-[0_0_10px_rgba(249,115,22,0.5)]"></div>
-                            </div>
-                        </div>
-                        
-                            <div className="group">
-                            <div className="flex items-center justify-between mb-2">
-                                <h3 className="font-bold text-xl group-hover:text-white transition">Launch Taskr MVP</h3>
-                                <Layers size={20} className="text-gray-600 group-hover:text-white transition" />
-                            </div>
-                            <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
-                                <div className="bg-white h-full w-1/2 rounded-full"></div>
-                            </div>
-                        </div>
-                    </div>
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-heading font-bold text-lg text-white">Scale SynthOS Enterprise</h3>
+                    <Database size={18} className="text-[#7342E2]" />
+                  </div>
+                  <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                    <div className="bg-[#7342E2] h-full w-3/4 rounded-full" />
+                  </div>
                 </div>
-                
-                <div className="flex flex-col justify-center space-y-6 bg-white/5 p-8 rounded-3xl backdrop-blur-sm border border-white/10">
-                    <h3 className="text-2xl font-bold mb-2">Partner With Us</h3>
-                    <p className="text-gray-400 text-sm mb-6">Forge the Future of Computation</p>
-                    {partnerSubmitted ? (
-                      <div className="text-center py-6">
-                        <div className="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <Check size={24} className="text-emerald-400" />
-                        </div>
-                        <h4 className="text-lg font-bold mb-2">Thank You!</h4>
-                        <p className="text-gray-400 text-sm">
-                          We'll be in touch soon to discuss partnership opportunities.
-                        </p>
-                      </div>
-                    ) : (
-                    <form className="space-y-4" onSubmit={handlePartnerSubmit}>
-                        <input 
-                          type="text" 
-                          placeholder="Full Name" 
-                          required
-                          value={partnerForm.name}
-                          onChange={(e) => setPartnerForm({...partnerForm, name: e.target.value})}
-                          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:bg-white/10 transition text-white placeholder-gray-600" 
-                        />
-                        <input 
-                          type="email" 
-                          placeholder="Email Address" 
-                          required
-                          value={partnerForm.email}
-                          onChange={(e) => setPartnerForm({...partnerForm, email: e.target.value})}
-                          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:bg-white/10 transition text-white placeholder-gray-600" 
-                        />
-                        <button type="submit" className="w-full bg-[#10B981] text-white font-bold py-3 rounded-xl hover:bg-emerald-600 transition shadow-lg shadow-emerald-900/20">
-                            PROPOSE PARTNERSHIP
-                        </button>
-                    </form>
-                    )}
-                </div>
-            </div>
-        </div>
 
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-heading font-bold text-lg text-white">Launch Taskr MVP</h3>
+                    <Layers size={18} className="text-white/60" />
+                  </div>
+                  <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                    <div className="bg-white h-full w-1/2 rounded-full" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="liquid-glass p-8 rounded-2xl border border-white/10">
+              <h3 className="font-heading text-2xl font-bold text-white mb-2">Partner With Us</h3>
+              <p className="text-white/60 text-sm mb-6">Forge the Future of Computation</p>
+              {partnerSubmitted ? (
+                <div className="text-center py-6">
+                  <div className="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Check size={24} />
+                  </div>
+                  <h4 className="font-heading text-lg font-bold text-white mb-1">Thank You!</h4>
+                  <p className="text-white/60 text-sm">We'll be in touch soon to discuss partnership opportunities.</p>
+                </div>
+              ) : (
+                <form className="space-y-4" onSubmit={handlePartnerSubmit}>
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    required
+                    value={partnerForm.name}
+                    onChange={(e) => setPartnerForm({ ...partnerForm, name: e.target.value })}
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-white/30"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    required
+                    value={partnerForm.email}
+                    onChange={(e) => setPartnerForm({ ...partnerForm, email: e.target.value })}
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-white/30"
+                  />
+                  <button
+                    type="submit"
+                    className="w-full bg-white text-black font-semibold py-3 rounded-xl hover:bg-white/90 transition-all text-sm"
+                  >
+                    PROPOSE PARTNERSHIP
+                  </button>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

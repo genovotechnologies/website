@@ -1,60 +1,41 @@
 import React from 'react';
-import { Twitter, Linkedin, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { SOCIAL_LINKS } from '../constants';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#1A1A1A] text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="bg-white text-[#1A1A1A] p-1 rounded">
-                <span className="font-bold text-lg">G</span>
-              </div>
-              <span className="font-bold text-xl tracking-tight">GENOVO</span>
-            </div>
-            <p className="text-gray-400 text-sm max-w-xs">
-              Engineering the foundational software and intelligence rails powering the world’s next era of computation.
-            </p>
+    <footer className="w-full relative z-10 pt-16 pb-12 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+      <div className="max-w-[1280px] mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+        {/* Left Side */}
+        <div className="flex flex-col gap-3">
+          <div className="flex items-center space-x-2 text-[12px] text-white/50 font-medium">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse inline-block" />
+            <span>Genovo Technologies // Lagos, Nigeria</span>
           </div>
           
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-300 mb-4">Company</h3>
-            <ul className="space-y-2 text-gray-400 text-sm">
-              <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
-              <li><Link to="/team" className="hover:text-white transition">Team</Link></li>
-              <li><Link to="/products" className="hover:text-white transition">Products</Link></li>
-              <li><Link to="/rad" className="hover:text-white transition">R&D</Link></li>
-              <li><Link to="/careers" className="hover:text-white transition">Careers</Link></li>
-              <li><Link to="/blog" className="hover:text-white transition">Blog</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-300 mb-4">Legal</h3>
-            <ul className="space-y-2 text-gray-400 text-sm">
-              <li><Link to="/privacy" className="hover:text-white transition">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="hover:text-white transition">Terms of Service</Link></li>
-            </ul>
+          <div className="flex flex-wrap items-center gap-4 text-[12px] text-white/40">
+            <span>© {new Date().getFullYear()} Genovo Technologies. All rights reserved.</span>
+            <span className="hidden sm:inline">•</span>
+            <Link to="/terms" className="hover:text-white/80 transition-colors">
+              Terms of Service
+            </Link>
+            <span className="hidden sm:inline">•</span>
+            <Link to="/privacy" className="hover:text-white/80 transition-colors">
+              Privacy Policy
+            </Link>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-center md:text-left">
-            <p className="text-gray-500 text-xs">
-              © 2025 Genovo Technologies. All rights reserved. African Roots, Global Reach.
-            </p>
-            <p className="text-gray-500 text-xs mt-2">
-              <a href="https://synthos.dev" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition">SynthOS</a> is a product of Genovo Technologies.
-            </p>
-          </div>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition" aria-label="Twitter"><Twitter size={20} /></a>
-            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition" aria-label="LinkedIn"><Linkedin size={20} /></a>
-            <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition" aria-label="GitHub"><Github size={20} /></a>
-          </div>
+        {/* Right Side: Three liquid-glass tag pills */}
+        <div className="flex flex-wrap items-center gap-3">
+          <span className="liquid-glass rounded-full px-3 py-1 text-[11px] text-white/70 font-medium tracking-wide">
+            Low-level Systems
+          </span>
+          <span className="liquid-glass rounded-full px-3 py-1 text-[11px] text-white/70 font-medium tracking-wide">
+            Machine Learning
+          </span>
+          <span className="liquid-glass rounded-full px-3 py-1 text-[11px] text-white/70 font-medium tracking-wide">
+            Cybersecurity
+          </span>
         </div>
       </div>
     </footer>

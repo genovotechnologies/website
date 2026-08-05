@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { PRODUCTS } from '../constants';
-import { ArrowLeft, Check, Terminal, Cpu, Zap, Shield, Activity } from 'lucide-react';
+import { ArrowLeft, Check, Activity, ArrowUpRight } from 'lucide-react';
 import NotFound from './NotFound';
 
 const ProductDetail: React.FC = () => {
@@ -11,10 +11,10 @@ const ProductDetail: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     if (product) {
-        document.title = `${product.name} - ${product.category} | Genovo Technologies`;
-        document.querySelector('meta[name="description"]')?.setAttribute('content', product.description);
+      document.title = `${product.name} - ${product.category} | Genovo Technologies`;
+      document.querySelector('meta[name="description"]')?.setAttribute('content', product.description);
     } else {
-        document.title = "Product Not Found | Genovo Technologies";
+      document.title = "Product Not Found | Genovo Technologies";
     }
   }, [id, product]);
 
@@ -23,132 +23,153 @@ const ProductDetail: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#050505] text-white pt-28 pb-24">
       {/* Hero Header */}
-      <div className={`relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 rounded-b-[3rem] overflow-hidden ${product.color}`}>
-        {/* Background Abstract */}
-        <div className="absolute inset-0 opacity-20">
-             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white rounded-full blur-[100px] transform translate-x-1/3 -translate-y-1/3"></div>
+      <div className="max-w-[1280px] mx-auto px-6 mb-16">
+        <Link
+          to="/products"
+          className="inline-flex items-center text-xs font-semibold uppercase tracking-widest text-white/60 hover:text-white transition-colors mb-8"
+        >
+          <ArrowLeft size={16} className="mr-2" /> Back to Platforms
+        </Link>
+
+        <div className="inline-block border border-white/20 px-3.5 py-1 rounded-full bg-white/5 backdrop-blur-md mb-6">
+          <span className="text-[10px] font-bold uppercase tracking-widest text-white/80">
+            {product.category}
+          </span>
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="mb-8">
-            <Link to="/products" className="inline-flex items-center text-sm font-bold uppercase tracking-widest opacity-70 hover:opacity-100 transition-opacity mb-6">
-              <ArrowLeft size={16} className="mr-2" /> Back to Platforms
-            </Link>
-            <div className="inline-block border border-black/10 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md mb-6">
-                 <span className="text-[10px] font-bold uppercase tracking-widest">{product.category}</span>
-            </div>
-            <h1 className={`text-5xl md:text-7xl font-bold tracking-tighter mb-6 ${product.textColor || 'text-[#1A1A1A]'}`}>
-              {product.name}
-            </h1>
-            <p className={`text-xl md:text-2xl font-light max-w-3xl leading-relaxed opacity-90 ${product.textColor || 'text-[#1A1A1A]'}`}>
-              {product.description}
-            </p>
-          </div>
+        <h1 className="font-heading text-5xl md:text-8xl font-bold tracking-tight text-white mb-6 leading-none">
+          {product.name}
+        </h1>
 
-          <div className="flex flex-wrap gap-4">
-             {product.id === 'synthos' && (
-               <a href="https://synthos.dev" target="_blank" rel="noopener noreferrer" className="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-sm shadow-lg hover:scale-105 transition-transform">
-                 Explore Platform
-               </a>
-             )}
-             <Link to="/contact" className="bg-[#1A1A1A] text-white px-8 py-4 rounded-2xl font-bold text-sm shadow-lg hover:scale-105 transition-transform">
-                 Schedule Demo
-             </Link>
-             <Link to="/rad" className="bg-white text-[#1A1A1A] px-8 py-4 rounded-2xl font-bold text-sm shadow-lg hover:scale-105 transition-transform">
-                 Technical Documentation
-             </Link>
-          </div>
+        <p className="text-xl text-white/70 max-w-3xl font-body leading-relaxed mb-8">
+          {product.description}
+        </p>
+
+        <div className="flex flex-wrap gap-4">
+          {product.id === 'synthos' && (
+            <a
+              href="https://synthos.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-black font-semibold text-sm hover:bg-white/90 transition-all shadow-xl"
+            >
+              Explore SynthOS Platform <ArrowUpRight size={16} />
+            </a>
+          )}
+          <Link
+            to="/contact"
+            className="liquid-glass rounded-full px-8 py-4 text-white text-sm font-semibold hover:bg-white/10 transition-all"
+          >
+            Schedule Demo
+          </Link>
+          <Link
+            to="/rad"
+            className="liquid-glass rounded-full px-8 py-4 text-white/80 text-sm font-semibold hover:bg-white/10 transition-all"
+          >
+            Technical Documentation
+          </Link>
         </div>
       </div>
 
       {/* Content Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-             
-             {/* Left Column: Detailed Info */}
-             <div className="lg:col-span-7 space-y-16">
-                 <div>
-                     <h2 className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase mb-8">SYSTEM OVERVIEW</h2>
-                     <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                         {product.longDescription || product.description}
-                     </p>
-                 </div>
+      <div className="max-w-[1280px] mx-auto px-6 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          {/* Left Column */}
+          <div className="lg:col-span-7 space-y-12">
+            <div className="liquid-glass rounded-[2.5rem] p-8 sm:p-10 border border-white/10">
+              <h2 className="text-xs font-bold tracking-[0.2em] text-[#7342E2] uppercase mb-6">
+                SYSTEM OVERVIEW
+              </h2>
+              <p className="text-base sm:text-lg text-white/80 font-body leading-relaxed">
+                {product.longDescription || product.description}
+              </p>
+            </div>
 
-                 <div>
-                     <h2 className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase mb-8">CORE CAPABILITIES</h2>
-                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                         {product.features.map((feature, idx) => (
-                             <div key={idx} className="flex items-start p-4 rounded-2xl bg-gray-50 border border-gray-100 hover:bg-gray-100 transition-colors">
-                                 <div className="bg-[#1A1A1A] text-white p-1 rounded-full mt-0.5 mr-3">
-                                     <Check size={12} />
-                                 </div>
-                                 <span className="font-medium text-gray-800">{feature}</span>
-                             </div>
-                         ))}
-                     </div>
-                 </div>
-             </div>
+            <div className="liquid-glass rounded-[2.5rem] p-8 sm:p-10 border border-white/10">
+              <h2 className="text-xs font-bold tracking-[0.2em] text-[#7342E2] uppercase mb-6">
+                CORE CAPABILITIES
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {product.features.map((feature, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10"
+                  >
+                    <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/30">
+                      <Check size={12} />
+                    </div>
+                    <span className="text-sm font-medium text-white/80">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
 
-             {/* Right Column: Specs & Visuals */}
-             <div className="lg:col-span-5 space-y-8">
-                 <div className="bg-[#1A1A1A] text-white rounded-[2.5rem] p-8 shadow-xl relative overflow-hidden">
-                     <div className="relative z-10">
-                         <div className="flex items-center gap-3 mb-8">
-                             <Activity className="text-green-400" />
-                             <h3 className="font-bold text-lg">Technical Specifications</h3>
-                         </div>
-                         
-                         <div className="space-y-6">
-                             {product.specs ? (
-                                 product.specs.map((spec, idx) => (
-                                     <div key={idx} className="flex justify-between items-center border-b border-white/10 pb-4 last:border-0 last:pb-0">
-                                         <span className="text-sm text-gray-400">{spec.label}</span>
-                                         <span className="font-mono text-sm font-bold text-white text-right">{spec.value}</span>
-                                     </div>
-                                 ))
-                             ) : (
-                                 <p className="text-gray-400 italic">Detailed specifications available upon request.</p>
-                             )}
-                         </div>
-                     </div>
-                 </div>
+          {/* Right Column: Specs */}
+          <div className="lg:col-span-5 space-y-8">
+            <div className="liquid-glass rounded-[2.5rem] p-8 border border-white/10 shadow-2xl">
+              <div className="flex items-center gap-3 mb-6">
+                <Activity className="text-emerald-400" size={20} />
+                <h3 className="font-heading font-bold text-xl text-white">Technical Specifications</h3>
+              </div>
 
-                 <div className="relative h-[300px] rounded-[2.5rem] overflow-hidden shadow-lg group">
-                     <img 
-                        src={`https://picsum.photos/seed/${product.id}_detail/600/600`} 
-                        alt="System Detail" 
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                     />
-                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
-                     <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl">
-                         <span className="text-xs font-bold uppercase tracking-wider text-black">System Architecture v2.1</span>
-                     </div>
-                 </div>
-             </div>
+              <div className="space-y-4">
+                {product.specs ? (
+                  product.specs.map((spec, idx) => (
+                    <div
+                      key={idx}
+                      className="flex justify-between items-center border-b border-white/10 pb-3 last:border-0 last:pb-0"
+                    >
+                      <span className="text-xs text-white/50">{spec.label}</span>
+                      <span className="font-mono text-xs font-bold text-white">{spec.value}</span>
+                    </div>
+                  ))
+                ) : (
+                  <p className="text-white/50 text-xs italic">
+                    Detailed specifications available upon request.
+                  </p>
+                )}
+              </div>
+            </div>
 
-         </div>
+            <div className="liquid-glass rounded-[2.5rem] p-4 border border-white/10 overflow-hidden">
+              <img
+                src={`https://picsum.photos/seed/${product.id}_detail/600/400`}
+                alt="System Detail"
+                className="w-full h-48 object-cover rounded-2xl opacity-70"
+              />
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Bottom CTA */}
-      <div className="bg-gray-50 py-24 border-t border-gray-200">
-          <div className="max-w-4xl mx-auto px-4 text-center">
-              <h2 className="text-3xl font-bold text-[#1A1A1A] mb-6">Ready to deploy {product.name}?</h2>
-              <p className="text-gray-600 mb-10">
-                  Our integration engineers are ready to help you architect your solution.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                 <Link to="/contact" className="bg-[#1A1A1A] text-white px-10 py-4 rounded-full font-bold text-sm hover:bg-gray-800 transition-colors">
-                     CONTACT SALES
-                 </Link>
-                 <Link to="/products" className="bg-white text-[#1A1A1A] border border-gray-200 px-10 py-4 rounded-full font-bold text-sm hover:bg-gray-100 transition-colors">
-                     VIEW ALL PLATFORMS
-                 </Link>
-              </div>
+      <div className="max-w-[1280px] mx-auto px-6">
+        <div className="liquid-glass rounded-[2.5rem] p-10 md:p-16 border border-white/10 text-center">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
+            Ready to deploy {product.name}?
+          </h2>
+          <p className="text-white/70 font-body text-base max-w-lg mx-auto mb-8">
+            Our integration engineers are ready to help you architect your solution.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/contact"
+              className="px-8 py-4 rounded-full bg-white text-black font-semibold text-sm hover:bg-white/90 transition-all shadow-xl"
+            >
+              CONTACT SALES
+            </Link>
+            <Link
+              to="/products"
+              className="liquid-glass rounded-full px-8 py-4 text-white text-sm font-semibold hover:bg-white/10 transition-all"
+            >
+              VIEW ALL PLATFORMS
+            </Link>
           </div>
+        </div>
       </div>
-
     </div>
   );
 };
