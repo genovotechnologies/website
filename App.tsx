@@ -39,7 +39,8 @@ const App: React.FC = () => {
   return (
     <HashRouter>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen bg-[#050505] text-white overflow-x-hidden">
+      <div className="flex flex-col min-h-screen bg-[#050505] text-white overflow-x-hidden relative">
+        <div className="ambient-bg-mesh" />
         <Navbar />
         <main className="flex-grow">
           <AnimatePresence mode="wait">

@@ -47,7 +47,7 @@ const Careers: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="liquid-glass rounded-[2.5rem] p-8 border border-white/10 flex flex-col justify-between min-h-[280px]">
+          <div className="seamless-card p-8 flex flex-col justify-between min-h-[280px]">
             <div className="flex items-start justify-between">
               <div className="bg-white/10 p-3 rounded-2xl text-white">
                 <Terminal size={24} />
@@ -64,7 +64,7 @@ const Careers: React.FC = () => {
             </div>
           </div>
 
-          <div className="liquid-glass rounded-[2.5rem] p-8 border border-white/10 flex flex-col justify-between min-h-[280px]">
+          <div className="seamless-card p-8 flex flex-col justify-between min-h-[280px]">
             <div className="flex items-start justify-between">
               <div className="bg-white/10 p-3 rounded-2xl text-white">
                 <Zap size={24} />
@@ -81,7 +81,7 @@ const Careers: React.FC = () => {
             </div>
           </div>
 
-          <div className="liquid-glass rounded-[2.5rem] p-8 border border-white/10 flex flex-col justify-between min-h-[280px]">
+          <div className="seamless-card p-8 flex flex-col justify-between min-h-[280px]">
             <div className="flex items-start justify-between">
               <div className="bg-white/10 p-3 rounded-2xl text-white">
                 <Globe size={24} />
@@ -120,7 +120,7 @@ const Careers: React.FC = () => {
             <Link
               key={job.id}
               to={`/careers/${job.id}`}
-              className="liquid-glass block rounded-[2rem] p-8 border border-white/10 hover:border-white/30 transition-all duration-300 group"
+              className="seamless-card block p-8 transition-all duration-300 group"
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
@@ -150,12 +150,12 @@ const Careers: React.FC = () => {
         </div>
 
         {JOB_LISTINGS.length === 0 && (
-          <div className="text-center py-12 liquid-glass rounded-[2rem]">
+          <div className="text-center py-12 seamless-card">
             <p className="text-white/60">No open positions at the moment. Check back soon!</p>
           </div>
         )}
 
-        <div className="mt-16 p-8 liquid-glass rounded-[2rem] border border-white/10 text-center">
+        <div className="mt-16 p-8 seamless-card text-center">
           <Users className="mx-auto mb-4 text-white/50" size={32} />
           <p className="text-white/60 text-sm mb-4">Don't see your specific role?</p>
           <a

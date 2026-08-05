@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Users, Zap, Globe, Shield, Box, Server, Database, Target, Award, Hexagon, Layers, Cpu, Check, ArrowUpRight } from 'lucide-react';
+import { Zap, Globe, Box, Server, Database, Target, Award, Hexagon, Layers, Cpu, Check, ArrowUpRight } from 'lucide-react';
 import { LEADERSHIP } from '../constants';
 
 const About: React.FC = () => {
@@ -37,10 +37,10 @@ const About: React.FC = () => {
             </p>
           </div>
           <div className="relative">
-            <div className="liquid-glass rounded-[2.5rem] p-4 border border-white/10 overflow-hidden shadow-2xl">
+            <div className="seamless-card p-4 overflow-hidden shadow-2xl">
               <img
                 src="https://picsum.photos/seed/about_genovo/800/800"
-                className="rounded-[2rem] w-full h-[400px] object-cover opacity-80 hover:opacity-100 transition duration-700"
+                className="rounded-[2rem] w-full h-[400px] object-cover opacity-75 hover:opacity-95 transition duration-700"
                 alt="Generative Art"
               />
             </div>
@@ -54,7 +54,7 @@ const About: React.FC = () => {
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="liquid-glass rounded-[2rem] p-8 border border-white/10 flex flex-col justify-between min-h-[300px]">
+            <div className="seamless-card p-8 flex flex-col justify-between min-h-[280px]">
               <div>
                 <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6 text-white border border-white/10">
                   <Zap size={24} />
@@ -67,20 +67,20 @@ const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="liquid-glass rounded-[2rem] p-8 border border-white/10 flex flex-col justify-between min-h-[300px]">
+            <div className="seamless-card p-8 flex flex-col justify-between min-h-[280px]">
               <div>
                 <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6 text-white border border-white/10">
                   <Box size={24} />
                 </div>
-                <h3 className="font-heading text-xl font-bold text-white mb-2">System & Manufacturing</h3>
+                <h3 className="font-heading text-xl font-bold text-white mb-2">System & Hardware</h3>
                 <p className="text-white/60 text-sm">Engineering</p>
               </div>
               <div className="mt-4 pt-4 border-t border-white/10">
-                <p className="text-[10px] uppercase tracking-widest text-white/40">Industrial Hardware</p>
+                <p className="text-[10px] uppercase tracking-widest text-white/40">Industrial OS</p>
               </div>
             </div>
 
-            <div className="liquid-glass rounded-[2rem] p-8 border border-white/10 flex flex-col justify-between min-h-[300px]">
+            <div className="seamless-card p-8 flex flex-col justify-between min-h-[280px]">
               <div>
                 <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6 text-white border border-white/10">
                   <Server size={24} />
@@ -93,13 +93,13 @@ const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="liquid-glass rounded-[2rem] p-8 border border-white/10 flex flex-col justify-between min-h-[300px]">
+            <div className="seamless-card p-8 flex flex-col justify-between min-h-[280px]">
               <div>
                 <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6 text-white border border-white/10">
                   <Globe size={24} />
                 </div>
                 <h3 className="font-heading text-xl font-bold text-white mb-2">Systems Division</h3>
-                <p className="text-white/60 text-sm">Bysseon</p>
+                <p className="text-white/60 text-sm">Global Network</p>
               </div>
               <div className="mt-4 pt-4 border-t border-white/10">
                 <p className="text-[10px] uppercase tracking-widest text-white/40">Global Ops</p>
@@ -114,7 +114,7 @@ const About: React.FC = () => {
             CORE OPERATING VALUES
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="liquid-glass rounded-[2rem] p-8 text-center border border-white/10">
+            <div className="seamless-card p-8 text-center">
               <div className="w-14 h-14 bg-[#7342E2]/20 text-[#7342E2] border border-[#7342E2]/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Target size={24} />
               </div>
@@ -122,7 +122,7 @@ const About: React.FC = () => {
               <p className="text-white/60 text-sm font-body">Zero tolerance for error in foundational systems.</p>
             </div>
 
-            <div className="liquid-glass rounded-[2rem] p-8 text-center border border-white/10">
+            <div className="seamless-card p-8 text-center">
               <div className="w-14 h-14 bg-white/10 text-white border border-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Hexagon size={24} />
               </div>
@@ -130,7 +130,7 @@ const About: React.FC = () => {
               <p className="text-white/60 text-sm font-body">Reasoning from physics and math, not analogy.</p>
             </div>
 
-            <div className="liquid-glass rounded-[2rem] p-8 text-center border border-white/10">
+            <div className="seamless-card p-8 text-center">
               <div className="w-14 h-14 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Award size={24} />
               </div>
@@ -142,7 +142,7 @@ const About: React.FC = () => {
 
         {/* Flagship Banner */}
         <div className="mb-32">
-          <div className="liquid-glass rounded-[2.5rem] p-10 md:p-16 border border-white/10 relative overflow-hidden">
+          <div className="seamless-card p-10 md:p-16 border border-white/10 relative overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-white text-xs font-semibold uppercase tracking-wider mb-6">
@@ -167,7 +167,7 @@ const About: React.FC = () => {
                 <img
                   src="https://picsum.photos/seed/synthos_about/600/400"
                   alt="SynthOS Platform"
-                  className="rounded-2xl border border-white/10 shadow-2xl opacity-80"
+                  className="rounded-2xl border border-white/10 shadow-2xl opacity-75"
                 />
               </div>
             </div>
@@ -183,8 +183,8 @@ const About: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {LEADERSHIP.map((leader, idx) => (
-              <div key={idx} className="liquid-glass rounded-[2.5rem] p-8 sm:p-10 border border-white/10 flex flex-col items-center text-center">
-                <div className="w-40 h-40 rounded-full overflow-hidden mb-6 border-2 border-white/20 shadow-xl">
+              <div key={idx} className="seamless-card p-8 sm:p-10 flex flex-col items-center text-center">
+                <div className="w-36 h-36 rounded-full overflow-hidden mb-6 border-2 border-white/20 shadow-xl">
                   <img
                     src={`https://picsum.photos/seed/${leader.name.split(' ')[0]}/400/400`}
                     alt={leader.name}
@@ -204,7 +204,7 @@ const About: React.FC = () => {
         </div>
 
         {/* Strategy & Form */}
-        <div className="liquid-glass rounded-[2.5rem] p-10 md:p-16 border border-white/10 shadow-2xl">
+        <div className="seamless-card p-10 md:p-16 shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
               <div className="flex items-center space-x-3 mb-6">
@@ -226,17 +226,17 @@ const About: React.FC = () => {
 
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-heading font-bold text-lg text-white">Launch Taskr MVP</h3>
+                    <h3 className="font-heading font-bold text-lg text-white">Deploy Asphallea Security Engine</h3>
                     <Layers size={18} className="text-white/60" />
                   </div>
                   <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
-                    <div className="bg-white h-full w-1/2 rounded-full" />
+                    <div className="bg-white h-full w-2/3 rounded-full" />
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="liquid-glass p-8 rounded-2xl border border-white/10">
+            <div className="seamless-card p-8">
               <h3 className="font-heading text-2xl font-bold text-white mb-2">Partner With Us</h3>
               <p className="text-white/60 text-sm mb-6">Forge the Future of Computation</p>
               {partnerSubmitted ? (
@@ -267,7 +267,7 @@ const About: React.FC = () => {
                   />
                   <button
                     type="submit"
-                    className="w-full bg-white text-black font-semibold py-3 rounded-xl hover:bg-white/90 transition-all text-sm"
+                    className="w-full bg-white text-black font-semibold py-3 rounded-full hover:bg-white/90 transition-all text-sm"
                   >
                     PROPOSE PARTNERSHIP
                   </button>
