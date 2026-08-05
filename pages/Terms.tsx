@@ -11,7 +11,7 @@ const Terms: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white pt-28 pb-24">
+    <div className="bg-[#050505] text-white min-h-screen pt-36 md:pt-44 pb-24">
       {/* Header */}
       <div className="max-w-4xl mx-auto px-6 mb-16">
         <div className="inline-flex items-center space-x-2 mb-6 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full backdrop-blur-md">

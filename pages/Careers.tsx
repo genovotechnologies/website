@@ -13,7 +13,7 @@ const Careers: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white pt-28 pb-24">
+    <div className="min-h-screen bg-[#050505] text-white pt-36 md:pt-44 pb-24">
       {/* Hero */}
       <div className="max-w-[1280px] mx-auto px-6 mb-20 text-center">
         <div className="inline-block border border-white/20 px-4 py-1.5 rounded-full mb-6 bg-white/5 backdrop-blur-sm">

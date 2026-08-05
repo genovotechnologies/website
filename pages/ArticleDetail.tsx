@@ -23,15 +23,17 @@ const ArticleDetail: React.FC = () => {
   const Icon = article.icon;
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white pt-28 pb-24">
+    <div className="bg-[#050505] text-white min-h-screen pt-36 md:pt-44 pb-24">
       {/* Header */}
       <div className="max-w-4xl mx-auto px-6 mb-12">
-        <Link
-          to="/blog"
-          className="inline-flex items-center text-xs font-semibold uppercase tracking-widest text-white/60 hover:text-white transition-colors mb-8"
-        >
-          <ArrowLeft size={16} className="mr-2" /> Back to Blog
-        </Link>
+        <div className="mb-8">
+          <Link
+            to="/blog"
+            className="inline-flex items-center text-xs font-semibold uppercase tracking-widest text-white/60 hover:text-white transition-colors"
+          >
+            <ArrowLeft size={16} className="mr-2" /> Back to Blog
+          </Link>
+        </div>
 
         <div className="flex items-center gap-3 mb-6">
           <div className="p-3 bg-white/10 rounded-2xl text-white">

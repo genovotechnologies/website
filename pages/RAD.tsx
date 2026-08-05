@@ -12,7 +12,7 @@ const RAD: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-[#050505] text-white min-h-screen pt-28 pb-24">
+    <div className="bg-[#050505] text-white min-h-screen pt-36 md:pt-44 pb-24">
       {/* Header */}
       <div className="max-w-[1280px] mx-auto px-6 mb-20">
         <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#7342E2] block mb-3">

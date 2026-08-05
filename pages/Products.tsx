@@ -34,7 +34,7 @@ const Products: React.FC = () => {
   );
 
   return (
-    <div className="bg-[#050505] text-white min-h-screen pt-28 pb-24">
+    <div className="bg-[#050505] text-white min-h-screen pt-36 md:pt-44 pb-24">
       <div className="max-w-[1280px] mx-auto px-6">
         {/* Hero Header */}
         <div className="mb-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

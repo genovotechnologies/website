@@ -97,17 +97,19 @@ const ProductDetail: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white pt-28 pb-24">
+    <div className="min-h-screen bg-[#050505] text-white pt-36 md:pt-44 pb-24">
       {/* Hero Header */}
       <div className="max-w-[1280px] mx-auto px-6 mb-20">
-        <Link
-          to="/products"
-          className="inline-flex items-center text-xs font-semibold uppercase tracking-widest text-white/60 hover:text-white transition-colors mb-8"
-        >
-          <ArrowLeft size={16} className="mr-2" /> Back to Platforms
-        </Link>
+        <div className="mb-8">
+          <Link
+            to="/products"
+            className="inline-flex items-center text-xs font-semibold uppercase tracking-widest text-white/60 hover:text-white transition-colors"
+          >
+            <ArrowLeft size={16} className="mr-2" /> Back to Platforms
+          </Link>
+        </div>
 
-        <div className="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6">
+        <div className="inline-block px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
           <span className="text-[10px] font-bold uppercase tracking-widest text-white/80">
             {product.category}
           </span>

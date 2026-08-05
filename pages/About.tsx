@@ -20,7 +20,7 @@ const About: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-[#050505] text-white min-h-screen pt-28 pb-24">
+    <div className="bg-[#050505] text-white min-h-screen pt-36 md:pt-44 pb-24">
       <div className="max-w-[1280px] mx-auto px-6">
         {/* Header */}
         <div className="mb-24 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">

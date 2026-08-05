@@ -33,14 +33,16 @@ const JobDetail: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white pt-28 pb-24">
+    <div className="bg-[#050505] text-white min-h-screen pt-36 md:pt-44 pb-24">
       <div className="max-w-4xl mx-auto px-6 mb-12">
-        <Link
-          to="/careers"
-          className="inline-flex items-center text-xs font-semibold uppercase tracking-widest text-white/60 hover:text-white transition-colors mb-8"
-        >
-          <ArrowLeft size={16} className="mr-2" /> Back to Careers
-        </Link>
+        <div className="mb-8">
+          <Link
+            to="/careers"
+            className="inline-flex items-center text-xs font-semibold uppercase tracking-widest text-white/60 hover:text-white transition-colors"
+          >
+            <ArrowLeft size={16} className="mr-2" /> Back to Careers
+          </Link>
+        </div>
 
         <div className="flex flex-wrap gap-2 mb-6">
           {job.tags.map((tag, idx) => (
