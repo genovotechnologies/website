@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Zap, Globe, Box, Server, Database, Target, Award, Hexagon, Layers, Cpu, Check, ArrowUpRight } from 'lucide-react';
+import { Target, Award, Hexagon, Database, Layers, Check, ArrowUpRight } from 'lucide-react';
 import { LEADERSHIP } from '../constants';
 
 const About: React.FC = () => {
@@ -47,62 +47,42 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        {/* Structure Section */}
+        {/* Structure Section (No Icon Badges) */}
         <div className="mb-32">
           <h2 className="text-xs font-bold tracking-[0.2em] text-white/50 uppercase mb-12 text-center">
             OUR STRUCTURE: MINIMAL HIERARCHY, MAXIMUM IMPACT
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="seamless-card p-8 flex flex-col justify-between min-h-[280px]">
+            <div className="seamless-card p-8 flex flex-col justify-between min-h-[240px]">
               <div>
-                <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6 text-white border border-white/10">
-                  <Zap size={24} />
-                </div>
-                <h3 className="font-heading text-xl font-bold text-white mb-2">Intelligence & Computation</h3>
-                <p className="text-white/60 text-sm">Research</p>
-              </div>
-              <div className="mt-4 pt-4 border-t border-white/10">
-                <p className="text-[10px] uppercase tracking-widest text-white/40">Foundational Models</p>
+                <span className="text-[10px] uppercase tracking-widest text-[#7342E2] font-semibold block mb-2">Research</span>
+                <h3 className="font-heading text-2xl font-bold text-white mb-2">Intelligence & Computation</h3>
+                <p className="text-white/60 text-sm font-body">Foundational System Architectures</p>
               </div>
             </div>
 
-            <div className="seamless-card p-8 flex flex-col justify-between min-h-[280px]">
+            <div className="seamless-card p-8 flex flex-col justify-between min-h-[240px]">
               <div>
-                <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6 text-white border border-white/10">
-                  <Box size={24} />
-                </div>
-                <h3 className="font-heading text-xl font-bold text-white mb-2">System & Hardware</h3>
-                <p className="text-white/60 text-sm">Engineering</p>
-              </div>
-              <div className="mt-4 pt-4 border-t border-white/10">
-                <p className="text-[10px] uppercase tracking-widest text-white/40">Industrial OS</p>
+                <span className="text-[10px] uppercase tracking-widest text-[#7342E2] font-semibold block mb-2">Engineering</span>
+                <h3 className="font-heading text-2xl font-bold text-white mb-2">System & Hardware</h3>
+                <p className="text-white/60 text-sm font-body">Industrial Control OS</p>
               </div>
             </div>
 
-            <div className="seamless-card p-8 flex flex-col justify-between min-h-[280px]">
+            <div className="seamless-card p-8 flex flex-col justify-between min-h-[240px]">
               <div>
-                <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6 text-white border border-white/10">
-                  <Server size={24} />
-                </div>
-                <h3 className="font-heading text-xl font-bold text-white mb-2">Systems & Architecture</h3>
-                <p className="text-white/60 text-sm">Engineering</p>
-              </div>
-              <div className="mt-4 pt-4 border-t border-white/10">
-                <p className="text-[10px] uppercase tracking-widest text-white/40">Scalable Compute</p>
+                <span className="text-[10px] uppercase tracking-widest text-[#7342E2] font-semibold block mb-2">Engineering</span>
+                <h3 className="font-heading text-2xl font-bold text-white mb-2">Systems & Architecture</h3>
+                <p className="text-white/60 text-sm font-body">Scalable Compute Mesh</p>
               </div>
             </div>
 
-            <div className="seamless-card p-8 flex flex-col justify-between min-h-[280px]">
+            <div className="seamless-card p-8 flex flex-col justify-between min-h-[240px]">
               <div>
-                <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6 text-white border border-white/10">
-                  <Globe size={24} />
-                </div>
-                <h3 className="font-heading text-xl font-bold text-white mb-2">Systems Division</h3>
-                <p className="text-white/60 text-sm">Global Network</p>
-              </div>
-              <div className="mt-4 pt-4 border-t border-white/10">
-                <p className="text-[10px] uppercase tracking-widest text-white/40">Global Ops</p>
+                <span className="text-[10px] uppercase tracking-widest text-[#7342E2] font-semibold block mb-2">Global Ops</span>
+                <h3 className="font-heading text-2xl font-bold text-white mb-2">Systems Division</h3>
+                <p className="text-white/60 text-sm font-body">High-Availability Operations</p>
               </div>
             </div>
           </div>
@@ -115,26 +95,17 @@ const About: React.FC = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="seamless-card p-8 text-center">
-              <div className="w-14 h-14 bg-[#7342E2]/20 text-[#7342E2] border border-[#7342E2]/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Target size={24} />
-              </div>
-              <h3 className="font-heading font-bold text-xl mb-2 text-white">Precision</h3>
+              <h3 className="font-heading font-bold text-2xl mb-2 text-white">Precision</h3>
               <p className="text-white/60 text-sm font-body">Zero tolerance for error in foundational systems.</p>
             </div>
 
             <div className="seamless-card p-8 text-center">
-              <div className="w-14 h-14 bg-white/10 text-white border border-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Hexagon size={24} />
-              </div>
-              <h3 className="font-heading font-bold text-xl mb-2 text-white">First Principles</h3>
+              <h3 className="font-heading font-bold text-2xl mb-2 text-white">First Principles</h3>
               <p className="text-white/60 text-sm font-body">Reasoning from physics and math, not analogy.</p>
             </div>
 
             <div className="seamless-card p-8 text-center">
-              <div className="w-14 h-14 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Award size={24} />
-              </div>
-              <h3 className="font-heading font-bold text-xl mb-2 text-white">Ownership</h3>
+              <h3 className="font-heading font-bold text-2xl mb-2 text-white">Ownership</h3>
               <p className="text-white/60 text-sm font-body">Extreme accountability for every line of code.</p>
             </div>
           </div>
@@ -146,13 +117,13 @@ const About: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-white text-xs font-semibold uppercase tracking-wider mb-6">
-                  <Cpu size={14} /> Flagship Platform
+                  Flagship Platform
                 </span>
                 <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
                   SynthOS is a product of Genovo Technologies
                 </h2>
                 <p className="text-white/70 text-base leading-relaxed mb-8 font-body">
-                  Our flagship AI training data validation platform, SynthOS, represents the culmination of Genovo's mission to engineer foundational intelligence rails.
+                  Our flagship entropic dataset validation platform, SynthOS, represents the culmination of Genovo's mission to engineer foundational intelligence rails.
                 </p>
                 <a
                   href="https://synthos.dev"
@@ -217,7 +188,6 @@ const About: React.FC = () => {
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <h3 className="font-heading font-bold text-lg text-white">Scale SynthOS Enterprise</h3>
-                    <Database size={18} className="text-[#7342E2]" />
                   </div>
                   <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
                     <div className="bg-[#7342E2] h-full w-3/4 rounded-full" />
@@ -227,7 +197,6 @@ const About: React.FC = () => {
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <h3 className="font-heading font-bold text-lg text-white">Deploy Asphallea Security Engine</h3>
-                    <Layers size={18} className="text-white/60" />
                   </div>
                   <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
                     <div className="bg-white h-full w-2/3 rounded-full" />

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ArrowRight, Terminal, Globe, Zap, Briefcase, Users } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { JOB_LISTINGS } from '../constants';
 
@@ -8,7 +8,7 @@ const Careers: React.FC = () => {
     document.title = "Careers at Genovo | Join the Collective";
     document.querySelector('meta[name="description"]')?.setAttribute(
       'content',
-      "Join Genovo Technologies. We are hiring systems engineers, compiler architects, and ML researchers to build the operating systems of tomorrow. Remote-first."
+      "Join Genovo Technologies. We are hiring systems engineers, compiler architects, and infrastructure researchers to build the operating systems of tomorrow. Remote-first."
     );
   }, []);
 
@@ -47,15 +47,10 @@ const Careers: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="seamless-card p-8 flex flex-col justify-between min-h-[280px]">
-            <div className="flex items-start justify-between">
-              <div className="bg-white/10 p-3 rounded-2xl text-white">
-                <Terminal size={24} />
-              </div>
-              <span className="text-[10px] uppercase font-bold tracking-wider border border-white/20 px-2.5 py-1 rounded-full text-white/70">
-                Autonomy
-              </span>
-            </div>
+          <div className="seamless-card p-8 flex flex-col justify-between min-h-[240px]">
+            <span className="text-[10px] uppercase font-bold tracking-wider text-[#7342E2]">
+              Autonomy
+            </span>
             <div>
               <h3 className="font-heading text-2xl font-bold text-white mb-2">Independent Execution</h3>
               <p className="text-white/70 text-sm font-body">
@@ -64,32 +59,22 @@ const Careers: React.FC = () => {
             </div>
           </div>
 
-          <div className="seamless-card p-8 flex flex-col justify-between min-h-[280px]">
-            <div className="flex items-start justify-between">
-              <div className="bg-white/10 p-3 rounded-2xl text-white">
-                <Zap size={24} />
-              </div>
-              <span className="text-[10px] uppercase font-bold tracking-wider border border-white/20 px-2.5 py-1 rounded-full text-white/70">
-                Impact
-              </span>
-            </div>
+          <div className="seamless-card p-8 flex flex-col justify-between min-h-[240px]">
+            <span className="text-[10px] uppercase font-bold tracking-wider text-[#7342E2]">
+              Impact
+            </span>
             <div>
               <h3 className="font-heading text-2xl font-bold text-white mb-2">Deep Tech Mission</h3>
               <p className="text-white/70 text-sm font-body">
-                Solving hard engineering problems, not just CRUD apps.
+                Solving hard systems engineering problems with zero compromises.
               </p>
             </div>
           </div>
 
-          <div className="seamless-card p-8 flex flex-col justify-between min-h-[280px]">
-            <div className="flex items-start justify-between">
-              <div className="bg-white/10 p-3 rounded-2xl text-white">
-                <Globe size={24} />
-              </div>
-              <span className="text-[10px] uppercase font-bold tracking-wider border border-white/20 px-2.5 py-1 rounded-full text-white/70">
-                Remote
-              </span>
-            </div>
+          <div className="seamless-card p-8 flex flex-col justify-between min-h-[240px]">
+            <span className="text-[10px] uppercase font-bold tracking-wider text-[#7342E2]">
+              Remote
+            </span>
             <div>
               <h3 className="font-heading text-2xl font-bold text-white mb-2">Global Inclusivity</h3>
               <p className="text-white/70 text-sm font-body">
@@ -102,16 +87,10 @@ const Careers: React.FC = () => {
 
       {/* Open Positions */}
       <div className="max-w-[1000px] mx-auto px-6">
-        <div className="flex items-center gap-3 mb-8">
-          <div className="bg-white/10 p-2.5 rounded-xl text-white">
-            <Briefcase size={20} />
-          </div>
-          <h2 className="font-heading text-3xl font-bold text-white">OPEN POSITIONS</h2>
-        </div>
-
         <div className="mb-10">
+          <h2 className="font-heading text-4xl font-bold text-white mb-4">OPEN POSITIONS</h2>
           <p className="text-white/70 text-lg leading-relaxed font-body">
-            We are building the foundational rails for the future of computation. If you love compilers, distributed systems, and solving for n-dimensional constraints, this is home.
+            We are building foundational software rails for the future of computation. If you love compilers, distributed systems, and solving for n-dimensional constraints, this is home.
           </p>
         </div>
 
@@ -156,7 +135,6 @@ const Careers: React.FC = () => {
         )}
 
         <div className="mt-16 p-8 seamless-card text-center">
-          <Users className="mx-auto mb-4 text-white/50" size={32} />
           <p className="text-white/60 text-sm mb-4">Don't see your specific role?</p>
           <a
             href="mailto:info@genovotech.com"

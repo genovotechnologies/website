@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Shield, Cpu, Server, Code, ArrowUpRight, Github, GitBranch } from 'lucide-react';
+import { ArrowUpRight, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Research: React.FC = () => {
@@ -20,7 +20,6 @@ const Research: React.FC = () => {
       description: 'A high-precision modernization utility designed to parse, analyze, and translate legacy enterprise COBOL infrastructure directly into idiomatic, concurrent Go codebases.',
       specs: ['AST Transformation', 'Go Target', 'Zero-downtime Transpilation'],
       github: 'https://github.com/genovotechnologies',
-      icon: Code,
     },
     {
       id: 'sre-agent',
@@ -29,7 +28,6 @@ const Research: React.FC = () => {
       description: 'An automated site reliability engineering tool for managing real-time system operations, telemetry anomaly detection, and self-healing infrastructure performance.',
       specs: ['eBPF Telemetry', 'Autonomous Mitigation', 'gRPC Control Plane'],
       github: 'https://github.com/genovotechnologies',
-      icon: Server,
     },
   ];
 
@@ -42,7 +40,6 @@ const Research: React.FC = () => {
       specs: ['AST Policy Engine', '<5μs Syscall Check', 'eBPF Sandbox'],
       github: 'https://github.com/genovotechnologies',
       link: '/products/asphallea',
-      icon: Shield,
     },
     {
       id: 'epoch-vcs',
@@ -51,7 +48,6 @@ const Research: React.FC = () => {
       description: 'A next-generation distributed version control system built with C++ and Rust that leverages Merkle DAGs for petabyte-scale diffing.',
       specs: ['C++ / Rust Core', 'Merkle DAG Structure', '10GB/s Checkout'],
       github: 'https://github.com/genovotechnologies',
-      icon: GitBranch,
     },
     {
       id: 'tocinlang',
@@ -60,7 +56,6 @@ const Research: React.FC = () => {
       description: 'A high-performance systems programming language featuring a custom hand-written lexer and parser targeting LLVM IR.',
       specs: ['Custom Lexer/Parser', 'LLVM IR Target', 'Zero-cost C Interop'],
       github: 'https://github.com/genovotechnologies',
-      icon: Terminal,
     },
     {
       id: 'tosinos',
@@ -69,7 +64,6 @@ const Research: React.FC = () => {
       description: 'A 32-bit protected-mode monolithic operating system kernel utilizing x86 Assembly and C with custom virtual memory management.',
       specs: ['x86 Assembly / C', 'Protected Mode', 'Custom VMM & Scheduler'],
       github: 'https://github.com/genovotechnologies',
-      icon: Cpu,
     },
   ];
 
@@ -108,14 +102,9 @@ const Research: React.FC = () => {
               className="editorial-row flex flex-col md:flex-row md:items-center justify-between gap-6"
             >
               <div className="flex-1 max-w-3xl">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white/80">
-                    <asset.icon size={18} />
-                  </div>
-                  <span className="text-[10px] font-semibold uppercase tracking-widest text-white/50">
-                    {asset.tag}
-                  </span>
-                </div>
+                <span className="text-[10px] font-semibold uppercase tracking-widest text-white/50 block mb-2">
+                  {asset.tag}
+                </span>
 
                 <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white mb-2">
                   {asset.title}
@@ -168,14 +157,9 @@ const Research: React.FC = () => {
               className="editorial-row flex flex-col md:flex-row md:items-center justify-between gap-6"
             >
               <div className="flex-1 max-w-3xl">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-[#7342E2]">
-                    <system.icon size={18} />
-                  </div>
-                  <span className="text-[10px] font-semibold uppercase tracking-widest text-white/50">
-                    {system.tag}
-                  </span>
-                </div>
+                <span className="text-[10px] font-semibold uppercase tracking-widest text-white/50 block mb-2">
+                  {system.tag}
+                </span>
 
                 <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white mb-2">
                   {system.title}

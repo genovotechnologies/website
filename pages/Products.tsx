@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PRODUCTS } from '../constants';
 import ProductCard from '../components/ProductCard';
-import { Cpu, Shield, Layers, Terminal, Box, Database, ArrowDown } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Products: React.FC = () => {
@@ -15,7 +15,7 @@ const Products: React.FC = () => {
     document.title = "Platforms - SynthOS, SCOS, Asphallea | Genovo Technologies";
     document.querySelector('meta[name="description"]')?.setAttribute(
       'content',
-      "Explore Genovo's portfolio of deep-tech platforms: SynthOS for AI validation, SCOS for industrial autonomy, and Asphallea for execution policy guardrails."
+      "Explore Genovo's portfolio of deep-tech platforms: SynthOS for dataset validation, SCOS for industrial autonomy, and Asphallea for execution policy guardrails."
     );
 
     return () => clearTimeout(timer);
@@ -24,7 +24,6 @@ const Products: React.FC = () => {
   const ProductSkeleton = () => (
     <div className="seamless-card p-8 md:p-12 flex flex-col md:flex-row gap-8 mb-12 animate-pulse">
       <div className="flex-1 space-y-4">
-        <div className="w-12 h-12 rounded-2xl bg-white/10" />
         <div className="h-8 bg-white/10 rounded-lg w-1/2" />
         <div className="h-4 bg-white/10 rounded w-1/4" />
         <div className="h-16 bg-white/10 rounded-lg w-full" />
@@ -64,7 +63,7 @@ const Products: React.FC = () => {
           </div>
         </div>
 
-        {/* System Stack Architecture Flowchart */}
+        {/* System Stack Architecture Flowchart (No Icon Badges) */}
         <div className="mb-28">
           <div className="flex items-center gap-3 mb-8">
             <div className="w-2 h-2 bg-[#7342E2] rounded-full animate-pulse" />
@@ -77,34 +76,19 @@ const Products: React.FC = () => {
             <div className="relative z-10 flex flex-col items-center space-y-10">
               {/* Level 1: Core Platforms */}
               <div className="flex flex-wrap justify-center gap-4 sm:gap-6 w-full">
-                <Link to="/products/synthos" className="seamless-card p-6 w-full sm:w-64 flex items-center gap-4 hover:border-[#7342E2]/50 transition-all">
-                  <div className="bg-white/10 p-3 rounded-2xl text-white">
-                    <Cpu size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-bold text-base text-white">SynthOS</h3>
-                    <p className="text-[10px] text-white/50 uppercase tracking-wider">AI Validation</p>
-                  </div>
+                <Link to="/products/synthos" className="seamless-card p-6 w-full sm:w-64 flex flex-col hover:border-[#7342E2]/50 transition-all">
+                  <h3 className="font-heading font-bold text-lg text-white mb-1">SynthOS</h3>
+                  <p className="text-[10px] text-white/50 uppercase tracking-wider">Entropic Validation Engine</p>
                 </Link>
 
-                <Link to="/products/scos" className="seamless-card p-6 w-full sm:w-64 flex items-center gap-4 hover:border-[#7342E2]/50 transition-all">
-                  <div className="bg-white/10 p-3 rounded-2xl text-white">
-                    <Layers size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-bold text-base text-white">SCOS</h3>
-                    <p className="text-[10px] text-white/50 uppercase tracking-wider">Industrial OS</p>
-                  </div>
+                <Link to="/products/scos" className="seamless-card p-6 w-full sm:w-64 flex flex-col hover:border-[#7342E2]/50 transition-all">
+                  <h3 className="font-heading font-bold text-lg text-white mb-1">SCOS</h3>
+                  <p className="text-[10px] text-white/50 uppercase tracking-wider">Industrial Systems OS</p>
                 </Link>
 
-                <Link to="/products/asphallea" className="seamless-card p-6 w-full sm:w-64 flex items-center gap-4 hover:border-[#7342E2]/50 transition-all">
-                  <div className="bg-white/10 p-3 rounded-2xl text-white">
-                    <Shield size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-bold text-base text-white">Asphallea</h3>
-                    <p className="text-[10px] text-white/50 uppercase tracking-wider">Execution Policy</p>
-                  </div>
+                <Link to="/products/asphallea" className="seamless-card p-6 w-full sm:w-64 flex flex-col hover:border-[#7342E2]/50 transition-all">
+                  <h3 className="font-heading font-bold text-lg text-white mb-1">Asphallea</h3>
+                  <p className="text-[10px] text-white/50 uppercase tracking-wider">Execution Policy Guardrail</p>
                 </Link>
               </div>
 
@@ -116,14 +100,9 @@ const Products: React.FC = () => {
 
               {/* Level 2: Language Layer */}
               <div className="seamless-card p-6 w-full max-w-md flex items-center justify-between border border-[#7342E2]/30 shadow-lg">
-                <div className="flex items-center gap-4">
-                  <div className="bg-[#7342E2]/20 p-3 rounded-2xl text-white">
-                    <Terminal size={26} />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-bold text-xl text-white">TocinLang</h3>
-                    <p className="text-xs text-white/60">Systems Programming Language</p>
-                  </div>
+                <div>
+                  <h3 className="font-heading font-bold text-xl text-white">TocinLang</h3>
+                  <p className="text-xs text-white/60">Systems Programming Language</p>
                 </div>
                 <div className="bg-white/10 px-3 py-1 rounded-full text-xs font-mono text-white/80">&lt;/&gt;</div>
               </div>
@@ -136,24 +115,14 @@ const Products: React.FC = () => {
 
               {/* Level 3: Infrastructure Layer */}
               <div className="flex flex-wrap justify-center gap-4 sm:gap-6 w-full">
-                <div className="seamless-card p-6 w-full sm:w-72 flex items-center gap-4">
-                  <div className="bg-white/10 p-3 rounded-2xl text-white">
-                    <Database size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-bold text-base text-white">EPOCH VCS</h3>
-                    <p className="text-[10px] text-white/50 uppercase tracking-wider">Merkle DAG Version Control</p>
-                  </div>
+                <div className="seamless-card p-6 w-full sm:w-72 flex flex-col">
+                  <h3 className="font-heading font-bold text-base text-white mb-1">EPOCH VCS</h3>
+                  <p className="text-[10px] text-white/50 uppercase tracking-wider">Merkle DAG Version Control</p>
                 </div>
 
-                <div className="seamless-card p-6 w-full sm:w-72 flex items-center gap-4">
-                  <div className="bg-white/10 p-3 rounded-2xl text-white">
-                    <Box size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-bold text-base text-white">TosinOS</h3>
-                    <p className="text-[10px] text-white/50 uppercase tracking-wider">32-Bit Protected Mode Kernel</p>
-                  </div>
+                <div className="seamless-card p-6 w-full sm:w-72 flex flex-col">
+                  <h3 className="font-heading font-bold text-base text-white mb-1">TosinOS</h3>
+                  <p className="text-[10px] text-white/50 uppercase tracking-wider">32-Bit Protected Mode Kernel</p>
                 </div>
               </div>
             </div>

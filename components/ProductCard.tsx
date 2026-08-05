@@ -1,22 +1,12 @@
 import React from 'react';
 import { Product } from '../types';
-import { ArrowRight, Box, Cpu, Layers, Shield, Terminal } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface ProductCardProps {
   product: Product;
   reversed?: boolean;
 }
-
-const getIcon = (id: string) => {
-  switch (id) {
-    case 'synthos': return <Cpu size={24} />;
-    case 'scos': return <Layers size={24} />;
-    case 'asphallea': return <Shield size={24} />;
-    case 'tosinlang': return <Terminal size={24} />;
-    default: return <Box size={24} />;
-  }
-};
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, reversed }) => {
   return (
@@ -29,14 +19,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, reversed }) => {
       {/* Left Content */}
       <div className="flex-1 flex flex-col justify-between text-white pr-4">
         <div>
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-[#7342E2]">
-              {getIcon(product.id)}
-            </div>
-            <span className="text-[10px] font-semibold uppercase tracking-widest text-white/50">
-              {product.category}
-            </span>
-          </div>
+          <span className="text-[10px] font-semibold uppercase tracking-widest text-white/50 block mb-3">
+            {product.category}
+          </span>
 
           <h3 className="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4 group-hover:text-[#7342E2] transition-colors">
             {product.name}

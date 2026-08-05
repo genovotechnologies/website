@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Cpu, Layers, Shield, Zap, ArrowUpRight, Github } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Github } from 'lucide-react';
 
 const Home: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -159,16 +159,14 @@ const Home: React.FC = () => {
       name: 'SynthOS',
       category: 'Dataset Validation Engine',
       path: '/products/synthos',
-      icon: Cpu,
-      description: 'Entropic validation engine eliminating statistical model collapse across deep learning architectures.',
+      description: 'Entropic validation engine eliminating statistical pipeline drift across deep computation architectures.',
       github: 'https://github.com/genovotechnologies',
     },
     {
       id: 'scos',
       name: 'SCOS',
-      category: 'Industrial Hypervisor',
+      category: 'Industrial Systems OS',
       path: '/products/scos',
-      icon: Layers,
       description: 'Bare-metal microkernel hypervisor built for city-scale autonomy, robotics, and sub-millisecond interrupts.',
       github: 'https://github.com/genovotechnologies',
     },
@@ -177,7 +175,6 @@ const Home: React.FC = () => {
       name: 'Asphallea',
       category: 'Execution Policy Guardrails',
       path: '/products/asphallea',
-      icon: Shield,
       description: 'Zero-trust security utility enforcing capability boundaries, syscall containment, and tool guardrails.',
       github: 'https://github.com/genovotechnologies',
     },
@@ -256,7 +253,7 @@ const Home: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* CORE PLATFORMS (OPEN SEAMLESS EDITORIAL LAYOUT) */}
+      {/* CORE PLATFORMS (CLEAN APPLE EDITORIAL LAYOUT) */}
       <section className="relative z-10 max-w-[1280px] mx-auto px-6 py-28">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
           <div>
@@ -277,7 +274,7 @@ const Home: React.FC = () => {
           </a>
         </div>
 
-        {/* Floating Open Feature Columns (No Boxy Boundaries) */}
+        {/* Floating Editorial Columns (Zero Icon Badges) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {corePlatforms.map((platform, idx) => (
             <motion.div
@@ -289,20 +286,15 @@ const Home: React.FC = () => {
               className="flex flex-col justify-between py-6 group"
             >
               <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-[#7342E2]">
-                    <platform.icon size={22} />
-                  </div>
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-white/50">
-                    {platform.category}
-                  </span>
-                </div>
+                <span className="text-[10px] uppercase font-bold tracking-widest text-white/50 block mb-3">
+                  {platform.category}
+                </span>
 
-                <h3 className="font-heading text-3xl font-bold text-white mb-3 group-hover:text-[#7342E2] transition-colors">
+                <h3 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-4 group-hover:text-[#7342E2] transition-colors">
                   {platform.name}
                 </h3>
 
-                <p className="text-white/70 text-sm font-body leading-relaxed mb-8">
+                <p className="text-white/70 text-base font-body leading-relaxed mb-8">
                   {platform.description}
                 </p>
               </div>
@@ -332,16 +324,16 @@ const Home: React.FC = () => {
 
       {/* SYNTHOS & ASPHALLEA FEATURED BANNER */}
       <section className="relative z-10 max-w-[1280px] mx-auto px-6 mb-28">
-        <div className="floating-panel p-10 sm:p-14 flex flex-col md:flex-row items-center justify-between gap-10">
-          <div className="max-w-2xl">
+        <div className="floating-panel p-10 sm:p-16 flex flex-col md:flex-row items-center justify-between gap-10">
+          <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#7342E2]/15 text-[#7342E2] text-xs font-semibold uppercase tracking-wider mb-6">
-              <Zap size={14} /> Deterministic Guardrails
+              Deterministic Guardrails
             </span>
             <h3 className="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-white mb-6">
               SynthOS & Asphallea Security Engine
             </h3>
             <p className="text-white/70 text-base sm:text-lg font-body leading-relaxed mb-8">
-              Combining entropic dataset validation with zero-trust execution guardrails. Preventing model collapse and securing tool execution across distributed environments.
+              Combining entropic dataset validation with zero-trust execution guardrails. Preventing structural pipeline drift and securing tool execution across distributed environments.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -356,13 +348,6 @@ const Home: React.FC = () => {
               >
                 Asphallea Details <ArrowRight size={16} />
               </Link>
-            </div>
-          </div>
-
-          <div className="w-full md:w-auto flex justify-center">
-            <div className="w-48 h-48 sm:w-60 sm:h-60 rounded-full bg-gradient-to-br from-[#7342E2]/20 to-purple-900/10 flex items-center justify-center border border-white/10 shadow-2xl relative">
-              <div className="absolute inset-4 rounded-full border border-white/10 animate-spin-slow" />
-              <Shield size={56} className="text-white/90" />
             </div>
           </div>
         </div>
