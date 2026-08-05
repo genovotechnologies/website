@@ -124,11 +124,26 @@ const Home: React.FC = () => {
     };
   }, []);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (profileRequest) {
       setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 4000);
+      try {
+        const web3Key = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "9921c6c9-a27a-4b57-9782-f8cb86b95444";
+        await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            access_key: web3Key,
+            request: profileRequest,
+            from_name: 'Genovo Home Hero Request',
+            subject: `Execution Profile Request: ${profileRequest}`,
+          }),
+        });
+      } catch (err) {
+        console.error(err);
+      }
+      setTimeout(() => setSubmitted(false), 5000);
       setProfileRequest('');
     }
   };

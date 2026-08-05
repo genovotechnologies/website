@@ -23,9 +23,28 @@ const JobDetail: React.FC = () => {
     }
   }, [id, job]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormSubmitted(true);
+    try {
+      const web3Key = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "9921c6c9-a27a-4b57-9782-f8cb86b95444";
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: web3Key,
+          job_title: job?.title,
+          name: formData.name,
+          email: formData.email,
+          linkedin_portfolio: formData.linkedin,
+          message: formData.message,
+          from_name: 'Genovo Job Application',
+          subject: `Job Application: ${job?.title} - ${formData.name}`,
+        }),
+      });
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   if (!job) {

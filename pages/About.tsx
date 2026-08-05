@@ -6,9 +6,25 @@ const About: React.FC = () => {
   const [partnerForm, setPartnerForm] = useState({ name: '', email: '' });
   const [partnerSubmitted, setPartnerSubmitted] = useState(false);
 
-  const handlePartnerSubmit = (e: React.FormEvent) => {
+  const handlePartnerSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setPartnerSubmitted(true);
+    try {
+      const web3Key = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "9921c6c9-a27a-4b57-9782-f8cb86b95444";
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: web3Key,
+          name: partnerForm.name,
+          email: partnerForm.email,
+          from_name: 'Genovo Partnership Form',
+          subject: `Partnership Proposal from ${partnerForm.name}`,
+        }),
+      });
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   useEffect(() => {
