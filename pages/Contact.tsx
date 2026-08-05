@@ -20,18 +20,19 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // 1. Web3Forms Integration (Preferred simple API)
-      if (import.meta.env.VITE_WEB3FORMS_ACCESS_KEY) {
+      const web3Key = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "9921c6c9-a27a-4b57-9782-f8cb86b95444";
+      if (web3Key) {
         await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+            access_key: web3Key,
             name: formData.name,
             email: formData.email,
             organization: formData.org,
             message: formData.message,
-            from_name: 'Genovo Contact Form',
+            from_name: 'Genovo Technologies Contact Form',
+            subject: `New Inquiry from ${formData.name}`,
           }),
         });
       } 
