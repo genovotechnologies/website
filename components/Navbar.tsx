@@ -17,30 +17,13 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 max-w-[1280px] mx-auto px-6 py-5 w-full flex items-center justify-between">
-      {/* Left: Custom Geometric SVG Logo + Genovo */}
+      {/* Left: Official Genovo Titlebar Logo + Text */}
       <Link to="/" className="flex items-center space-x-3 group z-10">
-        <svg
-          width="28"
-          height="28"
-          viewBox="0 0 32 32"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="text-white transform group-hover:scale-105 transition-transform duration-300"
-        >
-          <path
-            d="M16 2L3 9.5V22.5L16 30L29 22.5V9.5L16 2Z"
-            fill="white"
-            fillOpacity="0.95"
-          />
-          <path
-            d="M16 6L8 10.625V19.875L16 24.5L24 19.875V10.625L16 6Z"
-            fill="#050505"
-          />
-          <path
-            d="M16 10L11 13V19L16 22L21 19V13L16 10Z"
-            fill="white"
-          />
-        </svg>
+        <img
+          src="/favicon.ico"
+          alt="Genovo Logo"
+          className="w-7 h-7 object-contain transform group-hover:scale-105 transition-transform duration-300"
+        />
         <span className="font-heading font-bold text-xl tracking-tight text-white">
           Genovo
         </span>
@@ -113,10 +96,8 @@ const Navbar: React.FC = () => {
             >
               <div>
                 <div className="flex items-center justify-between mb-8 pt-2">
-                  <div className="flex items-center space-x-2">
-                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
-                      <path d="M16 2L3 9.5V22.5L16 30L29 22.5V9.5L16 2Z" fill="white" />
-                    </svg>
+                  <div className="flex items-center space-x-2.5">
+                    <img src="/favicon.ico" alt="Genovo Logo" className="w-6 h-6 object-contain" />
                     <span className="font-heading font-bold text-lg text-white">Genovo</span>
                   </div>
                   <button
