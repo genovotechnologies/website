@@ -1,0 +1,38 @@
+# Allow all Web Crawlers and AI Search Bots
+User-agent: *
+Allow: /
+
+# Explicit AI Search & Indexing Bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: ByteSpider
+Allow: /
+
+# Sitemap and LLM Machine-Readable Index
+Sitemap: https://genovotechnologies.github.io/website/sitemap.xml
+Sitemap: https://genovotechnologies.github.io/website/llms.txt

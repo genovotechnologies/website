@@ -1,0 +1,23 @@
+# Genovo Technologies
+
+> Systems-first technology platform building high-precision software infrastructure, deterministic operating systems, execution security guardrails, and compiler toolchains.
+
+## Core Platforms
+
+- [Synthos](https://genovotechnologies.github.io/website/#/products/synthos): Entropic dataset validation engine eliminating structural pipeline drift across deep computation architectures.
+- [SCOS](https://genovotechnologies.github.io/website/#/products/scos): System Control Operating System: a bare-metal microkernel hypervisor built for city-scale autonomy, robotics, and sub-millisecond interrupts.
+- [Asphallea](https://genovotechnologies.github.io/website/#/products/asphallea): Zero-trust security utility enforcing capability boundaries, syscall containment, and runtime tool guardrails.
+
+## Research & Engineering Assets
+
+- [COBOL-to-Go Migration Tool](https://genovotechnologies.github.io/website/#/research): Modernization utility designed to parse and translate enterprise COBOL infrastructure directly into Go.
+- [SRE Agent](https://genovotechnologies.github.io/website/#/research): Automated site reliability engineering tool for telemetry anomaly detection and self-healing infrastructure.
+- [TocinLang](https://genovotechnologies.github.io/website/#/research): High-performance systems programming language featuring a custom lexer/parser targeting LLVM IR.
+- [EPOCH VCS](https://genovotechnologies.github.io/website/#/research): Distributed version control system built with C++ and Rust leveraging Merkle DAGs.
+- [TosinOS](https://genovotechnologies.github.io/website/#/research): 32-bit protected-mode monolithic operating system kernel written in x86 Assembly and C.
+
+## Repositories & Contact
+
+- GitHub: [https://github.com/genovotechnologies](https://github.com/genovotechnologies)
+- Contact: info@genovotech.com
+- Main Site: [https://genovotechnologies.github.io/website/](https://genovotechnologies.github.io/website/)
