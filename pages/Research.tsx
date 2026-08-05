@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Shield, Cpu, Database, Server, Code, ArrowUpRight, Github, GitBranch, Layers } from 'lucide-react';
+import { Terminal, Shield, Cpu, Server, Code, ArrowUpRight, Github, GitBranch } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Research: React.FC = () => {
@@ -18,7 +18,7 @@ const Research: React.FC = () => {
       title: 'COBOL-to-Go Migration Tool',
       tag: 'Modernization Utility',
       description: 'A high-precision modernization utility designed to parse, analyze, and translate legacy enterprise COBOL infrastructure directly into idiomatic, concurrent Go codebases.',
-      specs: ['AST Transformation', 'Go 1.22+ Target', 'Zero-downtime Transpilation'],
+      specs: ['AST Transformation', 'Go Target', 'Zero-downtime Transpilation'],
       github: 'https://github.com/genovotechnologies',
       icon: Code,
     },
@@ -76,8 +76,8 @@ const Research: React.FC = () => {
   return (
     <div className="bg-[#050505] text-white min-h-screen pt-28 pb-24">
       {/* Header */}
-      <div className="max-w-[1280px] mx-auto px-6 mb-20">
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#7342E2] block mb-3">
+      <div className="max-w-[1280px] mx-auto px-6 mb-24">
+        <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#7342E2] block mb-3">
           Research & Systems Directory
         </span>
         <h1 className="font-heading text-5xl md:text-8xl font-bold tracking-tight leading-none text-white mb-6">
@@ -89,59 +89,58 @@ const Research: React.FC = () => {
       </div>
 
       {/* Section 1: Internal Engineering Assets */}
-      <div className="max-w-[1280px] mx-auto px-6 mb-24">
-        <div className="flex items-center gap-3 mb-8">
+      <div className="max-w-[1280px] mx-auto px-6 mb-28">
+        <div className="flex items-center gap-3 mb-10">
           <div className="w-2 h-2 rounded-full bg-[#7342E2] animate-pulse" />
-          <h2 className="text-xs font-bold tracking-[0.2em] text-white/60 uppercase">
+          <h2 className="text-xs font-bold tracking-[0.25em] text-white/50 uppercase">
             01 // INTERNAL ENGINEERING ASSETS
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="space-y-4">
           {internalAssets.map((asset, idx) => (
             <motion.div
               key={asset.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="liquid-glass rounded-[2.5rem] p-8 border border-white/10 hover:border-white/30 transition-all flex flex-col justify-between"
+              className="editorial-row flex flex-col md:flex-row md:items-center justify-between gap-6"
             >
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-white/10 text-white flex items-center justify-center border border-white/10">
-                    <asset.icon size={24} />
+              <div className="flex-1 max-w-3xl">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white/80">
+                    <asset.icon size={18} />
                   </div>
-                  <span className="text-[10px] font-semibold uppercase tracking-wider bg-white/10 text-white/80 px-3 py-1 rounded-full border border-white/10">
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-white/50">
                     {asset.tag}
                   </span>
                 </div>
 
-                <h3 className="font-heading text-2xl font-bold text-white mb-3">
+                <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white mb-2">
                   {asset.title}
                 </h3>
-                <p className="text-white/70 text-sm font-body leading-relaxed mb-6">
+                <p className="text-white/70 text-sm font-body leading-relaxed mb-4">
                   {asset.description}
                 </p>
-              </div>
 
-              <div className="pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
                 <div className="flex flex-wrap gap-2">
                   {asset.specs.map((spec, sIdx) => (
-                    <span key={sIdx} className="text-[10px] font-mono text-white/60 bg-white/5 px-2.5 py-1 rounded-md border border-white/5">
+                    <span key={sIdx} className="text-[10px] font-mono text-white/60 bg-white/5 px-3 py-1 rounded-full">
                       {spec}
                     </span>
                   ))}
                 </div>
+              </div>
 
+              <div>
                 <a
                   href={asset.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="liquid-glass p-2.5 rounded-full text-white/80 hover:text-white transition-colors"
-                  aria-label={`${asset.title} GitHub Repo`}
+                  className="inline-flex items-center gap-2 text-xs font-semibold text-white/80 hover:text-white transition-colors"
                 >
-                  <Github size={18} />
+                  <Github size={16} /> Repository <ArrowUpRight size={14} />
                 </a>
               </div>
             </motion.div>
@@ -151,69 +150,66 @@ const Research: React.FC = () => {
 
       {/* Section 2: Associated Systems & Security Infrastructure */}
       <div className="max-w-[1280px] mx-auto px-6">
-        <div className="flex items-center gap-3 mb-8">
+        <div className="flex items-center gap-3 mb-10">
           <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <h2 className="text-xs font-bold tracking-[0.2em] text-white/60 uppercase">
+          <h2 className="text-xs font-bold tracking-[0.25em] text-white/50 uppercase">
             02 // ASSOCIATED SYSTEMS & SECURITY INFRASTRUCTURE
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="space-y-4">
           {associatedSystems.map((system, idx) => (
             <motion.div
               key={system.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="liquid-glass rounded-[2.5rem] p-8 border border-white/10 hover:border-white/30 transition-all flex flex-col justify-between"
+              className="editorial-row flex flex-col md:flex-row md:items-center justify-between gap-6"
             >
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-white/10 text-white flex items-center justify-center border border-white/10">
-                    <system.icon size={24} />
+              <div className="flex-1 max-w-3xl">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-[#7342E2]">
+                    <system.icon size={18} />
                   </div>
-                  <span className="text-[10px] font-semibold uppercase tracking-wider bg-white/10 text-white/80 px-3 py-1 rounded-full border border-white/10">
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-white/50">
                     {system.tag}
                   </span>
                 </div>
 
-                <h3 className="font-heading text-2xl font-bold text-white mb-3">
+                <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white mb-2">
                   {system.title}
                 </h3>
-                <p className="text-white/70 text-sm font-body leading-relaxed mb-6">
+                <p className="text-white/70 text-sm font-body leading-relaxed mb-4">
                   {system.description}
                 </p>
-              </div>
 
-              <div className="pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
                 <div className="flex flex-wrap gap-2">
                   {system.specs.map((spec, sIdx) => (
-                    <span key={sIdx} className="text-[10px] font-mono text-white/60 bg-white/5 px-2.5 py-1 rounded-md border border-white/5">
+                    <span key={sIdx} className="text-[10px] font-mono text-white/60 bg-white/5 px-3 py-1 rounded-full">
                       {spec}
                     </span>
                   ))}
                 </div>
+              </div>
 
-                <div className="flex items-center gap-2">
-                  {system.link && (
-                    <Link
-                      to={system.link}
-                      className="text-xs text-white/80 hover:text-white font-semibold flex items-center gap-1 mr-2"
-                    >
-                      Specs <ArrowUpRight size={14} />
-                    </Link>
-                  )}
-                  <a
-                    href={system.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="liquid-glass p-2.5 rounded-full text-white/80 hover:text-white transition-colors"
-                    aria-label={`${system.title} GitHub Repo`}
+              <div className="flex items-center gap-4">
+                {system.link && (
+                  <Link
+                    to={system.link}
+                    className="text-xs font-semibold text-white/80 hover:text-white transition-colors"
                   >
-                    <Github size={18} />
-                  </a>
-                </div>
+                    Specifications
+                  </Link>
+                )}
+                <a
+                  href={system.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-xs font-semibold text-white/80 hover:text-white transition-colors"
+                >
+                  <Github size={16} /> Repository <ArrowUpRight size={14} />
+                </a>
               </div>
             </motion.div>
           ))}

@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Cpu, Layers, Shield, Zap, ArrowUpRight, Github } from 'lucide-react';
-import { PRODUCTS } from '../constants';
 
 const Home: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -158,28 +157,28 @@ const Home: React.FC = () => {
     {
       id: 'synthos',
       name: 'SynthOS',
-      category: 'AI Training Data Validation',
+      category: 'Dataset Validation Engine',
       path: '/products/synthos',
       icon: Cpu,
-      description: 'Entropic data validation engine eliminating model collapse across deep learning workloads.',
+      description: 'Entropic validation engine eliminating statistical model collapse across deep learning architectures.',
       github: 'https://github.com/genovotechnologies',
     },
     {
       id: 'scos',
       name: 'SCOS',
-      category: 'Industrial Intelligence OS',
+      category: 'Industrial Hypervisor',
       path: '/products/scos',
       icon: Layers,
-      description: 'Bare-metal deterministic hypervisor powering autonomous factories and city-scale robotics.',
+      description: 'Bare-metal microkernel hypervisor built for city-scale autonomy, robotics, and sub-millisecond interrupts.',
       github: 'https://github.com/genovotechnologies',
     },
     {
       id: 'asphallea',
       name: 'Asphallea',
-      category: 'Security & Policy Guardrails',
+      category: 'Execution Policy Guardrails',
       path: '/products/asphallea',
       icon: Shield,
-      description: 'Zero-trust security utility enforcing strict capability limits and execution policies.',
+      description: 'Zero-trust security utility enforcing capability boundaries, syscall containment, and tool guardrails.',
       github: 'https://github.com/genovotechnologies',
     },
   ];
@@ -229,7 +228,7 @@ const Home: React.FC = () => {
           <motion.div variants={itemVariants} className="w-full max-w-[480px]">
             {submitted ? (
               <div className="liquid-glass rounded-full px-6 py-4 text-emerald-400 text-sm font-medium text-center shadow-xl">
-                ✓ Profile request submitted to core architecture team.
+                ✓ Execution profile request transmitted.
               </div>
             ) : (
               <form
@@ -257,29 +256,29 @@ const Home: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* CORE PLATFORMS (SYNTHOS, SCOS, ASPHALLEA) */}
-      <section className="relative z-10 max-w-[1280px] mx-auto px-6 py-24 border-t border-white/5">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      {/* CORE PLATFORMS (OPEN SEAMLESS EDITORIAL LAYOUT) */}
+      <section className="relative z-10 max-w-[1280px] mx-auto px-6 py-28">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#7342E2] block mb-3">
-              Core Systems Platform
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#7342E2] block mb-3">
+              SYSTEM ARCHITECTURE
             </span>
-            <h2 className="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-white">
-              Determinism & Execution Security
+            <h2 className="font-heading text-4xl sm:text-6xl font-bold tracking-tight text-white">
+              Determinism & Security
             </h2>
           </div>
           <a
             href="https://github.com/genovotechnologies"
             target="_blank"
             rel="noopener noreferrer"
-            className="liquid-glass rounded-full px-6 py-3 text-sm font-medium text-white/90 hover:text-white inline-flex items-center gap-2 w-fit transition-all"
+            className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white/70 hover:text-white transition-colors py-2"
           >
-            <Github size={16} /> Access Repositories
+            <Github size={16} /> Access Repositories <ArrowUpRight size={14} />
           </a>
         </div>
 
-        {/* Asymmetrical Staggered Cards Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Floating Open Feature Columns (No Boxy Boundaries) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {corePlatforms.map((platform, idx) => (
             <motion.div
               key={platform.id}
@@ -287,22 +286,23 @@ const Home: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.15 }}
-              className="liquid-glass rounded-[2.5rem] p-8 flex flex-col justify-between group hover:bg-white/[0.05] transition-all duration-500 min-h-[380px] border border-white/10"
+              className="flex flex-col justify-between py-6 group"
             >
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-white mb-8 border border-white/10 group-hover:scale-110 transition-transform">
-                  <platform.icon size={26} />
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-[#7342E2]">
+                    <platform.icon size={22} />
+                  </div>
+                  <span className="text-[10px] uppercase font-bold tracking-widest text-white/50">
+                    {platform.category}
+                  </span>
                 </div>
 
-                <span className="text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full bg-white/10 text-white/70 inline-block mb-3 border border-white/10">
-                  {platform.category}
-                </span>
-
-                <h3 className="font-heading text-3xl font-bold text-white mb-3">
+                <h3 className="font-heading text-3xl font-bold text-white mb-3 group-hover:text-[#7342E2] transition-colors">
                   {platform.name}
                 </h3>
 
-                <p className="text-white/70 text-sm font-body leading-relaxed mb-6">
+                <p className="text-white/70 text-sm font-body leading-relaxed mb-8">
                   {platform.description}
                 </p>
               </div>
@@ -312,17 +312,17 @@ const Home: React.FC = () => {
                   to={platform.path}
                   className="inline-flex items-center gap-2 text-xs font-semibold text-white/80 group-hover:text-white transition-colors"
                 >
-                  System Specs <ArrowRight size={14} />
+                  Technical Specs <ArrowRight size={14} />
                 </Link>
 
                 <a
                   href={platform.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/50 hover:text-white transition-colors p-2"
+                  className="text-white/40 hover:text-white transition-colors p-1"
                   aria-label={`${platform.name} GitHub Repository`}
                 >
-                  <ArrowUpRight size={18} />
+                  <ArrowUpRight size={16} />
                 </a>
               </div>
             </motion.div>
@@ -331,10 +331,10 @@ const Home: React.FC = () => {
       </section>
 
       {/* SYNTHOS & ASPHALLEA FEATURED BANNER */}
-      <section className="relative z-10 max-w-[1280px] mx-auto px-6 mb-24">
-        <div className="liquid-glass rounded-[2.5rem] p-8 sm:p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 border border-white/10">
+      <section className="relative z-10 max-w-[1280px] mx-auto px-6 mb-28">
+        <div className="floating-panel p-10 sm:p-14 flex flex-col md:flex-row items-center justify-between gap-10">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold uppercase tracking-wider mb-6">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#7342E2]/15 text-[#7342E2] text-xs font-semibold uppercase tracking-wider mb-6">
               <Zap size={14} /> Deterministic Guardrails
             </span>
             <h3 className="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-white mb-6">
@@ -346,13 +346,13 @@ const Home: React.FC = () => {
             <div className="flex flex-wrap gap-4">
               <Link
                 to="/products/synthos"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-black font-semibold text-sm hover:bg-white/90 transition-all shadow-xl"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-black font-semibold text-sm hover:bg-white/90 transition-all shadow-xl"
               >
                 SynthOS Details <ArrowRight size={16} />
               </Link>
               <Link
                 to="/products/asphallea"
-                className="liquid-glass inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold text-sm hover:bg-white/10 transition-all"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-white font-semibold text-sm hover:bg-white/10 transition-all"
               >
                 Asphallea Details <ArrowRight size={16} />
               </Link>
@@ -360,9 +360,9 @@ const Home: React.FC = () => {
           </div>
 
           <div className="w-full md:w-auto flex justify-center">
-            <div className="w-48 h-48 sm:w-64 sm:h-64 rounded-full bg-gradient-to-br from-[#7342E2]/30 to-purple-900/10 flex items-center justify-center border border-white/10 shadow-2xl relative">
+            <div className="w-48 h-48 sm:w-60 sm:h-60 rounded-full bg-gradient-to-br from-[#7342E2]/20 to-purple-900/10 flex items-center justify-center border border-white/10 shadow-2xl relative">
               <div className="absolute inset-4 rounded-full border border-white/10 animate-spin-slow" />
-              <Shield size={64} className="text-white/90" />
+              <Shield size={56} className="text-white/90" />
             </div>
           </div>
         </div>

@@ -22,8 +22,8 @@ export const PRODUCTS: Product[] = [
   {
     id: "synthos",
     name: "SynthOS",
-    category: "AI Training Data Validation",
-    description: "The flagship AI training data validation platform eliminating model collapse.",
+    category: "Dataset Validation Engine",
+    description: "The flagship training dataset validation platform eliminating structural model collapse.",
     longDescription: "SynthOS represents a paradigm shift in how AI models perceive reality. By validating training data at the entropic level, SynthOS acts as an immune system for Large Language Models and Generative Architectures. It detects subtle statistical drifts that lead to model collapse before they impact inference quality, ensuring long-term stability for mission-critical AI deployments.",
     specs: [
         { label: "Validation Rate", value: "10TB/hr" },

@@ -7,23 +7,23 @@ import NotFound from './NotFound';
 const ArchitectureDiagram: React.FC<{ type?: string }> = ({ type }) => {
   if (type === 'synthos') {
     return (
-      <div className="w-full bg-[#080808] p-6 rounded-2xl border border-white/10 flex flex-col items-center justify-center text-center space-y-4">
-        <div className="text-xs font-mono text-white/50 uppercase tracking-widest mb-2">SynthOS Entropic Pipeline Architecture</div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
-          <div className="liquid-glass p-4 rounded-xl text-center border border-white/10">
-            <Cpu className="mx-auto mb-2 text-[#7342E2]" size={20} />
-            <div className="text-xs font-bold text-white">Ingestion Layer</div>
-            <div className="text-[10px] text-white/50">10TB/hr Streaming</div>
+      <div className="w-full py-8 border-y border-white/10 flex flex-col items-center justify-center text-center space-y-6">
+        <div className="text-xs font-mono text-white/50 uppercase tracking-widest">SynthOS Pipeline Architecture</div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
+          <div className="floating-panel p-6 text-center">
+            <Cpu className="mx-auto mb-3 text-[#7342E2]" size={24} />
+            <div className="text-sm font-bold text-white">Ingestion Layer</div>
+            <div className="text-xs text-white/50 mt-1">10TB/hr Streaming</div>
           </div>
-          <div className="liquid-glass p-4 rounded-xl text-center border border-[#7342E2]/40 bg-[#7342E2]/10">
-            <Activity className="mx-auto mb-2 text-emerald-400" size={20} />
-            <div className="text-xs font-bold text-white">Entropic Engine</div>
-            <div className="text-[10px] text-emerald-400">&lt;1ms Drift Analysis</div>
+          <div className="floating-panel p-6 text-center bg-[#7342E2]/10">
+            <Activity className="mx-auto mb-3 text-emerald-400" size={24} />
+            <div className="text-sm font-bold text-white">Entropic Engine</div>
+            <div className="text-xs text-emerald-400 mt-1">&lt;1ms Drift Analysis</div>
           </div>
-          <div className="liquid-glass p-4 rounded-xl text-center border border-white/10">
-            <Shield className="mx-auto mb-2 text-purple-400" size={20} />
-            <div className="text-xs font-bold text-white">Validation Mesh</div>
-            <div className="text-[10px] text-white/50">LLM Guardrail</div>
+          <div className="floating-panel p-6 text-center">
+            <Shield className="mx-auto mb-3 text-purple-400" size={24} />
+            <div className="text-sm font-bold text-white">Validation Mesh</div>
+            <div className="text-xs text-white/50 mt-1">Execution Guardrail</div>
           </div>
         </div>
       </div>
@@ -32,23 +32,23 @@ const ArchitectureDiagram: React.FC<{ type?: string }> = ({ type }) => {
 
   if (type === 'scos') {
     return (
-      <div className="w-full bg-[#080808] p-6 rounded-2xl border border-white/10 flex flex-col items-center justify-center text-center space-y-4">
-        <div className="text-xs font-mono text-white/50 uppercase tracking-widest mb-2">SCOS Microkernel Architecture</div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
-          <div className="liquid-glass p-4 rounded-xl text-center border border-white/10">
-            <Layers className="mx-auto mb-2 text-amber-400" size={20} />
-            <div className="text-xs font-bold text-white">Bare-Metal Core</div>
-            <div className="text-[10px] text-white/50">40ns Latency</div>
+      <div className="w-full py-8 border-y border-white/10 flex flex-col items-center justify-center text-center space-y-6">
+        <div className="text-xs font-mono text-white/50 uppercase tracking-widest">SCOS Microkernel Hypervisor</div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
+          <div className="floating-panel p-6 text-center">
+            <Layers className="mx-auto mb-3 text-amber-400" size={24} />
+            <div className="text-sm font-bold text-white">Bare-Metal Core</div>
+            <div className="text-xs text-white/50 mt-1">40ns Latency</div>
           </div>
-          <div className="liquid-glass p-4 rounded-xl text-center border border-amber-500/40 bg-amber-500/10">
-            <Cpu className="mx-auto mb-2 text-amber-400" size={20} />
-            <div className="text-xs font-bold text-white">Hypervisor</div>
-            <div className="text-[10px] text-amber-400">ASIL-D Certified</div>
+          <div className="floating-panel p-6 text-center bg-amber-500/10">
+            <Cpu className="mx-auto mb-3 text-amber-400" size={24} />
+            <div className="text-sm font-bold text-white">Hypervisor</div>
+            <div className="text-xs text-amber-400 mt-1">ASIL-D Certified</div>
           </div>
-          <div className="liquid-glass p-4 rounded-xl text-center border border-white/10">
-            <Terminal className="mx-auto mb-2 text-white/70" size={20} />
-            <div className="text-xs font-bold text-white">Autonomous Bus</div>
-            <div className="text-[10px] text-white/50">50MB Footprint</div>
+          <div className="floating-panel p-6 text-center">
+            <Terminal className="mx-auto mb-3 text-white/70" size={24} />
+            <div className="text-sm font-bold text-white">Autonomous Bus</div>
+            <div className="text-xs text-white/50 mt-1">50MB Footprint</div>
           </div>
         </div>
       </div>
@@ -57,23 +57,23 @@ const ArchitectureDiagram: React.FC<{ type?: string }> = ({ type }) => {
 
   if (type === 'asphallea') {
     return (
-      <div className="w-full bg-[#080808] p-6 rounded-2xl border border-white/10 flex flex-col items-center justify-center text-center space-y-4">
-        <div className="text-xs font-mono text-white/50 uppercase tracking-widest mb-2">Asphallea Execution Policy Sandbox</div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
-          <div className="liquid-glass p-4 rounded-xl text-center border border-white/10">
-            <Shield className="mx-auto mb-2 text-emerald-400" size={20} />
-            <div className="text-xs font-bold text-white">Syscall Intercept</div>
-            <div className="text-[10px] text-white/50">&lt;5μs Overhead</div>
+      <div className="w-full py-8 border-y border-white/10 flex flex-col items-center justify-center text-center space-y-6">
+        <div className="text-xs font-mono text-white/50 uppercase tracking-widest">Asphallea Execution Policy Sandbox</div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
+          <div className="floating-panel p-6 text-center">
+            <Shield className="mx-auto mb-3 text-emerald-400" size={24} />
+            <div className="text-sm font-bold text-white">Syscall Intercept</div>
+            <div className="text-xs text-white/50 mt-1">&lt;5μs Overhead</div>
           </div>
-          <div className="liquid-glass p-4 rounded-xl text-center border border-emerald-500/40 bg-emerald-500/10">
-            <Activity className="mx-auto mb-2 text-emerald-400" size={20} />
-            <div className="text-xs font-bold text-white">AST Policy Engine</div>
-            <div className="text-[10px] text-emerald-400">Zero-Trust Guard</div>
+          <div className="floating-panel p-6 text-center bg-emerald-500/10">
+            <Activity className="mx-auto mb-3 text-emerald-400" size={24} />
+            <div className="text-sm font-bold text-white">AST Policy Engine</div>
+            <div className="text-xs text-emerald-400 mt-1">Zero-Trust Guard</div>
           </div>
-          <div className="liquid-glass p-4 rounded-xl text-center border border-white/10">
-            <Terminal className="mx-auto mb-2 text-white/70" size={20} />
-            <div className="text-xs font-bold text-white">eBPF Sandbox</div>
-            <div className="text-[10px] text-white/50">Capability Limits</div>
+          <div className="floating-panel p-6 text-center">
+            <Terminal className="mx-auto mb-3 text-white/70" size={24} />
+            <div className="text-sm font-bold text-white">eBPF Sandbox</div>
+            <div className="text-xs text-white/50 mt-1">Capability Limits</div>
           </div>
         </div>
       </div>
@@ -81,7 +81,7 @@ const ArchitectureDiagram: React.FC<{ type?: string }> = ({ type }) => {
   }
 
   return (
-    <div className="w-full bg-[#080808] p-6 rounded-2xl border border-white/10 text-center text-white/50 text-xs font-mono">
+    <div className="w-full py-6 text-center text-white/50 text-xs font-mono border-y border-white/10">
       System Architecture Diagram v2.1
     </div>
   );
@@ -108,7 +108,7 @@ const ProductDetail: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#050505] text-white pt-28 pb-24">
       {/* Hero Header */}
-      <div className="max-w-[1280px] mx-auto px-6 mb-16">
+      <div className="max-w-[1280px] mx-auto px-6 mb-20">
         <Link
           to="/products"
           className="inline-flex items-center text-xs font-semibold uppercase tracking-widest text-white/60 hover:text-white transition-colors mb-8"
@@ -116,7 +116,7 @@ const ProductDetail: React.FC = () => {
           <ArrowLeft size={16} className="mr-2" /> Back to Platforms
         </Link>
 
-        <div className="inline-block border border-white/20 px-3.5 py-1 rounded-full bg-white/5 backdrop-blur-md mb-6">
+        <div className="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6">
           <span className="text-[10px] font-bold uppercase tracking-widest text-white/80">
             {product.category}
           </span>
@@ -155,37 +155,37 @@ const ProductDetail: React.FC = () => {
       </div>
 
       {/* Content Grid */}
-      <div className="max-w-[1280px] mx-auto px-6 mb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div className="max-w-[1280px] mx-auto px-6 mb-28">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Left Column */}
-          <div className="lg:col-span-7 space-y-12">
-            <div className="liquid-glass rounded-[2.5rem] p-8 sm:p-10 border border-white/10">
-              <h2 className="text-xs font-bold tracking-[0.2em] text-[#7342E2] uppercase mb-6">
+          <div className="lg:col-span-7 space-y-16">
+            <div>
+              <h2 className="text-xs font-bold tracking-[0.25em] text-[#7342E2] uppercase mb-4">
                 SYSTEM OVERVIEW
               </h2>
-              <p className="text-base sm:text-lg text-white/80 font-body leading-relaxed">
+              <p className="text-lg sm:text-xl text-white/80 font-body leading-relaxed">
                 {product.longDescription || product.description}
               </p>
             </div>
 
-            <div className="liquid-glass rounded-[2.5rem] p-8 sm:p-10 border border-white/10">
-              <h2 className="text-xs font-bold tracking-[0.2em] text-[#7342E2] uppercase mb-6">
-                ARCHITECTURE & FLOW PIPELINE
+            <div>
+              <h2 className="text-xs font-bold tracking-[0.25em] text-[#7342E2] uppercase mb-6">
+                ARCHITECTURE PIPELINE
               </h2>
               <ArchitectureDiagram type={product.architectureType || product.id} />
             </div>
 
-            <div className="liquid-glass rounded-[2.5rem] p-8 sm:p-10 border border-white/10">
-              <h2 className="text-xs font-bold tracking-[0.2em] text-[#7342E2] uppercase mb-6">
+            <div>
+              <h2 className="text-xs font-bold tracking-[0.25em] text-[#7342E2] uppercase mb-6">
                 CORE CAPABILITIES
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {product.features.map((feature, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10"
+                    className="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/5"
                   >
-                    <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/30">
+                    <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
                       <Check size={12} />
                     </div>
                     <span className="text-sm font-medium text-white/80">{feature}</span>
@@ -196,8 +196,8 @@ const ProductDetail: React.FC = () => {
           </div>
 
           {/* Right Column: Specs */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="liquid-glass rounded-[2.5rem] p-8 border border-white/10 shadow-2xl">
+          <div className="lg:col-span-5 space-y-10">
+            <div className="floating-panel p-8">
               <div className="flex items-center gap-3 mb-6">
                 <Activity className="text-emerald-400" size={20} />
                 <h3 className="font-heading font-bold text-xl text-white">Technical Specifications</h3>
@@ -222,10 +222,10 @@ const ProductDetail: React.FC = () => {
               </div>
             </div>
 
-            <div className="liquid-glass rounded-[2.5rem] p-6 border border-white/10 text-center">
+            <div className="floating-panel p-8 text-center">
               <Github size={32} className="mx-auto mb-3 text-white/80" />
-              <h4 className="font-heading font-bold text-lg text-white mb-2">Open Source & Repository Access</h4>
-              <p className="text-white/60 text-xs mb-4 font-body">
+              <h4 className="font-heading font-bold text-lg text-white mb-2">Repository & Codebase</h4>
+              <p className="text-white/60 text-xs mb-6 font-body">
                 Access the source code, security audit logs, and integration documentation on GitHub.
               </p>
               <a
@@ -243,7 +243,7 @@ const ProductDetail: React.FC = () => {
 
       {/* Bottom CTA */}
       <div className="max-w-[1280px] mx-auto px-6">
-        <div className="liquid-glass rounded-[2.5rem] p-10 md:p-16 border border-white/10 text-center">
+        <div className="floating-panel p-10 md:p-16 text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to deploy {product.name}?
           </h2>
