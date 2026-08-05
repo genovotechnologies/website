@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { PRODUCTS } from '../constants';
-import { ArrowLeft, Check, Activity, ArrowUpRight, Github, Shield, Cpu, Layers, Terminal } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Github } from 'lucide-react';
 import NotFound from './NotFound';
 
 const ArchitectureDiagram: React.FC<{ type?: string }> = ({ type }) => {
@@ -11,19 +11,16 @@ const ArchitectureDiagram: React.FC<{ type?: string }> = ({ type }) => {
         <div className="text-xs font-mono text-white/50 uppercase tracking-widest">SynthOS Pipeline Architecture</div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
           <div className="floating-panel p-6 text-center">
-            <Cpu className="mx-auto mb-3 text-[#7342E2]" size={24} />
-            <div className="text-sm font-bold text-white">Ingestion Layer</div>
-            <div className="text-xs text-white/50 mt-1">10TB/hr Streaming</div>
+            <div className="text-sm font-bold text-white mb-1">Ingestion Layer</div>
+            <div className="text-xs text-white/50">10TB/hr Streaming</div>
           </div>
           <div className="floating-panel p-6 text-center bg-[#7342E2]/10">
-            <Activity className="mx-auto mb-3 text-emerald-400" size={24} />
-            <div className="text-sm font-bold text-white">Entropic Engine</div>
-            <div className="text-xs text-emerald-400 mt-1">&lt;1ms Drift Analysis</div>
+            <div className="text-sm font-bold text-white mb-1">Entropic Engine</div>
+            <div className="text-xs text-emerald-400">&lt;1ms Drift Analysis</div>
           </div>
           <div className="floating-panel p-6 text-center">
-            <Shield className="mx-auto mb-3 text-purple-400" size={24} />
-            <div className="text-sm font-bold text-white">Validation Mesh</div>
-            <div className="text-xs text-white/50 mt-1">Execution Guardrail</div>
+            <div className="text-sm font-bold text-white mb-1">Validation Mesh</div>
+            <div className="text-xs text-white/50">Execution Guardrail</div>
           </div>
         </div>
       </div>
@@ -36,19 +33,16 @@ const ArchitectureDiagram: React.FC<{ type?: string }> = ({ type }) => {
         <div className="text-xs font-mono text-white/50 uppercase tracking-widest">SCOS Microkernel Hypervisor</div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
           <div className="floating-panel p-6 text-center">
-            <Layers className="mx-auto mb-3 text-amber-400" size={24} />
-            <div className="text-sm font-bold text-white">Bare-Metal Core</div>
-            <div className="text-xs text-white/50 mt-1">40ns Latency</div>
+            <div className="text-sm font-bold text-white mb-1">Bare-Metal Core</div>
+            <div className="text-xs text-white/50">40ns Latency</div>
           </div>
           <div className="floating-panel p-6 text-center bg-amber-500/10">
-            <Cpu className="mx-auto mb-3 text-amber-400" size={24} />
-            <div className="text-sm font-bold text-white">Hypervisor</div>
-            <div className="text-xs text-amber-400 mt-1">ASIL-D Certified</div>
+            <div className="text-sm font-bold text-white mb-1">Hypervisor</div>
+            <div className="text-xs text-amber-400">ASIL-D Certified</div>
           </div>
           <div className="floating-panel p-6 text-center">
-            <Terminal className="mx-auto mb-3 text-white/70" size={24} />
-            <div className="text-sm font-bold text-white">Autonomous Bus</div>
-            <div className="text-xs text-white/50 mt-1">50MB Footprint</div>
+            <div className="text-sm font-bold text-white mb-1">Autonomous Bus</div>
+            <div className="text-xs text-white/50">50MB Footprint</div>
           </div>
         </div>
       </div>
@@ -61,19 +55,16 @@ const ArchitectureDiagram: React.FC<{ type?: string }> = ({ type }) => {
         <div className="text-xs font-mono text-white/50 uppercase tracking-widest">Asphallea Execution Policy Sandbox</div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
           <div className="floating-panel p-6 text-center">
-            <Shield className="mx-auto mb-3 text-emerald-400" size={24} />
-            <div className="text-sm font-bold text-white">Syscall Intercept</div>
-            <div className="text-xs text-white/50 mt-1">&lt;5μs Overhead</div>
+            <div className="text-sm font-bold text-white mb-1">Syscall Intercept</div>
+            <div className="text-xs text-white/50">&lt;5μs Overhead</div>
           </div>
           <div className="floating-panel p-6 text-center bg-emerald-500/10">
-            <Activity className="mx-auto mb-3 text-emerald-400" size={24} />
-            <div className="text-sm font-bold text-white">AST Policy Engine</div>
-            <div className="text-xs text-emerald-400 mt-1">Zero-Trust Guard</div>
+            <div className="text-sm font-bold text-white mb-1">AST Policy Engine</div>
+            <div className="text-xs text-emerald-400">Zero-Trust Guard</div>
           </div>
           <div className="floating-panel p-6 text-center">
-            <Terminal className="mx-auto mb-3 text-white/70" size={24} />
-            <div className="text-sm font-bold text-white">eBPF Sandbox</div>
-            <div className="text-xs text-white/50 mt-1">Capability Limits</div>
+            <div className="text-sm font-bold text-white mb-1">eBPF Sandbox</div>
+            <div className="text-xs text-white/50">Capability Limits</div>
           </div>
         </div>
       </div>
@@ -183,11 +174,8 @@ const ProductDetail: React.FC = () => {
                 {product.features.map((feature, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/5"
+                    className="p-4 rounded-2xl bg-white/5 border border-white/5"
                   >
-                    <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                      <Check size={12} />
-                    </div>
                     <span className="text-sm font-medium text-white/80">{feature}</span>
                   </div>
                 ))}
@@ -198,10 +186,7 @@ const ProductDetail: React.FC = () => {
           {/* Right Column: Specs */}
           <div className="lg:col-span-5 space-y-10">
             <div className="floating-panel p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <Activity className="text-emerald-400" size={20} />
-                <h3 className="font-heading font-bold text-xl text-white">Technical Specifications</h3>
-              </div>
+              <h3 className="font-heading font-bold text-xl text-white mb-6">Technical Specifications</h3>
 
               <div className="space-y-4">
                 {product.specs ? (
@@ -223,7 +208,6 @@ const ProductDetail: React.FC = () => {
             </div>
 
             <div className="floating-panel p-8 text-center">
-              <Github size={32} className="mx-auto mb-3 text-white/80" />
               <h4 className="font-heading font-bold text-lg text-white mb-2">Repository & Codebase</h4>
               <p className="text-white/60 text-xs mb-6 font-body">
                 Access the source code, security audit logs, and integration documentation on GitHub.
@@ -234,7 +218,7 @@ const ProductDetail: React.FC = () => {
                 rel="noopener noreferrer"
                 className="liquid-glass rounded-full px-6 py-2.5 text-xs text-white uppercase tracking-wider font-semibold inline-flex items-center gap-2 hover:bg-white/10 transition-all"
               >
-                Open GitHub Repository <ArrowUpRight size={14} />
+                <Github size={14} /> Open GitHub Repository <ArrowUpRight size={14} />
               </a>
             </div>
           </div>
