@@ -156,7 +156,7 @@ const Home: React.FC = () => {
   const corePlatforms = [
     {
       id: 'synthos',
-      name: 'SynthOS',
+      name: 'Synthos',
       category: 'Dataset Validation Engine',
       path: '/products/synthos',
       description: 'Entropic validation engine eliminating statistical pipeline drift across deep computation architectures.',
@@ -330,7 +330,7 @@ const Home: React.FC = () => {
               Deterministic Guardrails
             </span>
             <h3 className="font-heading text-3xl sm:text-5xl font-bold tracking-tight text-white mb-6">
-              SynthOS & Asphallea Security Engine
+              Synthos & Asphallea Security Engine
             </h3>
             <p className="text-white/70 text-base sm:text-lg font-body leading-relaxed mb-8">
               Combining entropic dataset validation with zero-trust execution guardrails. Preventing structural pipeline drift and securing tool execution across distributed environments.
@@ -340,7 +340,7 @@ const Home: React.FC = () => {
                 to="/products/synthos"
                 className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-black font-semibold text-sm hover:bg-white/90 transition-all shadow-xl"
               >
-                SynthOS Details <ArrowRight size={16} />
+                Synthos Details <ArrowRight size={16} />
               </Link>
               <Link
                 to="/products/asphallea"

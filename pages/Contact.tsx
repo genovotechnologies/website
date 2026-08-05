@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
             INITIATE <br /> CONNECTION
           </h1>
           <p className="text-xl text-white/70 font-body max-w-2xl leading-relaxed">
-            Whether you're looking to integrate SynthOS, partner on deep-tech infrastructure, or join the collective, we are listening.
+            Whether you're looking to integrate Synthos, partner on deep-tech infrastructure, or join the collective, we are listening.
           </p>
         </div>
 
@@ -180,7 +180,7 @@ const Contact: React.FC = () => {
                   <a href="mailto:info@genovotech.com" className="hover:text-white transition-colors">info@genovotech.com</a>
                 </div>
                 <div>
-                  <span className="text-xs uppercase font-semibold text-white/40 block">SynthOS Platform</span>
+                  <span className="text-xs uppercase font-semibold text-white/40 block">Synthos Platform</span>
                   <a href="https://synthos.dev" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">synthos.dev</a>
                 </div>
               </div>

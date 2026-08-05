@@ -12,10 +12,10 @@ const Products: React.FC = () => {
       setLoading(false);
     }, 600);
 
-    document.title = "Platforms - SynthOS, SCOS, Asphallea | Genovo Technologies";
+    document.title = "Platforms - Synthos, SCOS, Asphallea | Genovo Technologies";
     document.querySelector('meta[name="description"]')?.setAttribute(
       'content',
-      "Explore Genovo's portfolio of deep-tech platforms: SynthOS for dataset validation, SCOS for industrial autonomy, and Asphallea for execution policy guardrails."
+      "Explore Genovo's portfolio of deep-tech platforms: Synthos for dataset validation, SCOS for industrial autonomy, and Asphallea for execution policy guardrails."
     );
 
     return () => clearTimeout(timer);
@@ -77,7 +77,7 @@ const Products: React.FC = () => {
               {/* Level 1: Core Platforms */}
               <div className="flex flex-wrap justify-center gap-4 sm:gap-6 w-full">
                 <Link to="/products/synthos" className="seamless-card p-6 w-full sm:w-64 flex flex-col hover:border-[#7342E2]/50 transition-all">
-                  <h3 className="font-heading font-bold text-lg text-white mb-1">SynthOS</h3>
+                  <h3 className="font-heading font-bold text-lg text-white mb-1">Synthos</h3>
                   <p className="text-[10px] text-white/50 uppercase tracking-wider">Entropic Validation Engine</p>
                 </Link>
 

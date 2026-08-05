@@ -8,7 +8,7 @@ Genovo Technologies is a systems-first technology platform building high-precisi
 
 ### Core Platforms & Infrastructure
 
-- **SynthOS**: Entropic data validation engine designed to detect statistical drift and eliminate model collapse in large-scale machine learning architectures.
+- **Synthos**: Entropic data validation engine designed to detect statistical drift and eliminate model collapse in large-scale machine learning architectures.
 - **SCOS**: System Control Operating System: a bare-metal microkernel hypervisor built for city-scale autonomy, robotics, and industrial execution.
 - **Asphallea**: Zero-trust security execution utility enforcing capability boundaries, syscall containment, and runtime tool guardrails.
 - **TocinLang**: High-performance systems programming language with a custom lexer/parser targeting LLVM IR.

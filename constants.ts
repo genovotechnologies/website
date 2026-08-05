@@ -21,10 +21,10 @@ export const NAV_ITEMS: NavItem[] = [
 export const PRODUCTS: Product[] = [
   {
     id: "synthos",
-    name: "SynthOS",
+    name: "Synthos",
     category: "Dataset Validation Engine",
     description: "The flagship dataset validation platform eliminating structural pipeline drift.",
-    longDescription: "SynthOS represents a paradigm shift in how complex computational pipelines process data. By validating streaming datasets at the entropic level, SynthOS acts as an immune system for high-throughput data streams. It detects subtle statistical drifts before they impact system stability, ensuring long-term execution integrity for mission-critical deployments.",
+    longDescription: "Synthos represents a paradigm shift in how complex computational pipelines process data. By validating streaming datasets at the entropic level, Synthos acts as an immune system for high-throughput data streams. It detects subtle statistical drifts before they impact system stability, ensuring long-term execution integrity for mission-critical deployments.",
     specs: [
         { label: "Validation Rate", value: "10TB/hr" },
         { label: "Drift Detection", value: "<1ms" },
@@ -316,9 +316,9 @@ Our monitoring stack captures:
 - Jitter analysis
 - Packet loss correlation
 
-## Case Study: SynthOS API
+## Case Study: Synthos API
 
-The SynthOS validation API serves requests to ML pipelines worldwide. Before optimization, P99 latency was 340ms. After implementing our network operations framework:
+The Synthos validation API serves requests to ML pipelines worldwide. Before optimization, P99 latency was 340ms. After implementing our network operations framework:
 - P50: 18ms
 - P95: 31ms
 - P99: 39ms
@@ -386,7 +386,7 @@ All APIs use OAuth 2.0 with JWT tokens. Tokens are valid for 1 hour and can be r
 
 ## Core Endpoints
 
-### SynthOS API
+### Synthos API
 \`POST /v1/validate\` - Submit datasets for validation
 \`GET /v1/status/{job_id}\` - Check validation status
 \`GET /v1/report/{job_id}\` - Retrieve validation report
@@ -473,7 +473,7 @@ export const JOB_LISTINGS: JobListing[] = [
         type: "Full-time",
         tags: ["RUST", "C++"],
         tagColor: "bg-blue-100 text-blue-800 group-hover:bg-blue-600 group-hover:text-white",
-        description: "Join our core infrastructure team to build the foundational systems that power SynthOS and our distributed computing platform.",
+        description: "Join our core infrastructure team to build the foundational systems that power Synthos and our distributed computing platform.",
         requirements: [
             "5+ years of experience with systems programming in Rust or C++",
             "Deep understanding of memory management and concurrency",
@@ -485,12 +485,12 @@ export const JOB_LISTINGS: JobListing[] = [
     {
         id: "ml-ops-architect",
         title: "ML Ops Architect",
-        department: "SynthOS Platform",
+        department: "Synthos Platform",
         location: "Remote",
         type: "Full-time",
         tags: ["PYTHON", "KUBERNETES"],
         tagColor: "bg-purple-100 text-purple-800 group-hover:bg-purple-600 group-hover:text-white",
-        description: "Design and implement the ML infrastructure that enables SynthOS to validate AI training data at scale.",
+        description: "Design and implement the ML infrastructure that enables Synthos to validate AI training data at scale.",
         requirements: [
             "4+ years of experience in ML infrastructure and operations",
             "Proficiency in Python and ML frameworks (PyTorch, TensorFlow)",

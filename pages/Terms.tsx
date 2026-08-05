@@ -48,14 +48,14 @@ const Terms: React.FC = () => {
               All proprietary systems, designs, source code, logos, and underlying infrastructure remain the exclusive property of Genovo Technologies.
             </p>
             <p className="text-white/90">
-              <strong>SynthOS</strong>, <strong>Taskr</strong>, <strong>SCOS</strong>, and <strong>Genovo</strong> are registered trademarks of Genovo Technologies.
+              <strong>Synthos</strong>, <strong>Taskr</strong>, <strong>SCOS</strong>, and <strong>Genovo</strong> are registered trademarks of Genovo Technologies.
             </p>
           </section>
 
           <section>
             <h2 className="font-heading text-2xl font-bold text-white mb-4">3. Use of Services</h2>
             <p>
-              You agree to use our systems (SynthOS, Taskr, SCOS, etc.) strictly for legitimate engineering and validation workflows. Reverse engineering or malicious exploitation of API endpoints is prohibited.
+              You agree to use our systems (Synthos, Taskr, SCOS, etc.) strictly for legitimate engineering and validation workflows. Reverse engineering or malicious exploitation of API endpoints is prohibited.
             </p>
           </section>
 

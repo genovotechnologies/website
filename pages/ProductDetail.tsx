@@ -8,7 +8,7 @@ const ArchitectureDiagram: React.FC<{ type?: string }> = ({ type }) => {
   if (type === 'synthos') {
     return (
       <div className="w-full py-8 border-y border-white/10 flex flex-col items-center justify-center text-center space-y-6">
-        <div className="text-xs font-mono text-white/50 uppercase tracking-widest">SynthOS Pipeline Architecture</div>
+        <div className="text-xs font-mono text-white/50 uppercase tracking-widest">Synthos Pipeline Architecture</div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
           <div className="floating-panel p-6 text-center">
             <div className="text-sm font-bold text-white mb-1">Ingestion Layer</div>

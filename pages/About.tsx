@@ -120,10 +120,10 @@ const About: React.FC = () => {
                   Flagship Platform
                 </span>
                 <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
-                  SynthOS is a product of Genovo Technologies
+                  Synthos is a product of Genovo Technologies
                 </h2>
                 <p className="text-white/70 text-base leading-relaxed mb-8 font-body">
-                  Our flagship entropic dataset validation platform, SynthOS, represents the culmination of Genovo's mission to engineer foundational intelligence rails.
+                  Our flagship entropic dataset validation platform, Synthos, represents the culmination of Genovo's mission to engineer foundational intelligence rails.
                 </p>
                 <a
                   href="https://synthos.dev"
@@ -137,7 +137,7 @@ const About: React.FC = () => {
               <div>
                 <img
                   src="https://picsum.photos/seed/synthos_about/600/400"
-                  alt="SynthOS Platform"
+                  alt="Synthos Platform"
                   className="rounded-2xl border border-white/10 shadow-2xl opacity-75"
                 />
               </div>
@@ -187,7 +187,7 @@ const About: React.FC = () => {
               <div className="space-y-8">
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-heading font-bold text-lg text-white">Scale SynthOS Enterprise</h3>
+                    <h3 className="font-heading font-bold text-lg text-white">Scale Synthos Enterprise</h3>
                   </div>
                   <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
                     <div className="bg-[#7342E2] h-full w-3/4 rounded-full" />
