@@ -11,13 +11,11 @@ export const COLORS = {
 };
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: "Products", path: "/products" },
-  { label: "RAD", path: "/rad" },
-  { label: "Blog", path: "/blog" },
-  { label: "Team", path: "/team" },
-  { label: "About Us", path: "/about" },
-  { label: "Careers", path: "/careers" },
-  { label: "Contact", path: "/contact" },
+  { label: "Synthos", path: "/products/synthos" },
+  { label: "SCOS", path: "/products/scos" },
+  { label: "Asphallea", path: "/products/asphallea" },
+  { label: "Research", path: "/research" },
+  { label: "Company", path: "/about" },
 ];
 
 export const PRODUCTS: Product[] = [
@@ -34,24 +32,10 @@ export const PRODUCTS: Product[] = [
         { label: "Architecture", value: "Distributed Mesh" }
     ],
     features: ["End-to-end dataset validation", "Drift detection", "Performance warranties"],
-    color: "bg-[#1A1A1A]",
-    textColor: "text-white"
-  },
-  {
-    id: "taskr",
-    name: "Taskr",
-    category: "Global Talent Marketplace",
-    description: "Bridging Africa to global wage opportunities through AI-driven matching.",
-    longDescription: "Taskr creates a frictionless membrane between global capital and African human intelligence. Utilizing a proprietary matching algorithm based on skill-graph ontology rather than keyword matching, Taskr ensures that talent is routed to opportunities with high context awareness. The platform handles cross-border compliance, payments, and performance tracking natively.",
-    specs: [
-        { label: "Settlement", value: "Real-time USDC/Fiat" },
-        { label: "Coverage", value: "54 Countries" },
-        { label: "KYC", value: "AI-Automated" },
-        { label: "Matching Latency", value: "<200ms" }
-    ],
-    features: ["Cross-border payments", "Verified talent network", "Real-time routing"],
-    color: "bg-blue-50",
-    textColor: "text-blue-900"
+    color: "liquid-glass",
+    textColor: "text-white",
+    githubUrl: "https://github.com/genovotechnologies",
+    architectureType: "synthos"
   },
   {
     id: "scos",
@@ -66,56 +50,64 @@ export const PRODUCTS: Product[] = [
         { label: "Footprint", value: "50MB" }
     ],
     features: ["Nanosecond response", "Self-optimizing compute", "Latency-aware"],
-    color: "bg-orange-50",
-    textColor: "text-orange-900"
+    color: "liquid-glass",
+    textColor: "text-white",
+    githubUrl: "https://github.com/genovotechnologies",
+    architectureType: "scos"
+  },
+  {
+    id: "asphallea",
+    name: "Asphallea",
+    category: "Security & Execution Policy",
+    description: "A security utility designed to enforce execution policies and guardrails around runtime tools.",
+    longDescription: "Asphallea provides deterministic security execution policies, isolation boundaries, and runtime tool guardrails for mission-critical software systems. It intercepts syscalls, enforces capability limits, and monitors execution paths to guarantee absolute system integrity under zero-trust assumptions.",
+    specs: [
+        { label: "Policy Engine", value: "Deterministic AST" },
+        { label: "Overhead", value: "<5μs per check" },
+        { label: "Isolation", value: "eBPF / Sandbox" },
+        { label: "Model", value: "Zero-Trust Guardrail" }
+    ],
+    features: ["Runtime policy enforcement", "Syscall containment", "Execution guardrails", "Zero-trust verification"],
+    color: "liquid-glass",
+    textColor: "text-white",
+    githubUrl: "https://github.com/genovotechnologies",
+    architectureType: "asphallea"
   },
   {
     id: "tosinlang",
     name: "TosinLang",
     category: "Programming Language",
-    description: "Python-like syntax with C++-like performance and deep systems control.",
-    longDescription: "TosinLang bridges the gap between high-level abstraction and register-level control. Designed for the era of heterogeneous compute, it treats GPUs and TPUs as first-class citizens. TosinLang compiles down to a custom Intermediate Representation that maps efficiently to both von Neumann and neuromorphic architectures.",
+    description: "Systems programming language featuring a custom lexer and parser targeting LLVM IR.",
+    longDescription: "TocinLang (TosinLang) bridges the gap between high-level abstraction and register-level control. Designed for the era of heterogeneous compute, it treats GPUs and TPUs as first-class citizens and compiles down to LLVM IR.",
     specs: [
-        { label: "Paradigm", value: "Multi-paradigm" },
-        { label: "Memory Safety", value: "Compile-time Borrow Checker" },
+        { label: "Compiler", value: "Custom Lexer/Parser" },
+        { label: "Target IR", value: "LLVM IR" },
         { label: "Interop", value: "C/C++ Zero-cost" },
-        { label: "Backend", value: "LLVM / Custom" }
+        { label: "Backend", value: "LLVM Native" }
     ],
-    features: ["Low-level compilation", "Memory-efficient IR", "Real-time systems"],
-    color: "bg-emerald-50",
-    textColor: "text-emerald-900"
-  },
-  {
-    id: "navierflow",
-    name: "NavierFlow",
-    category: "CFD Engine",
-    description: "High-performance fluid dynamics engine for scalable simulations.",
-    longDescription: "NavierFlow leverages custom physics-informed neural networks (PINNs) to solve Computational Fluid Dynamics equations orders of magnitude faster than traditional solvers. It enables real-time aerodynamic simulation for drone swarms and efficient cooling modeling for hyperscale data centers.",
-    specs: [
-        { label: "Solver Type", value: "Hybrid Spectral/Neural" },
-        { label: "Scale", value: "Exascale Ready" },
-        { label: "Precision", value: "Mixed FP64/BF16" },
-        { label: "Mesh Generation", value: "Automated" }
-    ],
-    features: ["Navier-Stokes modeling", "Optimized simulation core"],
-    color: "bg-cyan-50",
-    textColor: "text-cyan-900"
+    features: ["Low-level compilation", "LLVM IR targeting", "Real-time systems"],
+    color: "liquid-glass",
+    textColor: "text-white",
+    githubUrl: "https://github.com/genovotechnologies",
+    architectureType: "tosinlang"
   },
   {
     id: "epoch",
     name: "EPOCH VCS",
     category: "Version Control",
-    description: "Next-Gen Distributed Version Control System. 10x faster than Git.",
-    longDescription: "EPOCH creates a content-addressable spacetime for your codebase. It abandons the traditional snapshot model for a continuous log-structured merge tree approach, allowing for instant checkout of petabyte-scale repositories and SIMD-accelerated diffing operations.",
+    description: "Distributed version control system built with C++ and Rust that leverages Merkle DAGs.",
+    longDescription: "EPOCH creates a content-addressable spacetime for codebases. Built with C++ and Rust, it leverages Merkle DAG structures and continuous log-structured merge trees for petabyte-scale diffing operations.",
     specs: [
-        { label: "Throughput", value: "10GB/s checkout" },
-        { label: "Deduplication", value: "Block-level Rolling Hash" },
-        { label: "Consistency", value: "Strong Eventual" },
+        { label: "Core Stack", value: "C++ / Rust" },
+        { label: "Data Structure", value: "Merkle DAG" },
+        { label: "Checkout Speed", value: "10GB/s" },
         { label: "Network", value: "P2P Gossip" }
     ],
-    features: ["SIMD-accelerated", "50% more storage-efficient"],
-    color: "bg-purple-50",
-    textColor: "text-purple-900"
+    features: ["Merkle DAG architecture", "C++/Rust implementation", "High-performance checkout"],
+    color: "liquid-glass",
+    textColor: "text-white",
+    githubUrl: "https://github.com/genovotechnologies",
+    architectureType: "epoch"
   }
 ];
 

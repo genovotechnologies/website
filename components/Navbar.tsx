@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, ExternalLink } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar: React.FC = () => {
@@ -8,11 +8,10 @@ const Navbar: React.FC = () => {
   const location = useLocation();
 
   const navLinks = [
-    { label: 'Products', path: '/products' },
-    { label: 'Synthos', path: '/products#synthos' },
-    { label: 'Taskr', path: '/products#taskr' },
-    { label: 'SCOS', path: '/products#scos' },
-    { label: 'Asphallea', path: '/products#asphallea' },
+    { label: 'Synthos', path: '/products/synthos' },
+    { label: 'SCOS', path: '/products/scos' },
+    { label: 'Asphallea', path: '/products/asphallea' },
+    { label: 'Research', path: '/research' },
     { label: 'Company', path: '/about' },
   ];
 
@@ -31,7 +30,7 @@ const Navbar: React.FC = () => {
           <path
             d="M16 2L3 9.5V22.5L16 30L29 22.5V9.5L16 2Z"
             fill="white"
-            fillOpacity="0.9"
+            fillOpacity="0.95"
           />
           <path
             d="M16 6L8 10.625V19.875L16 24.5L24 19.875V10.625L16 6Z"
@@ -50,7 +49,7 @@ const Navbar: React.FC = () => {
       {/* Desktop Links (Center) */}
       <div className="hidden md:flex items-center gap-8 bg-white/[0.02] backdrop-blur-md px-6 py-2.5 rounded-full border border-white/10 shadow-lg">
         {navLinks.map((link) => {
-          const isActive = location.pathname === link.path || (link.path.includes('#') && location.hash === link.path.substring(link.path.indexOf('#')));
+          const isActive = location.pathname === link.path;
           return (
             <Link
               key={link.label}
@@ -68,13 +67,13 @@ const Navbar: React.FC = () => {
       {/* Desktop Actions (Right) */}
       <div className="hidden md:flex items-center space-x-4">
         <Link
-          to="/rad"
+          to="/research"
           className="text-white/70 hover:text-white transition-colors text-sm font-medium px-3 py-2"
         >
           Documentation
         </Link>
         <a
-          href="https://github.com"
+          href="https://github.com/genovotechnologies"
           target="_blank"
           rel="noopener noreferrer"
           className="liquid-glass rounded-full px-6 py-2 text-white text-sm font-medium inline-flex items-center gap-2 hover:bg-white/10 transition-all duration-300"
@@ -144,14 +143,14 @@ const Navbar: React.FC = () => {
 
               <div className="flex flex-col gap-3 pt-6 border-t border-white/10">
                 <Link
-                  to="/rad"
+                  to="/research"
                   onClick={() => setIsOpen(false)}
                   className="text-center text-white/70 hover:text-white text-sm font-medium py-2.5 rounded-lg border border-white/10 hover:bg-white/5 transition-all"
                 >
                   Documentation
                 </Link>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/genovotechnologies"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsOpen(false)}

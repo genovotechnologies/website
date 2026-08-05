@@ -8,6 +8,8 @@ export interface Product {
   textColor?: string;
   longDescription?: string;
   specs?: { label: string; value: string }[];
+  githubUrl?: string;
+  architectureType?: string;
 }
 
 export interface TeamMember {

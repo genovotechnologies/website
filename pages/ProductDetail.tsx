@@ -1,8 +1,91 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { PRODUCTS } from '../constants';
-import { ArrowLeft, Check, Activity, ArrowUpRight } from 'lucide-react';
+import { ArrowLeft, Check, Activity, ArrowUpRight, Github, Shield, Cpu, Layers, Terminal } from 'lucide-react';
 import NotFound from './NotFound';
+
+const ArchitectureDiagram: React.FC<{ type?: string }> = ({ type }) => {
+  if (type === 'synthos') {
+    return (
+      <div className="w-full bg-[#080808] p-6 rounded-2xl border border-white/10 flex flex-col items-center justify-center text-center space-y-4">
+        <div className="text-xs font-mono text-white/50 uppercase tracking-widest mb-2">SynthOS Entropic Pipeline Architecture</div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
+          <div className="liquid-glass p-4 rounded-xl text-center border border-white/10">
+            <Cpu className="mx-auto mb-2 text-[#7342E2]" size={20} />
+            <div className="text-xs font-bold text-white">Ingestion Layer</div>
+            <div className="text-[10px] text-white/50">10TB/hr Streaming</div>
+          </div>
+          <div className="liquid-glass p-4 rounded-xl text-center border border-[#7342E2]/40 bg-[#7342E2]/10">
+            <Activity className="mx-auto mb-2 text-emerald-400" size={20} />
+            <div className="text-xs font-bold text-white">Entropic Engine</div>
+            <div className="text-[10px] text-emerald-400">&lt;1ms Drift Analysis</div>
+          </div>
+          <div className="liquid-glass p-4 rounded-xl text-center border border-white/10">
+            <Shield className="mx-auto mb-2 text-purple-400" size={20} />
+            <div className="text-xs font-bold text-white">Validation Mesh</div>
+            <div className="text-[10px] text-white/50">LLM Guardrail</div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (type === 'scos') {
+    return (
+      <div className="w-full bg-[#080808] p-6 rounded-2xl border border-white/10 flex flex-col items-center justify-center text-center space-y-4">
+        <div className="text-xs font-mono text-white/50 uppercase tracking-widest mb-2">SCOS Microkernel Architecture</div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
+          <div className="liquid-glass p-4 rounded-xl text-center border border-white/10">
+            <Layers className="mx-auto mb-2 text-amber-400" size={20} />
+            <div className="text-xs font-bold text-white">Bare-Metal Core</div>
+            <div className="text-[10px] text-white/50">40ns Latency</div>
+          </div>
+          <div className="liquid-glass p-4 rounded-xl text-center border border-amber-500/40 bg-amber-500/10">
+            <Cpu className="mx-auto mb-2 text-amber-400" size={20} />
+            <div className="text-xs font-bold text-white">Hypervisor</div>
+            <div className="text-[10px] text-amber-400">ASIL-D Certified</div>
+          </div>
+          <div className="liquid-glass p-4 rounded-xl text-center border border-white/10">
+            <Terminal className="mx-auto mb-2 text-white/70" size={20} />
+            <div className="text-xs font-bold text-white">Autonomous Bus</div>
+            <div className="text-[10px] text-white/50">50MB Footprint</div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (type === 'asphallea') {
+    return (
+      <div className="w-full bg-[#080808] p-6 rounded-2xl border border-white/10 flex flex-col items-center justify-center text-center space-y-4">
+        <div className="text-xs font-mono text-white/50 uppercase tracking-widest mb-2">Asphallea Execution Policy Sandbox</div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
+          <div className="liquid-glass p-4 rounded-xl text-center border border-white/10">
+            <Shield className="mx-auto mb-2 text-emerald-400" size={20} />
+            <div className="text-xs font-bold text-white">Syscall Intercept</div>
+            <div className="text-[10px] text-white/50">&lt;5μs Overhead</div>
+          </div>
+          <div className="liquid-glass p-4 rounded-xl text-center border border-emerald-500/40 bg-emerald-500/10">
+            <Activity className="mx-auto mb-2 text-emerald-400" size={20} />
+            <div className="text-xs font-bold text-white">AST Policy Engine</div>
+            <div className="text-[10px] text-emerald-400">Zero-Trust Guard</div>
+          </div>
+          <div className="liquid-glass p-4 rounded-xl text-center border border-white/10">
+            <Terminal className="mx-auto mb-2 text-white/70" size={20} />
+            <div className="text-xs font-bold text-white">eBPF Sandbox</div>
+            <div className="text-[10px] text-white/50">Capability Limits</div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-full bg-[#080808] p-6 rounded-2xl border border-white/10 text-center text-white/50 text-xs font-mono">
+      System Architecture Diagram v2.1
+    </div>
+  );
+};
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -48,27 +131,25 @@ const ProductDetail: React.FC = () => {
         </p>
 
         <div className="flex flex-wrap gap-4">
-          {product.id === 'synthos' && (
-            <a
-              href="https://synthos.dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-black font-semibold text-sm hover:bg-white/90 transition-all shadow-xl"
-            >
-              Explore SynthOS Platform <ArrowUpRight size={16} />
-            </a>
-          )}
+          <a
+            href={product.githubUrl || "https://github.com/genovotechnologies"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-black font-semibold text-sm hover:bg-white/90 transition-all shadow-xl"
+          >
+            <Github size={18} /> View Repository on GitHub
+          </a>
           <Link
             to="/contact"
             className="liquid-glass rounded-full px-8 py-4 text-white text-sm font-semibold hover:bg-white/10 transition-all"
           >
-            Schedule Demo
+            Schedule Integration Demo
           </Link>
           <Link
-            to="/rad"
+            to="/research"
             className="liquid-glass rounded-full px-8 py-4 text-white/80 text-sm font-semibold hover:bg-white/10 transition-all"
           >
-            Technical Documentation
+            Documentation & Assets
           </Link>
         </div>
       </div>
@@ -85,6 +166,13 @@ const ProductDetail: React.FC = () => {
               <p className="text-base sm:text-lg text-white/80 font-body leading-relaxed">
                 {product.longDescription || product.description}
               </p>
+            </div>
+
+            <div className="liquid-glass rounded-[2.5rem] p-8 sm:p-10 border border-white/10">
+              <h2 className="text-xs font-bold tracking-[0.2em] text-[#7342E2] uppercase mb-6">
+                ARCHITECTURE & FLOW PIPELINE
+              </h2>
+              <ArchitectureDiagram type={product.architectureType || product.id} />
             </div>
 
             <div className="liquid-glass rounded-[2.5rem] p-8 sm:p-10 border border-white/10">
@@ -134,12 +222,20 @@ const ProductDetail: React.FC = () => {
               </div>
             </div>
 
-            <div className="liquid-glass rounded-[2.5rem] p-4 border border-white/10 overflow-hidden">
-              <img
-                src={`https://picsum.photos/seed/${product.id}_detail/600/400`}
-                alt="System Detail"
-                className="w-full h-48 object-cover rounded-2xl opacity-70"
-              />
+            <div className="liquid-glass rounded-[2.5rem] p-6 border border-white/10 text-center">
+              <Github size={32} className="mx-auto mb-3 text-white/80" />
+              <h4 className="font-heading font-bold text-lg text-white mb-2">Open Source & Repository Access</h4>
+              <p className="text-white/60 text-xs mb-4 font-body">
+                Access the source code, security audit logs, and integration documentation on GitHub.
+              </p>
+              <a
+                href={product.githubUrl || "https://github.com/genovotechnologies"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="liquid-glass rounded-full px-6 py-2.5 text-xs text-white uppercase tracking-wider font-semibold inline-flex items-center gap-2 hover:bg-white/10 transition-all"
+              >
+                Open GitHub Repository <ArrowUpRight size={14} />
+              </a>
             </div>
           </div>
         </div>

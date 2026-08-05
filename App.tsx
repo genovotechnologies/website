@@ -11,6 +11,7 @@ import PageTransition from './components/PageTransition';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
+import Research from './pages/Research';
 import RAD from './pages/RAD';
 import Team from './pages/Team';
 import About from './pages/About';
@@ -43,21 +44,22 @@ const App: React.FC = () => {
         <main className="flex-grow">
           <AnimatePresence mode="wait">
             <Routes>
-               <Route path="/" element={<PageTransition><Home /></PageTransition>} />
-               <Route path="/products" element={<PageTransition><Products /></PageTransition>} />
-               <Route path="/products/:id" element={<PageTransition><ProductDetail /></PageTransition>} />
-               <Route path="/rad" element={<PageTransition><RAD /></PageTransition>} />
-               <Route path="/team" element={<PageTransition><Team /></PageTransition>} />
-               <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-               <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />
-               <Route path="/careers/:id" element={<PageTransition><JobDetail /></PageTransition>} />
-               <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
-               <Route path="/privacy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
-               <Route path="/terms" element={<PageTransition><Terms /></PageTransition>} />
-               <Route path="/blog" element={<PageTransition><Blog /></PageTransition>} />
-               <Route path="/blog/:id" element={<PageTransition><ArticleDetail /></PageTransition>} />
-               {/* Catch-all for 404 */}
-               <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
+              <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+              <Route path="/products" element={<PageTransition><Products /></PageTransition>} />
+              <Route path="/products/:id" element={<PageTransition><ProductDetail /></PageTransition>} />
+              <Route path="/research" element={<PageTransition><Research /></PageTransition>} />
+              <Route path="/rad" element={<PageTransition><RAD /></PageTransition>} />
+              <Route path="/team" element={<PageTransition><Team /></PageTransition>} />
+              <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+              <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />
+              <Route path="/careers/:id" element={<PageTransition><JobDetail /></PageTransition>} />
+              <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+              <Route path="/privacy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
+              <Route path="/terms" element={<PageTransition><Terms /></PageTransition>} />
+              <Route path="/blog" element={<PageTransition><Blog /></PageTransition>} />
+              <Route path="/blog/:id" element={<PageTransition><ArticleDetail /></PageTransition>} />
+              {/* Catch-all for 404 */}
+              <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
             </Routes>
           </AnimatePresence>
         </main>
