@@ -37,6 +37,7 @@ const Research: React.FC = () => {
       title: 'Asphallea',
       tag: 'Security Infrastructure',
       description: 'A security utility designed to enforce execution policies, capability boundaries, and deterministic guardrails around runtime tools.',
+      specs: ['AST Policy Engine', '<5μs Syscall Check', 'eBPF Sandbox'],
       github: 'https://github.com/Asphallea/Asphallea',
       live: 'https://asphallea.vercel.app',
       link: '/products/asphallea',
@@ -113,13 +114,15 @@ const Research: React.FC = () => {
                   {asset.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2">
-                  {asset.specs.map((spec, sIdx) => (
-                    <span key={sIdx} className="text-[10px] font-mono text-white/60 bg-white/5 px-3 py-1 rounded-full">
-                      {spec}
-                    </span>
-                  ))}
-                </div>
+                {asset.specs && (
+                  <div className="flex flex-wrap gap-2">
+                    {asset.specs.map((spec, sIdx) => (
+                      <span key={sIdx} className="text-[10px] font-mono text-white/60 bg-white/5 px-3 py-1 rounded-full">
+                        {spec}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <div>
@@ -168,13 +171,15 @@ const Research: React.FC = () => {
                   {system.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2">
-                  {system.specs.map((spec, sIdx) => (
-                    <span key={sIdx} className="text-[10px] font-mono text-white/60 bg-white/5 px-3 py-1 rounded-full">
-                      {spec}
-                    </span>
-                  ))}
-                </div>
+                {system.specs && (
+                  <div className="flex flex-wrap gap-2">
+                    {system.specs.map((spec, sIdx) => (
+                      <span key={sIdx} className="text-[10px] font-mono text-white/60 bg-white/5 px-3 py-1 rounded-full">
+                        {spec}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <div className="flex items-center gap-4">
@@ -186,11 +191,21 @@ const Research: React.FC = () => {
                     Specifications
                   </Link>
                 )}
+                {system.live && (
+                  <a
+                    href={system.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/80 hover:text-white transition-colors"
+                  >
+                    Live Site <ArrowUpRight size={14} />
+                  </a>
+                )}
                 <a
                   href={system.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-semibold text-white/80 hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/80 hover:text-white transition-colors"
                 >
                   <Github size={16} /> Repository <ArrowUpRight size={14} />
                 </a>
