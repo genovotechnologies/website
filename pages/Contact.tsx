@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
             INITIATE <br /> CONNECTION
           </h1>
           <p className="text-xl text-white/70 font-body max-w-2xl leading-relaxed">
-            Whether you're looking to integrate SynthOS, partner on deep-tech infrastructure, or join the collective — we are listening.
+            Whether you're looking to integrate SynthOS, partner on deep-tech infrastructure, or join the collective, we are listening.
           </p>
         </div>
 

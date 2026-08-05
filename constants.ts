@@ -23,8 +23,8 @@ export const PRODUCTS: Product[] = [
     id: "synthos",
     name: "SynthOS",
     category: "Dataset Validation Engine",
-    description: "The flagship training dataset validation platform eliminating structural model collapse.",
-    longDescription: "SynthOS represents a paradigm shift in how AI models perceive reality. By validating training data at the entropic level, SynthOS acts as an immune system for Large Language Models and Generative Architectures. It detects subtle statistical drifts that lead to model collapse before they impact inference quality, ensuring long-term stability for mission-critical AI deployments.",
+    description: "The flagship dataset validation platform eliminating structural pipeline drift.",
+    longDescription: "SynthOS represents a paradigm shift in how complex computational pipelines process data. By validating streaming datasets at the entropic level, SynthOS acts as an immune system for high-throughput data streams. It detects subtle statistical drifts before they impact system stability, ensuring long-term execution integrity for mission-critical deployments.",
     specs: [
         { label: "Validation Rate", value: "10TB/hr" },
         { label: "Drift Detection", value: "<1ms" },
@@ -40,9 +40,9 @@ export const PRODUCTS: Product[] = [
   {
     id: "scos",
     name: "SCOS",
-    category: "Industrial Intelligence OS",
-    description: "Synthetic Cognition Operating System for manufacturing and smart cities.",
-    longDescription: "The Synthetic Cognition Operating System (SCOS) is a bare-metal hypervisor designed for city-scale autonomy and industrial robotics. Unlike general-purpose OSs, SCOS is deterministic, ensuring that critical operations happen within guaranteed time windows. It serves as the nervous system for smart factories and autonomous logistics networks.",
+    category: "Industrial Systems OS",
+    description: "System Control Operating System for high-precision manufacturing and urban infrastructure.",
+    longDescription: "The System Control Operating System (SCOS) is a bare-metal hypervisor designed for city-scale autonomy and industrial robotics. Unlike general-purpose OSs, SCOS is deterministic, ensuring that critical operations happen within guaranteed time windows. It serves as the nervous system for smart factories and autonomous logistics networks.",
     specs: [
         { label: "Kernel Type", value: "Microkernel" },
         { label: "Interrupt Latency", value: "40ns" },
@@ -330,7 +330,7 @@ Teams can implement these optimizations using our open-source edge router config
     { id: "sustainable-solutions", title: "Sustainable Solutions", excerpt: "How Genovo achieves 223.12 Green watts/hour power efficiency in our data centers.", date: "Nov 28, 2024", author: "Gasper Samuel", category: "Company News", icon: Wind, color: "bg-gray-200", textColor: "text-gray-800", readTime: "5 min read", content: `
 ## Green Computing Initiative
 
-At Genovo, sustainability isn't an afterthought—it's engineered into our DNA. Our data centers achieve an unprecedented 223.12 Green watts/hour power efficiency rating.
+At Genovo, sustainability isn't an afterthought, it's engineered into our DNA. Our data centers achieve an unprecedented 223.12 Green watts/hour power efficiency rating.
 
 ## How We Achieve This
 
