@@ -12,10 +12,10 @@ const About: React.FC = () => {
   };
 
   useEffect(() => {
-    document.title = "About Genovo | Systems-First AI Engineering";
+    document.title = "About Genovo | Systems-First Engineering";
     document.querySelector('meta[name="description"]')?.setAttribute(
       'content',
-      "Learn about Genovo Technologies' mission to engineer the foundational intelligence rails for the future. We prioritize precision, first principles, and ownership."
+      "Learn about Genovo Technologies' mission to engineer foundational intelligence rails for the future. We prioritize precision, first principles, and ownership."
     );
   }, []);
 
@@ -33,7 +33,7 @@ const About: React.FC = () => {
               <span className="text-[#7342E2]">DIGITAL RAILS</span>
             </h1>
             <p className="text-lg text-white/70 leading-relaxed font-body">
-              Our Decentralized Collective of Visionaries & Engineers. Genovo Technologies is a systems-first, AI-native technology company building high-performance infrastructure.
+              Our Collective of Visionaries & Engineers. Genovo Technologies is a systems-first technology platform building high-performance software infrastructure.
             </p>
           </div>
           <div className="relative">
@@ -59,7 +59,7 @@ const About: React.FC = () => {
                 <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6 text-white border border-white/10">
                   <Zap size={24} />
                 </div>
-                <h3 className="font-heading text-xl font-bold text-white mb-2">AI & Machine Learning</h3>
+                <h3 className="font-heading text-xl font-bold text-white mb-2">Intelligence & Computation</h3>
                 <p className="text-white/60 text-sm">Research</p>
               </div>
               <div className="mt-4 pt-4 border-t border-white/10">

@@ -111,7 +111,7 @@ const Careers: React.FC = () => {
 
         <div className="mb-10">
           <p className="text-white/70 text-lg leading-relaxed font-body">
-            We are building the foundational rails for the AI economy. If you love compilers, distributed systems, and solving for n-dimensional constraints, this is home.
+            We are building the foundational rails for the future of computation. If you love compilers, distributed systems, and solving for n-dimensional constraints, this is home.
           </p>
         </div>
 
