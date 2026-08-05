@@ -35,6 +35,7 @@ export const PRODUCTS: Product[] = [
     color: "liquid-glass",
     textColor: "text-white",
     githubUrl: "https://github.com/genovotechnologies",
+    liveUrl: "https://www.synthos.dev",
     architectureType: "synthos"
   },
   {
@@ -70,7 +71,8 @@ export const PRODUCTS: Product[] = [
     features: ["Runtime policy enforcement", "Syscall containment", "Execution guardrails", "Zero-trust verification"],
     color: "liquid-glass",
     textColor: "text-white",
-    githubUrl: "https://github.com/genovotechnologies",
+    githubUrl: "https://github.com/Asphallea/Asphallea",
+    liveUrl: "https://asphallea.vercel.app",
     architectureType: "asphallea"
   },
   {

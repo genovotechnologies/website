@@ -124,25 +124,29 @@ const ProductDetail: React.FC = () => {
         </p>
 
         <div className="flex flex-wrap gap-4">
+          {product.liveUrl && (
+            <a
+              href={product.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-black font-semibold text-sm hover:bg-white/90 transition-all shadow-xl"
+            >
+              Visit Live Platform <ArrowUpRight size={18} />
+            </a>
+          )}
           <a
             href={product.githubUrl || "https://github.com/genovotechnologies"}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-black font-semibold text-sm hover:bg-white/90 transition-all shadow-xl"
+            className="liquid-glass rounded-full px-8 py-4 text-white text-sm font-semibold hover:bg-white/10 transition-all inline-flex items-center gap-2"
           >
             <Github size={18} /> View Repository on GitHub
           </a>
           <Link
             to="/contact"
-            className="liquid-glass rounded-full px-8 py-4 text-white text-sm font-semibold hover:bg-white/10 transition-all"
-          >
-            Schedule Integration Demo
-          </Link>
-          <Link
-            to="/research"
             className="liquid-glass rounded-full px-8 py-4 text-white/80 text-sm font-semibold hover:bg-white/10 transition-all"
           >
-            Documentation & Assets
+            Schedule Integration Demo
           </Link>
         </div>
       </div>

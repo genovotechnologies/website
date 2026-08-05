@@ -176,7 +176,8 @@ const Home: React.FC = () => {
       category: 'Execution Policy Guardrails',
       path: '/products/asphallea',
       description: 'Zero-trust security utility enforcing capability boundaries, syscall containment, and tool guardrails.',
-      github: 'https://github.com/genovotechnologies',
+      github: 'https://github.com/Asphallea/Asphallea',
+      live: 'https://asphallea.vercel.app',
     },
   ];
 
@@ -336,18 +337,22 @@ const Home: React.FC = () => {
               Combining entropic dataset validation with zero-trust execution guardrails. Preventing structural pipeline drift and securing tool execution across distributed environments.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link
-                to="/products/synthos"
+              <a
+                href="https://www.synthos.dev"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-black font-semibold text-sm hover:bg-white/90 transition-all shadow-xl"
               >
-                Synthos Details <ArrowRight size={16} />
-              </Link>
-              <Link
-                to="/products/asphallea"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-white font-semibold text-sm hover:bg-white/10 transition-all"
+                Visit synthos.dev <ArrowUpRight size={16} />
+              </a>
+              <a
+                href="https://asphallea.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-white font-semibold text-sm hover:bg-white/10 transition-all border border-white/10"
               >
-                Asphallea Details <ArrowRight size={16} />
-              </Link>
+                Visit asphallea.vercel.app <ArrowUpRight size={16} />
+              </a>
             </div>
           </div>
         </div>

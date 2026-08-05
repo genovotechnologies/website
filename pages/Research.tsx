@@ -37,8 +37,8 @@ const Research: React.FC = () => {
       title: 'Asphallea',
       tag: 'Security Infrastructure',
       description: 'A security utility designed to enforce execution policies, capability boundaries, and deterministic guardrails around runtime tools.',
-      specs: ['AST Policy Engine', '<5μs Syscall Check', 'eBPF Sandbox'],
-      github: 'https://github.com/genovotechnologies',
+      github: 'https://github.com/Asphallea/Asphallea',
+      live: 'https://asphallea.vercel.app',
       link: '/products/asphallea',
     },
     {

@@ -2,11 +2,11 @@
 
 > Systems-first technology platform building high-precision software infrastructure, deterministic operating systems, execution security guardrails, and compiler toolchains.
 
-## Core Platforms
+## Core Platforms & Live Products
 
-- [Synthos](https://genovotechnologies.github.io/website/#/products/synthos): Entropic dataset validation engine eliminating structural pipeline drift across deep computation architectures.
+- [Synthos Platform](https://www.synthos.dev): Entropic dataset validation engine eliminating structural pipeline drift across deep computation architectures. (Live: https://www.synthos.dev)
 - [SCOS](https://genovotechnologies.github.io/website/#/products/scos): System Control Operating System: a bare-metal microkernel hypervisor built for city-scale autonomy, robotics, and sub-millisecond interrupts.
-- [Asphallea](https://genovotechnologies.github.io/website/#/products/asphallea): Zero-trust security utility enforcing capability boundaries, syscall containment, and runtime tool guardrails.
+- [Asphallea Security Engine](https://asphallea.vercel.app): Zero-trust security utility enforcing capability boundaries, syscall containment, and runtime tool guardrails. (Live: https://asphallea.vercel.app | Repository: https://github.com/Asphallea/Asphallea)
 
 ## Research & Engineering Assets
 
@@ -18,6 +18,7 @@
 
 ## Repositories & Contact
 
-- GitHub: [https://github.com/genovotechnologies](https://github.com/genovotechnologies)
-- Contact: info@genovotech.com
-- Main Site: [https://genovotechnologies.github.io/website/](https://genovotechnologies.github.io/website/)
+- Asphallea GitHub Repository: [https://github.com/Asphallea/Asphallea](https://github.com/Asphallea/Asphallea)
+- Genovo GitHub Organization: [https://github.com/genovotechnologies](https://github.com/genovotechnologies)
+- Contact Email: info@genovotech.com
+- Official Website: [https://genovotechnologies.github.io/website/](https://genovotechnologies.github.io/website/)

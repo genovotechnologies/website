@@ -9,6 +9,7 @@ export interface Product {
   longDescription?: string;
   specs?: { label: string; value: string }[];
   githubUrl?: string;
+  liveUrl?: string;
   architectureType?: string;
 }
 

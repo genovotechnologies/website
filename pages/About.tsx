@@ -126,7 +126,7 @@ const About: React.FC = () => {
                   Our flagship entropic dataset validation platform, Synthos, represents the culmination of Genovo's mission to engineer foundational intelligence rails.
                 </p>
                 <a
-                  href="https://synthos.dev"
+                  href="https://www.synthos.dev"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-semibold text-sm rounded-full hover:bg-white/90 transition-all shadow-xl"
