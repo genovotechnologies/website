@@ -1,108 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Genovo Technologies - Foundational Rails for Deep Engineering. High-precision infrastructure, deterministic operating systems, and zero-trust security guardrails." />
-    <meta name="keywords" content="Genovo Technologies, Synthos, SCOS, Asphallea, TocinLang, EPOCH VCS, TosinOS, Systems Engineering, Microkernel, Entropic Validation, Zero-Trust Guardrails" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="author" content="Genovo Technologies" />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Genovo Technologies | Foundational Rails for Deep Engineering" />
-    <meta property="og:description" content="Highly optimized systems, unbreakable execution guardrails, and deterministic data validation via Synthos, SCOS, and Asphallea." />
-    <meta property="og:url" content="https://genovotechnologies.github.io/website/" />
-    <meta property="og:site_name" content="Genovo Technologies" />
+    <meta charset="utf-8" />
+    <title>Genovo Technologies</title>
+    <script>
+      (function () {
+        var path = window.location.pathname;
+        var search = window.location.search || '';
+        var hash = window.location.hash || '';
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Genovo Technologies | Foundational Rails for Deep Engineering" />
-    <meta name="twitter:description" content="Highly optimized systems, unbreakable execution guardrails, and deterministic data validation via Synthos, SCOS, and Asphallea." />
+        // If the user went to /clickup or /clickup/, redirect to /clickup/index.html or /#/clickup
+        if (path === '/clickup' || path === '/clickup/') {
+          window.location.replace('/clickup/index.html' + search + hash);
+          return;
+        }
 
-    <title>Genovo Technologies | Foundational Rails for Deep Engineering</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.cdnfonts.com/css/helvetica-now-display" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-    
-    <!-- JSON-LD Structured Data for AI & Search Engine Crawlers -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Genovo Technologies",
-      "url": "https://genovotechnologies.github.io/website/",
-      "logo": "https://genovotechnologies.github.io/website/favicon.ico",
-      "sameAs": [
-        "https://github.com/genovotechnologies",
-        "https://synthos.dev"
-      ],
-      "description": "Systems-first technology platform building high-performance software infrastructure, deterministic operating systems, execution security guardrails, and compiler toolchains.",
-      "knowsAbout": [
-        "Synthos Dataset Validation Engine",
-        "System Control Operating System (SCOS)",
-        "Asphallea Security Guardrails",
-        "TocinLang LLVM Compiler",
-        "EPOCH VCS Merkle DAG",
-        "TosinOS Kernel"
-      ]
-    }
+        // Standard SPA redirect for HashRouter:
+        // /products/synthos -> /#/products/synthos
+        var cleanPath = path;
+        // Strip repo base path if hosted on github.io subpath (e.g. /website/)
+        if (cleanPath.indexOf('/website') === 0) {
+          cleanPath = cleanPath.substring('/website'.length);
+        }
+        if (!cleanPath || cleanPath === '/') {
+          cleanPath = '';
+        }
+
+        var target = (window.location.pathname.indexOf('/website') === 0 ? '/website/#' : '/#') + cleanPath + search + hash;
+        window.location.replace(target);
+      })();
     </script>
-
-    <style>
-      :root {
-        --font-heading: 'Helvetica Now Display', 'Helvetica Now Display Bold', 'Helvetica Neue', Arial, sans-serif;
-        --font-body: 'Inter', sans-serif;
-        --color-bg: #050505;
-        --color-text: #FFFFFF;
-        --color-accent: #7342E2;
-      }
-      body {
-        font-family: var(--font-body);
-        background-color: var(--color-bg);
-        color: var(--color-text);
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-      }
-    </style>
-
-    <script type="importmap">
-    {
-      "imports": {
-        "react/": "https://aistudiocdn.com/react@^19.2.0/",
-        "react": "https://aistudiocdn.com/react@^19.2.0",
-        "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
-        "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
-        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-        "framer-motion": "https://aistudiocdn.com/framer-motion@^11.0.8"
-      }
-    }
-    </script>
-    <link rel="stylesheet" href="/index.css">
   </head>
-  <body>
-    <!-- Static Noscript Fallback for non-JS Crawlers & Search Engines -->
-    <noscript>
-      <div style="padding: 40px; color: white; background: #050505; font-family: sans-serif;">
-        <h1>Genovo Technologies</h1>
-        <p>Foundational Rails for Deep Engineering. Highly optimized systems, unbreakable execution guardrails, and deterministic data validation via Synthos, SCOS, and Asphallea.</p>
-        <h2>Core Platforms</h2>
-        <ul>
-          <li><strong>Synthos</strong>: Dataset Validation Engine eliminating structural pipeline drift.</li>
-          <li><strong>SCOS</strong>: System Control Operating System microkernel hypervisor built for city-scale autonomy.</li>
-          <li><strong>Asphallea</strong>: Zero-trust security execution policy guardrails.</li>
-          <li><strong>TocinLang</strong>: High-performance systems programming language targeting LLVM IR.</li>
-          <li><strong>EPOCH VCS</strong>: Distributed version control system using Merkle DAGs.</li>
-          <li><strong>TosinOS</strong>: 32-bit protected-mode monolithic operating system kernel.</li>
-        </ul>
-        <p>Access repositories on GitHub: <a href="https://github.com/genovotechnologies" style="color: #7342E2;">https://github.com/genovotechnologies</a></p>
-      </div>
-    </noscript>
-
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+  <body style="background: #050505; color: white; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
+    <p>Redirecting to Genovo Technologies...</p>
   </body>
 </html>

@@ -43,6 +43,8 @@ const ClickUp: React.FC = () => {
     }
   };
 
+  const deckUrl = `${import.meta.env.BASE_URL || '/'}clickup.html`;
+
   return (
     <div className="bg-[#050505] text-white min-h-screen pt-32 md:pt-40 pb-24">
       {/* Header Banner */}
@@ -75,7 +77,7 @@ const ClickUp: React.FC = () => {
               Engineering Reference
             </button>
             <a
-              href="/clickup.html"
+              href={deckUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="liquid-glass px-4 py-2 rounded-full text-xs font-semibold text-white inline-flex items-center gap-1.5 hover:bg-white/10 transition-all"
@@ -121,7 +123,7 @@ const ClickUp: React.FC = () => {
               <div className="relative w-full h-[600px] md:h-[780px] bg-neutral-900">
                 <iframe
                   ref={iframeRef}
-                  src="/clickup.html"
+                  src={deckUrl}
                   title="Genovo ClickUp Onboarding Deck"
                   className="w-full h-full border-0"
                   allow="fullscreen"
