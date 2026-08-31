@@ -22,6 +22,10 @@ const Footer: React.FC = () => {
             <Link to="/privacy" className="hover:text-white/80 transition-colors">
               Privacy Policy
             </Link>
+            <span className="hidden sm:inline">•</span>
+            <Link to="/clickup" className="hover:text-white/80 transition-colors">
+              ClickUp Hub
+            </Link>
           </div>
         </div>
 

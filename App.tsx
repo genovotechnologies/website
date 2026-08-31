@@ -23,6 +23,7 @@ import NotFound from './pages/NotFound';
 import Blog from './pages/Blog';
 import ArticleDetail from './pages/ArticleDetail';
 import JobDetail from './pages/JobDetail';
+import ClickUp from './pages/ClickUp';
 
 // Global Scroll Reset on Route Change
 const ScrollToTop = () => {
@@ -59,6 +60,7 @@ const App: React.FC = () => {
               <Route path="/terms" element={<PageTransition><Terms /></PageTransition>} />
               <Route path="/blog" element={<PageTransition><Blog /></PageTransition>} />
               <Route path="/blog/:id" element={<PageTransition><ArticleDetail /></PageTransition>} />
+              <Route path="/clickup" element={<PageTransition><ClickUp /></PageTransition>} />
               {/* Catch-all for 404 */}
               <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
             </Routes>
