@@ -3,11 +3,14 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, MapPin, Clock, Briefcase, Check, Send } from 'lucide-react';
 import { JOB_LISTINGS } from '../constants';
 import NotFound from './NotFound';
+import { submitForm, FORM_ERROR_MESSAGE } from '../forms';
 
 const JobDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const job = JOB_LISTINGS.find((j) => j.id === id);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,25 +28,24 @@ const JobDetail: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError(false);
     try {
-      const web3Key = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "9921c6c9-a27a-4b57-9782-f8cb86b95444";
-      await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          access_key: web3Key,
-          job_title: job?.title,
-          name: formData.name,
-          email: formData.email,
-          linkedin_portfolio: formData.linkedin,
-          message: formData.message,
-          from_name: 'Genovo Job Application',
-          subject: `Job Application: ${job?.title} - ${formData.name}`,
-        }),
+      await submitForm({
+        job_title: job?.title,
+        name: formData.name,
+        email: formData.email,
+        linkedin_portfolio: formData.linkedin,
+        message: formData.message,
+        from_name: 'Genovo Job Application',
+        subject: `Job Application: ${job?.title} - ${formData.name}`,
       });
+      setFormSubmitted(true);
     } catch (err) {
       console.error(err);
+      setSubmitError(true);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -207,11 +209,15 @@ const JobDetail: React.FC = () => {
                         placeholder="Tell us about your background..."
                       />
                     </div>
+                    {submitError && (
+                      <p role="alert" className="text-xs text-red-400">{FORM_ERROR_MESSAGE}</p>
+                    )}
                     <button
                       type="submit"
-                      className="w-full bg-white text-black font-semibold py-3 rounded-xl hover:bg-white/90 transition-colors text-xs flex items-center justify-center gap-2 shadow-lg"
+                      disabled={isSubmitting}
+                      className="w-full bg-white text-black font-semibold py-3 rounded-xl hover:bg-white/90 transition-colors text-xs flex items-center justify-center gap-2 shadow-lg disabled:opacity-50"
                     >
-                      Submit Application <Send size={14} />
+                      {isSubmitting ? 'Submitting...' : <>Submit Application <Send size={14} /></>}
                     </button>
                   </form>
                 </>

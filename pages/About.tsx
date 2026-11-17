@@ -1,29 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { Target, Award, Hexagon, Database, Layers, Check, ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { LEADERSHIP } from '../constants';
+import { submitForm, FORM_ERROR_MESSAGE } from '../forms';
 
 const About: React.FC = () => {
   const [partnerForm, setPartnerForm] = useState({ name: '', email: '' });
   const [partnerSubmitted, setPartnerSubmitted] = useState(false);
+  const [partnerSubmitting, setPartnerSubmitting] = useState(false);
+  const [partnerError, setPartnerError] = useState(false);
 
   const handlePartnerSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setPartnerSubmitted(true);
+    setPartnerSubmitting(true);
+    setPartnerError(false);
     try {
-      const web3Key = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "9921c6c9-a27a-4b57-9782-f8cb86b95444";
-      await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          access_key: web3Key,
-          name: partnerForm.name,
-          email: partnerForm.email,
-          from_name: 'Genovo Partnership Form',
-          subject: `Partnership Proposal from ${partnerForm.name}`,
-        }),
+      await submitForm({
+        name: partnerForm.name,
+        email: partnerForm.email,
+        from_name: 'Genovo Partnership Form',
+        subject: `Partnership Proposal from ${partnerForm.name}`,
       });
+      setPartnerSubmitted(true);
     } catch (err) {
       console.error(err);
+      setPartnerError(true);
+    } finally {
+      setPartnerSubmitting(false);
     }
   };
 
@@ -141,14 +144,12 @@ const About: React.FC = () => {
                 <p className="text-white/70 text-base leading-relaxed mb-8 font-body">
                   Our flagship entropic dataset validation platform, Synthos, represents the culmination of Genovo's mission to engineer foundational intelligence rails.
                 </p>
-                <a
-                  href="https://www.synthos.dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/products/synthos"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-semibold text-sm rounded-full hover:bg-white/90 transition-all shadow-xl"
                 >
-                  Visit synthos.dev <ArrowUpRight size={16} />
-                </a>
+                  Explore Synthos <ArrowUpRight size={16} />
+                </Link>
               </div>
               <div>
                 <img
@@ -250,11 +251,15 @@ const About: React.FC = () => {
                     onChange={(e) => setPartnerForm({ ...partnerForm, email: e.target.value })}
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-white/30"
                   />
+                  {partnerError && (
+                    <p role="alert" className="text-xs text-red-400">{FORM_ERROR_MESSAGE}</p>
+                  )}
                   <button
                     type="submit"
-                    className="w-full bg-white text-black font-semibold py-3 rounded-full hover:bg-white/90 transition-all text-sm"
+                    disabled={partnerSubmitting}
+                    className="w-full bg-white text-black font-semibold py-3 rounded-full hover:bg-white/90 transition-all text-sm disabled:opacity-50"
                   >
-                    PROPOSE PARTNERSHIP
+                    {partnerSubmitting ? 'SENDING...' : 'PROPOSE PARTNERSHIP'}
                   </button>
                 </form>
               )}

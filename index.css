@@ -85,6 +85,20 @@ html, body {
   transform: translateY(-2px);
 }
 
+/* Seamless Card (floating panel with a hairline border for grid layouts) */
+.seamless-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.005) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2rem;
+  transition: all 0.4s ease;
+}
+
+.seamless-card:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+
 /* Seamless Editorial Row with Fading Dividers */
 .editorial-row {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
