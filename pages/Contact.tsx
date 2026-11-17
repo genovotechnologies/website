@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Check, Send } from 'lucide-react';
-import emailjs from '@emailjs/browser';
+import { submitForm, FORM_ERROR_MESSAGE } from '../forms';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', org: '', message: '' });
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   useEffect(() => {
     document.title = 'Contact Us | Genovo Technologies';
@@ -18,53 +19,21 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError(false);
 
     try {
-      const web3Key = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "9921c6c9-a27a-4b57-9782-f8cb86b95444";
-      if (web3Key) {
-        await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            access_key: web3Key,
-            name: formData.name,
-            email: formData.email,
-            organization: formData.org,
-            message: formData.message,
-            from_name: 'Genovo Technologies Contact Form',
-            subject: `New Inquiry from ${formData.name}`,
-          }),
-        });
-      } 
-      // 2. EmailJS Integration
-      else if (import.meta.env.VITE_EMAILJS_SERVICE_ID) {
-        await emailjs.send(
-          import.meta.env.VITE_EMAILJS_SERVICE_ID,
-          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-          {
-            from_name: formData.name,
-            from_email: formData.email,
-            to_email: formData.email,
-            organization: formData.org,
-            message: formData.message,
-            to_name: 'Genovo Team',
-          },
-          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-        );
-      }
-      // 3. Formspree Integration
-      else if (import.meta.env.VITE_FORMSPREE_ENDPOINT) {
-        await fetch(import.meta.env.VITE_FORMSPREE_ENDPOINT, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData),
-        });
-      }
-
+      await submitForm({
+        name: formData.name,
+        email: formData.email,
+        organization: formData.org,
+        message: formData.message,
+        from_name: 'Genovo Technologies Contact Form',
+        subject: `New Inquiry from ${formData.name}`,
+      });
       setFormSubmitted(true);
-    } catch (error: any) {
+    } catch (error) {
       console.error('Email Transmission Error:', error);
-      setFormSubmitted(true);
+      setSubmitError(true);
     } finally {
       setIsSubmitting(false);
     }
@@ -167,6 +136,10 @@ const Contact: React.FC = () => {
                   />
                 </div>
 
+                {submitError && (
+                  <p role="alert" className="text-sm text-red-400">{FORM_ERROR_MESSAGE}</p>
+                )}
+
                 <button
                   type="submit"
                   disabled={isSubmitting}
@@ -193,10 +166,6 @@ const Contact: React.FC = () => {
                 <div>
                   <span className="text-xs uppercase font-semibold text-white/40 block">General Inquiries</span>
                   <a href="mailto:info@genovotech.com" className="text-white hover:text-[#7342E2] transition-colors">info@genovotech.com</a>
-                </div>
-                <div>
-                  <span className="text-xs uppercase font-semibold text-white/40 block">Synthos Platform</span>
-                  <a href="https://www.synthos.dev" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#7342E2] transition-colors">www.synthos.dev</a>
                 </div>
                 <div>
                   <span className="text-xs uppercase font-semibold text-white/40 block">Asphallea Engine</span>

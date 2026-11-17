@@ -33,6 +33,5 @@ Allow: /
 User-agent: ByteSpider
 Allow: /
 
-# Sitemap and LLM Machine-Readable Index
-Sitemap: https://genovotechnologies.github.io/website/sitemap.xml
-Sitemap: https://genovotechnologies.github.io/website/llms.txt
+# Sitemap (LLM index lives at https://www.genovotech.com/llms.txt)
+Sitemap: https://www.genovotech.com/sitemap.xml

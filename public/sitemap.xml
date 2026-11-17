@@ -5,61 +5,61 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
   <url>
-    <loc>https://genovotechnologies.github.io/website/</loc>
+    <loc>https://www.genovotech.com/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://genovotechnologies.github.io/website/#/products</loc>
+    <loc>https://www.genovotech.com/products</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://genovotechnologies.github.io/website/#/products/synthos</loc>
+    <loc>https://www.genovotech.com/products/synthos</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://genovotechnologies.github.io/website/#/products/scos</loc>
+    <loc>https://www.genovotech.com/products/scos</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://genovotechnologies.github.io/website/#/products/asphallea</loc>
+    <loc>https://www.genovotech.com/products/asphallea</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://genovotechnologies.github.io/website/#/research</loc>
+    <loc>https://www.genovotech.com/research</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://genovotechnologies.github.io/website/#/about</loc>
+    <loc>https://www.genovotech.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://genovotechnologies.github.io/website/#/careers</loc>
+    <loc>https://www.genovotech.com/careers</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://genovotechnologies.github.io/website/#/contact</loc>
+    <loc>https://www.genovotech.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://genovotechnologies.github.io/website/#/blog</loc>
+    <loc>https://www.genovotech.com/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

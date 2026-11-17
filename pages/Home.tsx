@@ -2,11 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, Github } from 'lucide-react';
+import { submitForm, FORM_ERROR_MESSAGE } from '../forms';
 
 const Home: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [profileRequest, setProfileRequest] = useState('');
+  const [profileEmail, setProfileEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   useEffect(() => {
     document.title = "Genovo Technologies | Foundational Rails for Deep Engineering";
@@ -126,25 +129,23 @@ const Home: React.FC = () => {
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (profileRequest) {
+    if (!profileEmail || isSubmitting) return;
+    setIsSubmitting(true);
+    setSubmitError(false);
+    try {
+      await submitForm({
+        email: profileEmail,
+        from_name: 'Genovo Home Hero Request',
+        subject: `Execution Profile Request from ${profileEmail}`,
+      });
       setSubmitted(true);
-      try {
-        const web3Key = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "9921c6c9-a27a-4b57-9782-f8cb86b95444";
-        await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            access_key: web3Key,
-            request: profileRequest,
-            from_name: 'Genovo Home Hero Request',
-            subject: `Execution Profile Request: ${profileRequest}`,
-          }),
-        });
-      } catch (err) {
-        console.error(err);
-      }
+      setProfileEmail('');
       setTimeout(() => setSubmitted(false), 5000);
-      setProfileRequest('');
+    } catch (err) {
+      console.error(err);
+      setSubmitError(true);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -249,21 +250,26 @@ const Home: React.FC = () => {
                 className="liquid-glass rounded-full p-1.5 flex items-center w-full shadow-2xl group transition-all"
               >
                 <input
-                  type="text"
-                  value={profileRequest}
-                  onChange={(e) => setProfileRequest(e.target.value)}
-                  placeholder="Request execution profile..."
+                  type="email"
+                  value={profileEmail}
+                  onChange={(e) => setProfileEmail(e.target.value)}
+                  placeholder="Your email to request an execution profile"
+                  aria-label="Email address"
                   className="bg-transparent border-none outline-none text-white placeholder-white/50 px-5 py-3 text-sm flex-grow font-body w-full"
                   required
                 />
                 <button
                   type="submit"
-                  className="w-11 h-11 rounded-full bg-white text-black flex items-center justify-center hover:bg-white/90 hover:scale-105 transition-all duration-200 shrink-0 shadow-md"
+                  disabled={isSubmitting}
+                  className="disabled:opacity-50 w-11 h-11 rounded-full bg-white text-black flex items-center justify-center hover:bg-white/90 hover:scale-105 transition-all duration-200 shrink-0 shadow-md"
                   aria-label="Submit Request"
                 >
                   <ArrowRight size={18} />
                 </button>
               </form>
+            )}
+            {submitError && (
+              <p role="alert" className="mt-3 text-sm text-red-400 text-center">{FORM_ERROR_MESSAGE}</p>
             )}
           </motion.div>
         </motion.div>
@@ -352,14 +358,12 @@ const Home: React.FC = () => {
               Combining entropic dataset validation with zero-trust execution guardrails. Preventing structural pipeline drift and securing tool execution across distributed environments.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a
-                href="https://www.synthos.dev"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/products/synthos"
                 className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-black font-semibold text-sm hover:bg-white/90 transition-all shadow-xl"
               >
-                Visit synthos.dev <ArrowUpRight size={16} />
-              </a>
+                Explore Synthos <ArrowRight size={16} />
+              </Link>
               <a
                 href="https://asphallea.vercel.app"
                 target="_blank"

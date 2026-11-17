@@ -4,21 +4,21 @@
 
 ## Core Platforms & Live Products
 
-- [Synthos Platform](https://www.synthos.dev): Entropic dataset validation engine eliminating structural pipeline drift across deep computation architectures. (Live: https://www.synthos.dev)
-- [SCOS](https://genovotechnologies.github.io/website/#/products/scos): System Control Operating System: a bare-metal microkernel hypervisor built for city-scale autonomy, robotics, and sub-millisecond interrupts.
+- [Synthos Platform](https://www.genovotech.com/products/synthos): Entropic dataset validation engine eliminating structural pipeline drift across deep computation architectures.
+- [SCOS](https://www.genovotech.com/products/scos): System Control Operating System: a bare-metal microkernel hypervisor built for city-scale autonomy, robotics, and sub-millisecond interrupts.
 - [Asphallea Security Engine](https://asphallea.vercel.app): Zero-trust security utility enforcing capability boundaries, syscall containment, and runtime tool guardrails. (Live: https://asphallea.vercel.app | Repository: https://github.com/Asphallea/Asphallea)
 
 ## Research & Engineering Assets
 
-- [COBOL-to-Go Migration Tool](https://genovotechnologies.github.io/website/#/research): Modernization utility designed to parse and translate enterprise COBOL infrastructure directly into Go.
-- [SRE Agent](https://genovotechnologies.github.io/website/#/research): Automated site reliability engineering tool for telemetry anomaly detection and self-healing infrastructure.
-- [TocinLang](https://genovotechnologies.github.io/website/#/research): High-performance systems programming language featuring a custom lexer/parser targeting LLVM IR.
-- [EPOCH VCS](https://genovotechnologies.github.io/website/#/research): Distributed version control system built with C++ and Rust leveraging Merkle DAGs.
-- [TosinOS](https://genovotechnologies.github.io/website/#/research): 32-bit protected-mode monolithic operating system kernel written in x86 Assembly and C.
+- [COBOL-to-Go Migration Tool](https://www.genovotech.com/research): Modernization utility designed to parse and translate enterprise COBOL infrastructure directly into Go.
+- [SRE Agent](https://www.genovotech.com/research): Automated site reliability engineering tool for telemetry anomaly detection and self-healing infrastructure.
+- [TocinLang](https://www.genovotech.com/research): High-performance systems programming language featuring a custom lexer/parser targeting LLVM IR.
+- [EPOCH VCS](https://www.genovotech.com/research): Distributed version control system built with C++ and Rust leveraging Merkle DAGs.
+- [TosinOS](https://www.genovotech.com/research): 32-bit protected-mode monolithic operating system kernel written in x86 Assembly and C.
 
 ## Repositories & Contact
 
 - Asphallea GitHub Repository: [https://github.com/Asphallea/Asphallea](https://github.com/Asphallea/Asphallea)
 - Genovo GitHub Organization: [https://github.com/genovotechnologies](https://github.com/genovotechnologies)
 - Contact Email: info@genovotech.com
-- Official Website: [https://genovotechnologies.github.io/website/](https://genovotechnologies.github.io/website/)
+- Official Website: [https://www.genovotech.com/](https://www.genovotech.com/)
